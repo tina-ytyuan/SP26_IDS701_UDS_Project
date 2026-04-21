@@ -43,11 +43,11 @@ library(stringi)
 ```{r}
 
 # Player box stats 2003-2026
-player_03_26 <- hoopR::load_mbb_player_box(seasons = c(2003:2026))
+player_03_26_load <- hoopR::load_mbb_player_box(seasons = c(2003:2026))
 
-player_03_26 <- player_03_26 %>%
+player_03_26 <- player_03_26_load %>%
   filter(!is.nan(minutes) & !is.na(minutes)) %>%
-  group_by(athlete_id, team_id) %>%
+  group_by(athlete_id, team_id, season) %>%
   reframe(athlete_display_name, athlete_position_name, athlete_headshot_href,
           team_location, team_logo,
           across(
@@ -120,7 +120,7 @@ draft_data <- scrape_nba_draft(all_years)
 
 
 ```{r}
-#setdiff(draft_data$Player, player_03_26$athlete_display_name)
+setdiff(draft_upd$Player, player_03_26$athlete_display_name)
 ```
 
 
@@ -159,7 +159,7 @@ draft_upd <- draft_data %>%
   select(-draft_year)
 
 player_03_26 <- player_03_26 %>%
-  mutate(athlete_display_name == case_when(
+  mutate(athlete_display_name = case_when(
     athlete_display_name == "Robbie John Hummel" ~ "Robbie Hummel",
     athlete_display_name == "Pierre Deshawn Jackson" ~ "Pierre Jackson",
     athlete_display_name == "Erik Jay Murphy" ~ "Erik Murphy",
@@ -167,7 +167,8 @@ player_03_26 <- player_03_26 %>%
     athlete_display_name == "O.G. Anunoby" ~ "OG Anunoby",
     athlete_display_name == "Xavier Tillman" ~ "Xavier Tillman Sr.",
     athlete_display_name == "GG Jackson" ~ "GG Jackson II",
-    athlete_display_name == "Carlton Carrington" ~ "Bub Carrington"
+    athlete_display_name == "Carlton Carrington" ~ "Bub Carrington",
+    TRUE ~ athlete_display_name
   ))
 
 
@@ -177,11 +178,8 @@ player_03_26 <- player_03_26 %>%
 draft_full <- draft_upd %>%
   left_join(player_03_26, by = c(Player = "athlete_display_name", Season = "season"))
 
-draft_full %>%
-  group_by(Player) %>%
-  distinct() %>%
-  count() %>%
-  arrange(-n)
+draft_full <- draft_full %>%
+  filter(!is.na(minutes))
 ```
 
 
