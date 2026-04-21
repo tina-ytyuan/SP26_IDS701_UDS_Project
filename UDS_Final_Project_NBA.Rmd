@@ -186,19 +186,19 @@ draft_full <- draft_full %>%
 
 ```{r bind rows 2026}
 
-# Combine with 2026 players' data
-player_26 <- load_mbb_player_box(seasons = 2026) %>%
-  group_by(athlete_id) %>%
-  reframe(athlete_display_name, team_location,
-    round(across(where(is.numeric), mean, na.rm = TRUE), 2),
-    games = n()) %>%
-  distinct() %>%
-  mutate(impact = 0) %>%
-  filter(minutes >= 15 & games >= 14) %>%
-  select(-c(opponent_team_id, opponent_team_score, team_score, team_id,
-            athlete_id, game_id, season_type, fouls)) %>%
-  rename("player" = "athlete_display_name",
-         "Season" = "season")
+# # Combine with 2026 players' data
+# player_26 <- load_mbb_player_box(seasons = 2026) %>%
+#   group_by(athlete_id) %>%
+#   reframe(athlete_display_name, team_location,
+#     round(across(where(is.numeric), mean, na.rm = TRUE), 2),
+#     games = n()) %>%
+#   distinct() %>%
+#   mutate(impact = 0) %>%
+#   filter(minutes >= 15 & games >= 14) %>%
+#   select(-c(opponent_team_id, opponent_team_score, team_score, team_id,
+#             athlete_id, game_id, season_type, fouls)) %>%
+#   rename("player" = "athlete_display_name",
+#          "Season" = "season")
 
 ```
 
