@@ -9,6 +9,29 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r install packages, warning=FALSE}
+
+install.packages("renv")
+
+# 1. Install all standard CRAN packages
+renv::install(c(
+  "tidyverse", "xgboost", "randomForest", "broom", "janitor", 
+  "pROC", "reshape2", "caret", "purrr", "fuzzyjoin", "gt", 
+  "gtExtras", "prismatic", "ggrepel", "scales", "ggimage", 
+  "rvest", "stringi", "AdvancedBasketballStats", "hoopR"
+))
+
+# 2. Install the GitHub-only packages
+renv::install(c(
+  "lbenz730/ncaahoopR",
+  "andreweatherman/toRvik",
+  "andreweatherman/cbbdata"
+))
+
+renv::snapshot()
+```
+
+
 ```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(xgboost)
@@ -36,6 +59,12 @@ library(AdvancedBasketballStats)
 library(cbbdata)
 library(rvest)
 library(stringi)
+```
+
+```{r}
+
+
+
 ```
 
 
@@ -110,7 +139,7 @@ scrape_nba_draft <- function(years) {
 player_03_26 %>%
   filter(athlete_display_name == "Ike Diogu")
 
-all_years <- c(2004:2025)
+all_years <- c(2005:2025)
 
 # Run the scraper
 draft_data <- scrape_nba_draft(all_years)
@@ -120,7 +149,8 @@ draft_data <- scrape_nba_draft(all_years)
 
 
 ```{r}
-setdiff(draft_upd$Player, player_03_26$athlete_display_name)
+# Look at name differences between players in the dataframes
+#setdiff(draft_upd$Player, player_03_26$athlete_display_name)
 ```
 
 
@@ -203,7 +233,7 @@ draft_full <- draft_full %>%
 ```
 
 
-```{r}
+```{r impact}
 # Impact factor: Calculated by Gaurav Law (have used in multiple projects for MCBB + WCBB)
 # Used AI to help with function but formula has been used many times
 calculate_season_impact <- function(data) {
@@ -479,53 +509,64 @@ cat("RMSE:", round(rmse_xg, 4))
 # NBA Draft projections
 
 ```{r NBA Draft projections}
+# 
+# conf <- read_csv("~/Desktop/Data Testing/Pacers Project/conferences.csv") %>%
+#   filter(Season == 2025 & Division == "D1") %>%
+#   select(Team, Conference)
+# 
+# testing <- testing %>%
+#   left_join(conf, by = c(team_location = "Team")) %>%
+#   mutate(impact = case_when(Conference %in% c("SEC", "ACC", "Big 12", "Big Ten", "Big East") ~
+#                               impact + 0.1*impact,
+#                             .default = impact)) %>%
+#   arrange(-impact) %>%
+#   select(-Conference)
+# 
+# # Scraped NBA draft projections, per NBADraft.net
+# proj_picks_draft <- read_csv("~/Desktop/Data Testing/Pacers Project/pred_picks.csv") %>%
+#   select(-c(...1, Team)) %>%
+#   filter(Pick <= 60)
+# 
+# testing <- testing %>%
+#   select(-pick) %>%
+#   stringdist_left_join(
+#     proj_picks_draft,
+#     by = c(player = "Player", team_location = "School"),
+#     method = "jw",
+#     max_dist = 0.15,
+#     distance_col = "dist"
+#   ) %>%
+#   filter(!is.na(Pick)) %>%
+#   select(-c(Player, School, player.dist, team_location.dist, dist)) %>%
+#   rename("pick" = "Pick") %>%
+#   arrange(pick)
+# 
+# 
+# cbb_ovr <- cbb_ovr %>%
+#   filter(!player %in% c(proj_picks_draft$Player)) %>%
+#   bind_rows(testing)
 
-conf <- read_csv("~/Desktop/Data Testing/Pacers Project/conferences.csv") %>%
-  filter(Season == 2025 & Division == "D1") %>%
-  select(Team, Conference)
-
-testing <- testing %>%
-  left_join(conf, by = c(team_location = "Team")) %>%
-  mutate(impact = case_when(Conference %in% c("SEC", "ACC", "Big 12", "Big Ten", "Big East") ~
-                              impact + 0.1*impact,
-                            .default = impact)) %>%
-  arrange(-impact) %>%
-  select(-Conference)
-
-# Scraped NBA draft projections, per NBADraft.net
-proj_picks_draft <- read_csv("~/Desktop/Data Testing/Pacers Project/pred_picks.csv") %>%
-  select(-c(...1, Team)) %>%
-  filter(Pick <= 60)
-
-testing <- testing %>%
-  select(-pick) %>%
-  stringdist_left_join(
-    proj_picks_draft,
-    by = c(player = "Player", team_location = "School"),
-    method = "jw",
-    max_dist = 0.15,
-    distance_col = "dist"
-  ) %>%
-  filter(!is.na(Pick)) %>%
-  select(-c(Player, School, player.dist, team_location.dist, dist)) %>%
-  rename("pick" = "Pick") %>%
-  arrange(pick)
-
-
-cbb_ovr <- cbb_ovr %>%
-  filter(!player %in% c(proj_picks_draft$Player)) %>%
-  bind_rows(testing)
-
-darko <- read_csv("~/Desktop/Data Testing/Pacers Project/darko_history.csv")
-darko_top_300 <- darko %>%
-  filter(dpm_rank <= 300 & season >= 2000) %>%
+darko <- read_csv("~/Desktop/Understanding Data Science/SP26_IDS701_UDS_Project/data/darko_history.csv") # change to data/darko_history.csv
+darko <- darko %>%
+  filter(season >= 2002) %>%
+  select(player_name, season, age, dpm, dpm_rank, o_dpm, d_dpm) %>%
   group_by(player_name) %>%
-  reframe(dpm = round(mean(dpm), 2),
-          dpm_rank = round(mean(dpm_rank), 2)) %>%
-  arrange(-dpm)
+  # Grabs the 5 earliest seasons for each player
+  slice_min(order_by = season, n = 5) %>% 
+  ungroup() %>%
+  # Sorting by player and season makes the output easy to read
+  arrange(player_name, season) %>%
+  rename(nba_season = season)
 
-projections <- cbb_ovr %>%
-  left_join(darko_top_300, by = c(player = "player_name")) %>%
+draft_test <- draft_full %>%
+  filter(Season != 2004) %>%
+  rename(draft_year = Season)
+
+preds <- draft_test %>%
+  left_join(darko, by = c(Player = "player_name")) %>%
+  relocate(nba_season, .after = draft_year)
+
+%>%
   #filter(!is.na(pick)) %>%
   filter((!is.na(dpm) | (player %in% proj_picks_draft$Player)) & !is.na(pick)) %>%
   mutate(dpm = ifelse(!is.na(dpm), dpm, 0)) %>%
