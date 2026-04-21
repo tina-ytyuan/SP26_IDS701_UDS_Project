@@ -39,16 +39,15 @@ library(stringi)
 ```
 
 
-# Player Factor
 
 ```{r}
 
 # Player box stats 2003-2026
-player_03_26 <- hoopR::load_mbb_player_box(seasons = c(2005:2026))
+player_03_26 <- hoopR::load_mbb_player_box(seasons = c(2003:2026))
 
 player_03_26 <- player_03_26 %>%
-  filter(minutes != "NaN") %>%
-  group_by(season, athlete_id, team_id) %>%
+  filter(!is.nan(minutes) & !is.na(minutes)) %>%
+  group_by(athlete_id, team_id) %>%
   reframe(athlete_display_name, athlete_position_name, athlete_headshot_href,
           team_location, team_logo,
           across(
@@ -58,25 +57,6 @@ player_03_26 <- player_03_26 %>%
           games = n()) %>%
   #filter(minutes >= 15 & games >= 19) %>%
   distinct()
-
-
-# ORTG, USG, DRTG, MPG, PFR = PER
-# 
-# # Torvik stats 2010-2025
-# get_torvik <- function(years) {
-#   purrr::map_df(years, function(year) {
-#     cbd_torvik_player_season(year = year) %>%
-#       mutate(Season = year) %>%
-#       relocate(Season, .after = pos)
-#   })
-# }
-# 
-# cbb_player %>%
-#   filter(!is.na(pick)) %>%
-#   summarise(player, year, pick) %>%
-#   arrange(-year)
-# 
-# cbb_player <- get_torvik(2010:2026)
 
 ```
 
@@ -130,25 +110,46 @@ scrape_nba_draft <- function(years) {
 player_03_26 %>%
   filter(athlete_display_name == "Ike Diogu")
 
-
-```
-
-```{r}
-
-all_years <- c(2005:2025)
+all_years <- c(2004:2025)
 
 # Run the scraper
 draft_data <- scrape_nba_draft(all_years)
 
-draft_data <- draft_data %>%
+
+```
+
+
+```{r}
+#setdiff(draft_data$Player, player_03_26$athlete_display_name)
+```
+
+
+```{r}
+
+# Look at case by case data manipulation
+draft_upd <- draft_data %>%
   select(Pk, Player, College, draft_year) %>%
   mutate(across(where(is.character), ~na_if(., "")),
          Season = draft_year,
          Pk = as.integer(Pk),
          Player = stri_trans_general(Player, "Latin-ASCII"),
          Player = case_when(
-           Player == "VJ Edgecombe"   ~ "V.J. Edgecombe",
-           Player == "Walter Clayton" ~ "Walter Clayton Jr.",
+           Player == "V.J. Edgecombe" ~ "VJ Edgecombe",
+           Player == "J.J. Hickson" ~ "JJ Hickson",
+           Player == "Patrick Ewing" ~ "Patrick Ewing Jr.",
+           Player == "Marcus Morris" ~ "Marcus Morris Sr.",
+           Player == "Jeff Taylor" ~ "Jeffery Taylor",
+           Player == "Robbie Hummel" ~ "Robbie John Hummel",
+           Player == "K.J. McDaniels" ~ "KJ McDaniels",
+           Player == "R.J. Hunter" ~ "RJ Hunter",
+           Player == "A.J. Hammons" ~ "AJ Hammons",
+           Player == "Harry Giles" ~ "Harry Giles III",
+           Player == "Wade Baldwin" ~ "Wade Baldwin IV",
+           Player == "Kevin Knox" ~ "Kevin Knox II",
+           Player == "Vince Edwards" ~ "Vincent Edwards",
+           Player == "Tristan Da Silva" ~ "Tristan da Silva",
+           Player == "DaRon Holmes" ~ "DaRon Holmes II",
+           Player == "Egor Dёmin" ~ "Egor Demin",
            TRUE ~ Player
          )) %>%
   filter(!is.na(Player),
@@ -157,17 +158,30 @@ draft_data <- draft_data %>%
          Player != "Player") %>%
   select(-draft_year)
 
+player_03_26 <- player_03_26 %>%
+  mutate(athlete_display_name == case_when(
+    athlete_display_name == "Robbie John Hummel" ~ "Robbie Hummel",
+    athlete_display_name == "Pierre Deshawn Jackson" ~ "Pierre Jackson",
+    athlete_display_name == "Erik Jay Murphy" ~ "Erik Murphy",
+    athlete_display_name == "Johnny O'Bryant III" ~ "Johnny O'Bryant",
+    athlete_display_name == "O.G. Anunoby" ~ "OG Anunoby",
+    athlete_display_name == "Xavier Tillman" ~ "Xavier Tillman Sr.",
+    athlete_display_name == "GG Jackson" ~ "GG Jackson II",
+    athlete_display_name == "Carlton Carrington" ~ "Bub Carrington"
+  ))
 
 
-# cbb_player <- cbb_player %>%
-#   left_join(draft_data, by = c(player = "Player", "Season")) %>%
-#   mutate(pick = ifelse(is.na(pick), Pk, pick)) %>%
-#   filter(!is.na(pick)) %>%
-#   select(-College)
+```
 
+```{r}
+draft_full <- draft_upd %>%
+  left_join(player_03_26, by = c(Player = "athlete_display_name", Season = "season"))
 
-player_03_26 %>%
-  filter(athlete_display_name == "Chris Paul")
+draft_full %>%
+  group_by(Player) %>%
+  distinct() %>%
+  count() %>%
+  arrange(-n)
 ```
 
 
