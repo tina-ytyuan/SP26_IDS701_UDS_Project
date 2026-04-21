@@ -35,6 +35,7 @@ library(toRvik)
 library(AdvancedBasketballStats)
 library(cbbdata)
 library(rvest)
+library(stringi)
 ```
 
 
@@ -42,68 +43,133 @@ library(rvest)
 
 ```{r}
 
-# Player box stats 2003-2025
-player_03_25 <- hoopR::load_mbb_player_box(seasons = c(2003:2025))
+# Player box stats 2003-2026
+player_03_26 <- hoopR::load_mbb_player_box(seasons = c(2005:2026))
 
-player_03_25 <- player_03_25 %>%
+player_03_26 <- player_03_26 %>%
+  filter(minutes != "NaN") %>%
   group_by(season, athlete_id, team_id) %>%
-  reframe(athlete_display_name, team_location,
+  reframe(athlete_display_name, athlete_position_name, athlete_headshot_href,
+          team_location, team_logo,
           across(
             c(minutes:points),
             ~ round(mean(.x, na.rm = TRUE), 2)
             ),
           games = n()) %>%
-  filter(minutes >= 15 & games >= 19) %>%
+  #filter(minutes >= 15 & games >= 19) %>%
   distinct()
 
+
 # ORTG, USG, DRTG, MPG, PFR = PER
-
-# Torvik stats 2010-2025
-get_torvik <- function(years) {
-  purrr::map_df(years, function(year) {
-    cbd_torvik_player_season(year = year) %>%
-      mutate(Season = year) %>%
-      relocate(Season, .after = pos)
-  })
-}
-
-cbb_player <- get_torvik(2010:2025)
-
-# 2025 data not filled with draft picks, need to scrape
-url <- "https://www.basketball-reference.com/draft/NBA_2025.html"
-
-full_table <- read_html(url, as.data.frame = T, stringsAsFactors = TRUE)
-
-draft_25 <- full_table %>%
-  html_nodes("table") %>%
-  .[[1]] %>%
-  html_table(fill = T) %>%
-  {colnames(.) <- .[1, ]; .[-1, ]}
-
-draft_25 <- draft_25 %>%
-  select(Pk, Player, College) %>%
-  mutate(across(everything(), ~na_if(., "")),
-         Season = 2025,
-         Pk = as.integer(Pk),
-         Player = case_when(Player == "VJ Edgecombe" ~ "V.J. Edgecombe",
-                            Player == "Egor Dёmin" ~ "Egor Demin",
-                            Player == "Walter Clayton" ~ "Walter Clayton Jr.",
-                            Player == "Kasparas Jakučionis" ~ "Kasparas Jakucionis",
-                            Player == "Yanic Konan Niederhäuser" ~ "Yanic Konan Niederhauser",
-                            
-                               TRUE ~ Player)) %>%
-  filter(!is.na(Player)) %>%
-  filter(!is.na(Pk)) %>%
-  filter(!Player == "Player") %>%
-  filter(!is.na(College))
-
-cbb_player <- cbb_player %>%
-  left_join(draft_25, by = c(player = "Player", "Season")) %>%
-  mutate(pick = ifelse(is.na(pick), Pk, pick)) %>%
-  filter(!is.na(pick)) %>%
-  select(-College)
+# 
+# # Torvik stats 2010-2025
+# get_torvik <- function(years) {
+#   purrr::map_df(years, function(year) {
+#     cbd_torvik_player_season(year = year) %>%
+#       mutate(Season = year) %>%
+#       relocate(Season, .after = pos)
+#   })
+# }
+# 
+# cbb_player %>%
+#   filter(!is.na(pick)) %>%
+#   summarise(player, year, pick) %>%
+#   arrange(-year)
+# 
+# cbb_player <- get_torvik(2010:2026)
 
 ```
+
+```{r}
+
+scrape_nba_draft <- function(years) {
+  
+  scrape_single_year <- function(year) {
+    url <- paste0("https://www.basketball-reference.com/draft/NBA_", year, ".html")
+    
+    tryCatch({
+      full_table <- read_html(url)
+      
+      draft <- full_table %>%
+        html_nodes("table") %>%
+        .[[1]] %>%
+        html_table(fill = TRUE)
+      
+      # Set first row as column names and remove it
+      colnames(draft) <- draft[1, ]
+      draft <- draft[-1, ]
+      
+      # Remove duplicate header rows that appear mid-table
+      draft <- draft[draft[[1]] != colnames(draft)[1], ]
+      
+      # Add year column for reference
+      draft$draft_year <- year
+      
+      message("Successfully scraped ", year, " NBA Draft (", nrow(draft), " rows)")
+      return(draft)
+      
+    }, error = function(e) {
+      warning("Failed to scrape year ", year, ": ", e$message)
+      return(NULL)
+    })
+  }
+  
+  # Scrape all years and bind into one data frame
+  all_drafts <- lapply(years, function(y) {
+    Sys.sleep(3)
+    scrape_single_year(y)
+  })
+  
+  # Drop any failed years and combine
+  all_drafts <- Filter(Negate(is.null), all_drafts)
+  combined <- bind_rows(all_drafts)
+  
+  return(combined)
+}
+
+player_03_26 %>%
+  filter(athlete_display_name == "Ike Diogu")
+
+
+```
+
+```{r}
+
+all_years <- c(2005:2025)
+
+# Run the scraper
+draft_data <- scrape_nba_draft(all_years)
+
+draft_data <- draft_data %>%
+  select(Pk, Player, College, draft_year) %>%
+  mutate(across(where(is.character), ~na_if(., "")),
+         Season = draft_year,
+         Pk = as.integer(Pk),
+         Player = stri_trans_general(Player, "Latin-ASCII"),
+         Player = case_when(
+           Player == "VJ Edgecombe"   ~ "V.J. Edgecombe",
+           Player == "Walter Clayton" ~ "Walter Clayton Jr.",
+           TRUE ~ Player
+         )) %>%
+  filter(!is.na(Player),
+         !is.na(Pk),
+         !is.na(College),
+         Player != "Player") %>%
+  select(-draft_year)
+
+
+
+# cbb_player <- cbb_player %>%
+#   left_join(draft_data, by = c(player = "Player", "Season")) %>%
+#   mutate(pick = ifelse(is.na(pick), Pk, pick)) %>%
+#   filter(!is.na(pick)) %>%
+#   select(-College)
+
+
+player_03_26 %>%
+  filter(athlete_display_name == "Chris Paul")
+```
+
 
 
 ```{r bind rows 2026}
@@ -185,7 +251,7 @@ calculate_season_impact <- function(data) {
 cbb_ovr <- calculate_season_impact(cbb_player)
 
 cbb_ovr <- cbb_ovr %>%
-  left_join(player_03_25, by = c(player = "athlete_display_name", Season = "season")) %>%
+  left_join(player_03_26, by = c(player = "athlete_display_name", Season = "season")) %>%
   select(player, Season, team_location, minutes, points, rebounds, assists, blocks, steals,
          offensive_rebounds, defensive_rebounds, turnovers, field_goals_made, field_goals_attempted,
          free_throws_made, free_throws_attempted, three_point_field_goals_made,
