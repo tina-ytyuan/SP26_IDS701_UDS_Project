@@ -560,29 +560,18 @@ darko <- darko %>%
   ungroup() %>%
   # Sorting by player and season makes the output easy to read
   arrange(player_name, season) %>%
-  rename(nba_season = season)
+  rename(nba_season = season) %>%
+  # Remove accents, tildes, umlauts
+  mutate(player_name = stri_trans_general(player_name, "Latin-ASCII"))
 
 draft_test <- draft_full %>%
-  filter(Season != 2004) %>%
+  #filter(Season != 2004) %>%
   select(-Season)
 
 preds <- draft_test %>%
-  left_join(darko, by = c(Player = "player_name")) %>%
-  relocate(nba_season, .after = draft_year)
-
-%>%
-  #filter(!is.na(pick)) %>%
-  filter((!is.na(dpm) | (player %in% proj_picks_draft$Player)) & !is.na(pick)) %>%
-  mutate(dpm = ifelse(!is.na(dpm), dpm, 0)) %>%
-  group_by(player, pick, dpm) %>%
-  reframe(across(
-            c(minutes:impact),
-            ~ round(mean(.x, na.rm = TRUE), 2)
-            )) %>%
-  distinct() %>%
-  arrange(pick, -dpm)
-
-
+  stringdist_left_join(darko, by = c(Player = "player_name")) %>%
+  relocate(nba_season, .after = draft_year) %>%
+  mutate(dpm = ifelse(is.na(dpm), median(dpm, na.rm = TRUE), dpm))
 
 ```
 
