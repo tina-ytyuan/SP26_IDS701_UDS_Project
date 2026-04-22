@@ -573,7 +573,38 @@ preds <- draft_test %>%
   relocate(nba_season, .after = draft_year) %>%
   mutate(dpm = ifelse(is.na(dpm), median(dpm, na.rm = TRUE), dpm))
 
+# Pad each player up to five seasons
+preds <- preds %>%
+  group_by(Player) %>%
+  group_modify(~ {
+    n_missing <- 5 - nrow(.x)
+    if (n_missing <= 0) return(.x)
+    
+    last_season <- max(.x$nba_season)
+    
+    new_rows <- tibble(
+      nba_season            = last_season + seq_len(n_missing),
+      dpm                   = -5,
+      Pk                    = .x$Pk[1],
+      College               = .x$College[1],
+      draft_year            = .x$draft_year[1],
+      athlete_id            = .x$athlete_id[1],
+      athlete_position_name = .x$athlete_position_name[1],
+      num_years_college     = .x$num_years_college[1]
+    )
+    
+    bind_rows(.x, new_rows)
+  }) %>%
+  ungroup()
+
+nba_did <- preds %>%
+  select(Player, athlete_id, num_years_college, dpm)
+
+
 ```
+
+
+
 
 
 ```{r}
