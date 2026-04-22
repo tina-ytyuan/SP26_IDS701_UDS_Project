@@ -61,13 +61,6 @@ library(rvest)
 library(stringi)
 ```
 
-```{r}
-
-
-
-```
-
-
 
 ```{r}
 
@@ -76,8 +69,8 @@ player_03_26_load <- hoopR::load_mbb_player_box(seasons = c(2003:2026))
 
 player_03_26 <- player_03_26_load %>%
   filter(!is.nan(minutes) & !is.na(minutes)) %>%
-  group_by(athlete_id, team_id, season) %>%
-  reframe(athlete_display_name, athlete_position_name, athlete_headshot_href,
+  group_by(athlete_id, season) %>%
+  reframe(team_id, athlete_display_name, athlete_position_name, athlete_headshot_href,
           team_location, team_logo,
           across(
             c(minutes:points),
@@ -89,7 +82,7 @@ player_03_26 <- player_03_26_load %>%
 
 ```
 
-```{r}
+```{r draft data 2005-25}
 
 scrape_nba_draft <- function(years) {
   
@@ -185,8 +178,7 @@ draft_upd <- draft_data %>%
   filter(!is.na(Player),
          !is.na(Pk),
          !is.na(College),
-         Player != "Player") %>%
-  select(-draft_year)
+         Player != "Player")
 
 player_03_26 <- player_03_26 %>%
   mutate(athlete_display_name = case_when(
@@ -201,15 +193,25 @@ player_03_26 <- player_03_26 %>%
     TRUE ~ athlete_display_name
   ))
 
+player_03_26 <- player_03_26 %>%
+  group_by(athlete_id) %>%
+  mutate(num_years_college = n()) %>%
+  ungroup()
+
+# Since data only starts in 2005, we manually went through 2004-2008 to get the real number of years a player spent in college
+draft_pre_08 <- read_csv("~/Downloads/draft_pre_08.csv") # change to data/
+#draft_pre_08 <- read_csv("data/draft_pre_08.csv")
+
 
 ```
 
 ```{r}
 draft_full <- draft_upd %>%
-  left_join(player_03_26, by = c(Player = "athlete_display_name", Season = "season"))
-
-draft_full <- draft_full %>%
-  filter(!is.na(minutes))
+  left_join(player_03_26, by = c(Player = "athlete_display_name", Season = "season")) %>%
+  left_join(draft_pre_08, by = c("Player", "College", "draft_year", "Season", "Pk")) %>%
+  filter(!is.na(minutes)) %>%
+  mutate(num_years_college = ifelse(Season <= 2008, num_years_college.y, num_years_college.x)) %>%
+  select(-c(num_years_college.x, num_years_college.y))
 ```
 
 
@@ -547,6 +549,8 @@ cat("RMSE:", round(rmse_xg, 4))
 #   bind_rows(testing)
 
 darko <- read_csv("~/Desktop/Understanding Data Science/SP26_IDS701_UDS_Project/data/darko_history.csv") # change to data/darko_history.csv
+#darko <- read_csv("data/darko_history.csv")
+
 darko <- darko %>%
   filter(season >= 2002) %>%
   select(player_name, season, age, dpm, dpm_rank, o_dpm, d_dpm) %>%
@@ -560,7 +564,7 @@ darko <- darko %>%
 
 draft_test <- draft_full %>%
   filter(Season != 2004) %>%
-  rename(draft_year = Season)
+  select(-Season)
 
 preds <- draft_test %>%
   left_join(darko, by = c(Player = "player_name")) %>%
