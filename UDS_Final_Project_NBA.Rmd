@@ -31,7 +31,6 @@ renv::install(c(
 renv::snapshot()
 ```
 
-
 ```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(xgboost)
@@ -60,7 +59,6 @@ library(cbbdata)
 library(rvest)
 library(stringi)
 ```
-
 
 ```{r}
 
@@ -140,12 +138,10 @@ draft_data <- scrape_nba_draft(all_years)
 
 ```
 
-
 ```{r}
 # Look at name differences between players in the dataframes
 #setdiff(draft_upd$Player, player_03_26$athlete_display_name)
 ```
-
 
 ```{r}
 
@@ -214,8 +210,6 @@ draft_full <- draft_upd %>%
   select(-c(num_years_college.x, num_years_college.y))
 ```
 
-
-
 ```{r bind rows 2026}
 
 # # Combine with 2026 players' data
@@ -233,7 +227,6 @@ draft_full <- draft_upd %>%
 #          "Season" = "season")
 
 ```
-
 
 ```{r impact}
 # Impact factor: Calculated by Gaurav Law (have used in multiple projects for MCBB + WCBB)
@@ -318,7 +311,6 @@ exclude_vars <- c("player",
 features <- setdiff(names(cbb_ovr), exclude_vars)
 ```
 
-
 ```{r xgb model predicting impact}
 
 training <- cbb_ovr %>% filter(Season < 2026) %>% ungroup()
@@ -352,6 +344,7 @@ testing <- testing %>%
 ```
 
 ## Backtesting for impact score (GREAT!!)
+
 ### DO NOT RUN BEFORE "NBA Draft projections"
 
 ```{r 2025}
@@ -506,8 +499,6 @@ testing <- testing %>%
 cat("RMSE:", round(rmse_xg, 4))
 ```
 
-
-
 # NBA Draft projections
 
 ```{r NBA Draft projections}
@@ -603,10 +594,6 @@ nba_did <- preds %>%
 
 ```
 
-
-
-
-
 ```{r}
 target <- "dpm"
 
@@ -616,8 +603,6 @@ exclude_vars <- c("player",
 
 features <- setdiff(names(projections), exclude_vars)
 ```
-
-
 
 ```{r}
 training <- projections %>% 
@@ -693,12 +678,139 @@ sort_gt <- sort_data %>%
              palette = c("darkred", "red", "indianred", "white", "steelblue", "blue", "darkblue"))
 
 sort_gt
-
-
-
-
 ```
 
+```{r}
+nba_did <- read_csv("data/nba_did.csv")
+```
 
+```{r memo_data_prep, message=FALSE, warning=FALSE, echo=FALSE}
+nba_plot <- nba_did %>%
+  group_by(Player) %>%
+  mutate(nba_year = row_number()) %>%
+  filter(nba_year <= 5,
+         num_years_college %in% c(1, 2, 3, 4)) %>%
+  ungroup() %>%
+  mutate(college_label = case_when(
+    num_years_college == 1 ~ "1 Year (One-and-Done)",
+    num_years_college == 2 ~ "2 Years",
+    num_years_college == 3 ~ "3 Years",
+    num_years_college == 4 ~ "4 Years"
+  ),
+  college_label = factor(college_label, 
+                         levels = c("1 Year (One-and-Done)", "2 Years", "3 Years", "4 Years")))
 
+group_counts <- nba_plot %>%
+  distinct(Player, college_label) %>%
+  count(college_label) %>%
+  mutate(label_with_n = paste0(college_label, " (n=", n, ")"))
 
+nba_plot <- nba_plot %>%
+  left_join(group_counts, by = "college_label")
+
+tenure_colors <- c("1 Year (One-and-Done)" = "#1b9e77", 
+                    "2 Years" = "#d95f02", 
+                    "3 Years" = "#7570b3", 
+                    "4 Years" = "#e7298a")
+```
+
+```{r fig1_dpm_trajectories, fig.width=8, fig.height=5, echo=FALSE, fig.cap="Figure 1: Mean DARKO DPM trajectories over the first five NBA seasons, grouped by years spent in college."}
+trajectory_data <- nba_plot %>%
+  group_by(college_label, label_with_n, nba_year) %>%
+  summarize(mean_dpm = mean(dpm, na.rm = TRUE), .groups = "drop")
+
+ggplot(trajectory_data, aes(x = nba_year, y = mean_dpm, 
+                             color = college_label, group = college_label)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50", alpha = 0.4) +
+  scale_x_continuous(breaks = 1:5, labels = paste("Year", 1:5)) +
+  scale_color_manual(values = tenure_colors,
+                     labels = trajectory_data %>% 
+                       distinct(college_label, label_with_n) %>% 
+                       pull(label_with_n)) +
+  labs(title = "NBA Performance Trajectories by College Tenure",
+       x = "NBA Season (Years Since Draft)",
+       y = "Mean DARKO DPM",
+       color = NULL) +
+  coord_cartesian(ylim = c(-4.5, 0.5)) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        panel.grid.minor = element_blank())
+```
+
+```{r fig2_survivorship, fig.width=7, fig.height=5, echo=FALSE, fig.cap="Figure 2: NBA roster survival rates over five seasons by college tenure."}
+survival_data <- nba_plot %>%
+  group_by(college_label, nba_year) %>%
+  summarize(total = n(),
+            still_active = sum(dpm > -5.0),
+            pct_active = still_active / total * 100,
+            .groups = "drop")
+
+ggplot(survival_data, aes(x = nba_year, y = pct_active, 
+                           color = college_label, group = college_label)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3, shape = 15) +
+  scale_x_continuous(breaks = 1:5, labels = paste("Year", 1:5)) +
+  scale_color_manual(values = tenure_colors) +
+  labs(title = "NBA Roster Survival Rate by College Tenure",
+       x = "NBA Season (Years Since Draft)",
+       y = "% Still on NBA Roster",
+       color = NULL) +
+  coord_cartesian(ylim = c(0, 105)) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        panel.grid.minor = element_blank())
+```
+
+```{r fig3_rookie_boxplot, fig.width=7, fig.height=5, echo=FALSE, fig.cap="Figure 3: Distribution of rookie-year DPM by college tenure (excluding players who left the league)."}
+rookie_data <- nba_plot %>%
+  filter(nba_year == 1, dpm > -5.0)
+
+ggplot(rookie_data, aes(x = college_label, y = dpm, fill = college_label)) +
+  geom_boxplot(alpha = 0.6, outlier.shape = 1, outlier.size = 2, width = 0.6) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50", alpha = 0.4) +
+  scale_fill_manual(values = tenure_colors) +
+  labs(title = "Rookie Year Performance Distribution by College Tenure",
+       x = "Years in College",
+       y = "Rookie Year DARKO DPM") +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "none",
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        panel.grid.minor = element_blank())
+```
+
+```{r summary_table, echo=FALSE}
+summary_tbl <- nba_plot %>%
+  distinct(Player, num_years_college, college_label) %>%
+  group_by(college_label) %>%
+  summarize(n_players = n(), .groups = "drop") %>%
+  left_join(
+    nba_plot %>%
+      filter(nba_year == 1) %>%
+      group_by(college_label) %>%
+      summarize(yr1_dpm = round(mean(dpm), 2), .groups = "drop"),
+    by = "college_label"
+  ) %>%
+  left_join(
+    nba_plot %>%
+      group_by(college_label) %>%
+      summarize(pct_left = round(sum(dpm == -5.0) / n_distinct(Player) * 100, 1),
+                .groups = "drop"),
+    by = "college_label"
+  )
+
+summary_tbl %>%
+  gt() %>%
+  cols_label(
+    college_label = "College Tenure",
+    n_players = "Players (n)",
+    yr1_dpm = "Year 1 DPM",
+    pct_left = "Left NBA by Yr 5 (%)"
+  ) %>%
+  tab_header(title = "Summary Statistics by College Tenure Cohort") %>%
+  cols_align(align = "center") %>%
+  gtExtras::gt_theme_espn()
+```
