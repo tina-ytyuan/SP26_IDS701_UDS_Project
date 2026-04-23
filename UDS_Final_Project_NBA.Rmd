@@ -796,9 +796,15 @@ summary_tbl <- nba_plot %>%
   ) %>%
   left_join(
     nba_plot %>%
-      group_by(college_label) %>%
-      summarize(pct_left = round(sum(dpm == -5.0) / n_distinct(Player) * 100, 1),
-                .groups = "drop"),
+      filter(dpm == -5.0) %>%
+      distinct(Player, college_label) %>%
+      count(college_label, name = "left_n") %>%
+      left_join(
+        nba_plot %>% distinct(Player, college_label) %>% count(college_label, name = "total_n"),
+        by = "college_label"
+      ) %>%
+      mutate(pct_left = round(left_n / total_n * 100, 1)) %>%
+      select(college_label, pct_left),
     by = "college_label"
   )
 
