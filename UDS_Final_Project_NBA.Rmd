@@ -1,0 +1,822 @@
+---
+title: "UDS_Final_Project"
+author: "Gaurav Law"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r install packages, warning=FALSE}
+
+install.packages("renv")
+
+# 1. Install all standard CRAN packages
+renv::install(c(
+  "tidyverse", "xgboost", "randomForest", "broom", "janitor", 
+  "pROC", "reshape2", "caret", "purrr", "fuzzyjoin", "gt", 
+  "gtExtras", "prismatic", "ggrepel", "scales", "ggimage", 
+  "rvest", "stringi", "AdvancedBasketballStats", "hoopR"
+))
+
+# 2. Install the GitHub-only packages
+renv::install(c(
+  "lbenz730/ncaahoopR",
+  "andreweatherman/toRvik",
+  "andreweatherman/cbbdata"
+))
+
+renv::snapshot()
+```
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(xgboost)
+library(randomForest)
+library(broom)
+library(janitor)
+library(pROC)
+library(reshape2)
+library(caret)
+library(purrr)
+library(fuzzyjoin)
+library(tidyr)
+library(gt)
+library(gtExtras)
+library(prismatic)
+library(ggrepel)
+library(scales)
+library(purrr)
+library(ggimage)
+
+library(hoopR)
+library(ncaahoopR)
+library(toRvik)
+library(AdvancedBasketballStats)
+library(cbbdata)
+library(rvest)
+library(stringi)
+```
+
+```{r}
+
+# Player box stats 2003-2026
+player_03_26_load <- hoopR::load_mbb_player_box(seasons = c(2003:2026))
+
+player_03_26 <- player_03_26_load %>%
+  filter(!is.nan(minutes) & !is.na(minutes)) %>%
+  group_by(athlete_id, season) %>%
+  reframe(team_id, athlete_display_name, athlete_position_name, athlete_headshot_href,
+          team_location, team_logo,
+          across(
+            c(minutes:points),
+            ~ round(mean(.x, na.rm = TRUE), 2)
+            ),
+          games = n()) %>%
+  #filter(minutes >= 15 & games >= 19) %>%
+  distinct()
+
+```
+
+```{r draft data 2005-25}
+
+scrape_nba_draft <- function(years) {
+  
+  scrape_single_year <- function(year) {
+    url <- paste0("https://www.basketball-reference.com/draft/NBA_", year, ".html")
+    
+    tryCatch({
+      full_table <- read_html(url)
+      
+      draft <- full_table %>%
+        html_nodes("table") %>%
+        .[[1]] %>%
+        html_table(fill = TRUE)
+      
+      # Set first row as column names and remove it
+      colnames(draft) <- draft[1, ]
+      draft <- draft[-1, ]
+      
+      # Remove duplicate header rows that appear mid-table
+      draft <- draft[draft[[1]] != colnames(draft)[1], ]
+      
+      # Add year column for reference
+      draft$draft_year <- year
+      
+      message("Successfully scraped ", year, " NBA Draft (", nrow(draft), " rows)")
+      return(draft)
+      
+    }, error = function(e) {
+      warning("Failed to scrape year ", year, ": ", e$message)
+      return(NULL)
+    })
+  }
+  
+  # Scrape all years and bind into one data frame
+  all_drafts <- lapply(years, function(y) {
+    Sys.sleep(3)
+    scrape_single_year(y)
+  })
+  
+  # Drop any failed years and combine
+  all_drafts <- Filter(Negate(is.null), all_drafts)
+  combined <- bind_rows(all_drafts)
+  
+  return(combined)
+}
+
+player_03_26 %>%
+  filter(athlete_display_name == "Ike Diogu")
+
+all_years <- c(2005:2025)
+
+# Run the scraper
+draft_data <- scrape_nba_draft(all_years)
+
+
+```
+
+```{r}
+# Look at name differences between players in the dataframes
+#setdiff(draft_upd$Player, player_03_26$athlete_display_name)
+```
+
+```{r}
+
+# Look at case by case data manipulation
+draft_upd <- draft_data %>%
+  select(Pk, Player, College, draft_year) %>%
+  mutate(across(where(is.character), ~na_if(., "")),
+         Season = draft_year,
+         Pk = as.integer(Pk),
+         Player = stri_trans_general(Player, "Latin-ASCII"),
+         Player = case_when(
+           Player == "V.J. Edgecombe" ~ "VJ Edgecombe",
+           Player == "J.J. Hickson" ~ "JJ Hickson",
+           Player == "Patrick Ewing" ~ "Patrick Ewing Jr.",
+           Player == "Marcus Morris" ~ "Marcus Morris Sr.",
+           Player == "Jeff Taylor" ~ "Jeffery Taylor",
+           Player == "Robbie Hummel" ~ "Robbie John Hummel",
+           Player == "K.J. McDaniels" ~ "KJ McDaniels",
+           Player == "R.J. Hunter" ~ "RJ Hunter",
+           Player == "A.J. Hammons" ~ "AJ Hammons",
+           Player == "Harry Giles" ~ "Harry Giles III",
+           Player == "Wade Baldwin" ~ "Wade Baldwin IV",
+           Player == "Kevin Knox" ~ "Kevin Knox II",
+           Player == "Vince Edwards" ~ "Vincent Edwards",
+           Player == "Tristan Da Silva" ~ "Tristan da Silva",
+           Player == "DaRon Holmes" ~ "DaRon Holmes II",
+           Player == "Egor Dёmin" ~ "Egor Demin",
+           TRUE ~ Player
+         )) %>%
+  filter(!is.na(Player),
+         !is.na(Pk),
+         !is.na(College),
+         Player != "Player")
+
+player_03_26 <- player_03_26 %>%
+  mutate(athlete_display_name = case_when(
+    athlete_display_name == "Robbie John Hummel" ~ "Robbie Hummel",
+    athlete_display_name == "Pierre Deshawn Jackson" ~ "Pierre Jackson",
+    athlete_display_name == "Erik Jay Murphy" ~ "Erik Murphy",
+    athlete_display_name == "Johnny O'Bryant III" ~ "Johnny O'Bryant",
+    athlete_display_name == "O.G. Anunoby" ~ "OG Anunoby",
+    athlete_display_name == "Xavier Tillman" ~ "Xavier Tillman Sr.",
+    athlete_display_name == "GG Jackson" ~ "GG Jackson II",
+    athlete_display_name == "Carlton Carrington" ~ "Bub Carrington",
+    TRUE ~ athlete_display_name
+  ))
+
+player_03_26 <- player_03_26 %>%
+  group_by(athlete_id) %>%
+  mutate(num_years_college = n()) %>%
+  ungroup()
+
+# Since data only starts in 2005, we manually went through 2004-2008 to get the real number of years a player spent in college
+draft_pre_08 <- read_csv("~/Downloads/draft_pre_08.csv") # change to data/
+#draft_pre_08 <- read_csv("data/draft_pre_08.csv")
+
+
+```
+
+```{r}
+draft_full <- draft_upd %>%
+  left_join(player_03_26, by = c(Player = "athlete_display_name", Season = "season")) %>%
+  left_join(draft_pre_08, by = c("Player", "College", "draft_year", "Season", "Pk")) %>%
+  filter(!is.na(minutes)) %>%
+  mutate(num_years_college = ifelse(Season <= 2008, num_years_college.y, num_years_college.x)) %>%
+  select(-c(num_years_college.x, num_years_college.y))
+```
+
+```{r bind rows 2026}
+
+# # Combine with 2026 players' data
+# player_26 <- load_mbb_player_box(seasons = 2026) %>%
+#   group_by(athlete_id) %>%
+#   reframe(athlete_display_name, team_location,
+#     round(across(where(is.numeric), mean, na.rm = TRUE), 2),
+#     games = n()) %>%
+#   distinct() %>%
+#   mutate(impact = 0) %>%
+#   filter(minutes >= 15 & games >= 14) %>%
+#   select(-c(opponent_team_id, opponent_team_score, team_score, team_id,
+#             athlete_id, game_id, season_type, fouls)) %>%
+#   rename("player" = "athlete_display_name",
+#          "Season" = "season")
+
+```
+
+```{r impact}
+# Impact factor: Calculated by Gaurav Law (have used in multiple projects for MCBB + WCBB)
+# Used AI to help with function but formula has been used many times
+calculate_season_impact <- function(data) {
+  data %>%
+    group_by(Season) %>% 
+    mutate(
+      `net rtg` = ortg - drtg
+    ) %>%
+    drop_na(`net rtg`, usg, mpg) %>%
+    mutate(
+      # Net Rating Standardization
+      mean_rtg = mean(`net rtg`),
+      sd_rtg = sd(`net rtg`),
+      net_std = round((`net rtg` - mean_rtg) / sd_rtg, 2),
+      
+      # Minutes Standardization 
+      min_sd = sd(mpg),
+      min_std = round(mpg / min_sd, 2),
+      
+      # Combined Net * Min Score
+      raw_net_min = net_std * min_std,
+      max_raw_net_min = max(raw_net_min, na.rm = TRUE),
+      net_min_std = round(raw_net_min / max_raw_net_min, 2),
+      
+      # PER Standardization
+      pfr_mpg = pfr * mpg,
+      mean_per = mean(pfr_mpg),
+      sd_per = sd(pfr_mpg),
+      per_std = round((pfr_mpg - mean_per) / sd_per, 2)
+    ) %>%
+    
+    # Impact Score Calculation (max = 25 per season)
+    mutate(
+      term_1 = net_min_std - min(net_min_std, na.rm = TRUE),
+      term_2 = per_std - min(per_std, na.rm = TRUE),
+      raw_impact_score = usg * term_1 * term_2,
+      max_season_impact = max(raw_impact_score, na.rm = TRUE),
+      impact = round(raw_impact_score / (max_season_impact / 25), 3)
+    ) %>%
+    
+    # Filter for eligible players
+    filter(mpg >= 15 & g >= 19) %>%
+    mutate(
+      fgm = round(fgm / g, 1),
+      ftm = round(ftm / g, 1),
+      fta = round(fta / g, 1),
+      three_m = round(three_m / g, 1),
+      three_a = round(three_a / g, 1)
+    ) %>%
+    select(-mean_rtg, -sd_rtg, -min_sd, -mean_per, -sd_per, 
+           -term_1, -term_2, -raw_net_min, -max_raw_net_min, 
+           -raw_impact_score, -max_season_impact) %>%
+    
+    ungroup()
+}
+
+cbb_ovr <- calculate_season_impact(cbb_player)
+
+cbb_ovr <- cbb_ovr %>%
+  left_join(player_03_26, by = c(player = "athlete_display_name", Season = "season")) %>%
+  select(player, Season, team_location, minutes, points, rebounds, assists, blocks, steals,
+         offensive_rebounds, defensive_rebounds, turnovers, field_goals_made, field_goals_attempted,
+         free_throws_made, free_throws_attempted, three_point_field_goals_made,
+         three_point_field_goals_attempted, games, impact, pick) %>%
+  bind_rows(player_26)
+
+```
+
+# Predict impact for 2026
+
+```{r}
+target <- "impact"
+
+exclude_vars <- c("player",
+                  "Season",
+                  "team_location",
+                  "pick",
+                  target)
+
+features <- setdiff(names(cbb_ovr), exclude_vars)
+```
+
+```{r xgb model predicting impact}
+
+training <- cbb_ovr %>% filter(Season < 2026) %>% ungroup()
+testing <- cbb_ovr %>% filter(Season == 2026) %>% ungroup()
+
+set.seed(123)
+
+dtrain <- xgb.DMatrix(data = as.matrix(training[, features]), 
+                      label = training[[target]])
+dtest  <- xgb.DMatrix(data = as.matrix(testing[, features]), 
+                      label = testing[[target]])
+
+# Train the model
+xgb_model <- xgboost(
+  data = dtrain,
+  objective = "reg:squarederror",
+  nrounds = 100,
+  eta = 0.1,
+  max_depth = 4,
+  verbose = 0
+)
+
+# Calculate our impact predictions
+testing$impact <- predict(xgb_model, newdata = dtest)
+
+testing <- testing %>%
+  mutate(impact = round(impact, 3)) %>%
+  arrange(-impact)
+
+
+```
+
+## Backtesting for impact score (GREAT!!)
+
+### DO NOT RUN BEFORE "NBA Draft projections"
+
+```{r 2025}
+
+training <- cbb_ovr %>% filter(Season < 2025) %>% ungroup()
+testing <- cbb_ovr %>% filter(Season == 2025) %>% ungroup()
+
+set.seed(123)
+
+dtrain <- xgb.DMatrix(data = as.matrix(training[, features]), 
+                      label = training[[target]])
+dtest  <- xgb.DMatrix(data = as.matrix(testing[, features]), 
+                      label = testing[[target]])
+
+# Train the model
+xgb_model <- xgboost(
+  data = dtrain,
+  objective = "reg:squarederror",
+  nrounds = 100,
+  eta = 0.1,
+  max_depth = 4,
+  verbose = 0
+)
+
+# Calculate our transfer predictions
+testing$preds <- predict(xgb_model, newdata = dtest)
+
+# Calculate RMSE
+actuals <- testing[[target]]
+
+# Find RMSE of our test set
+rmse_xg <- sqrt(mean((testing$preds - actuals)^2))
+
+testing <- testing %>%
+  select(player, team_location, Season, preds, impact)
+
+
+cat("RMSE:", round(rmse_xg, 4))
+```
+
+```{r 2023}
+
+training <- cbb_ovr %>% filter(Season < 2023) %>% ungroup()
+testing <- cbb_ovr %>% filter(Season == 2023) %>% ungroup()
+
+set.seed(123)
+
+dtrain <- xgb.DMatrix(data = as.matrix(training[, features]), 
+                      label = training[[target]])
+dtest  <- xgb.DMatrix(data = as.matrix(testing[, features]), 
+                      label = testing[[target]])
+
+# Train the model
+xgb_model <- xgboost(
+  data = dtrain,
+  objective = "reg:squarederror",
+  nrounds = 100,
+  eta = 0.1,
+  max_depth = 4,
+  verbose = 0
+)
+
+# Calculate our transfer predictions
+testing$preds <- predict(xgb_model, newdata = dtest)
+
+# Calculate RMSE
+actuals <- testing[[target]]
+
+# Find RMSE of our test set
+rmse_xg <- sqrt(mean((testing$preds - actuals)^2))
+
+testing <- testing %>%
+  select(player, team_location, Season, preds, impact)
+
+
+cat("RMSE:", round(rmse_xg, 4))
+```
+
+```{r 2022}
+
+training <- cbb_ovr %>% filter(Season < 2022) %>% ungroup()
+testing <- cbb_ovr %>% filter(Season == 2022) %>% ungroup()
+
+set.seed(123)
+
+dtrain <- xgb.DMatrix(data = as.matrix(training[, features]), 
+                      label = training[[target]])
+dtest  <- xgb.DMatrix(data = as.matrix(testing[, features]), 
+                      label = testing[[target]])
+
+# Train the model
+xgb_model <- xgboost(
+  data = dtrain,
+  objective = "reg:squarederror",
+  nrounds = 100,
+  eta = 0.1,
+  max_depth = 4,
+  verbose = 0
+)
+
+# Calculate our transfer predictions
+testing$preds <- predict(xgb_model, newdata = dtest)
+
+# Calculate RMSE
+actuals <- testing[[target]]
+
+# Find RMSE of our test set
+rmse_xg <- sqrt(mean((testing$preds - actuals)^2))
+
+testing <- testing %>%
+  select(player, team_location, Season, preds, impact)
+
+
+cat("RMSE:", round(rmse_xg, 4))
+```
+
+```{r 2021}
+
+training <- cbb_ovr %>% filter(Season < 2021) %>% ungroup()
+testing <- cbb_ovr %>% filter(Season == 2021) %>% ungroup()
+
+set.seed(123)
+
+dtrain <- xgb.DMatrix(data = as.matrix(training[, features]), 
+                      label = training[[target]])
+dtest  <- xgb.DMatrix(data = as.matrix(testing[, features]), 
+                      label = testing[[target]])
+
+# Train the model
+xgb_model <- xgboost(
+  data = dtrain,
+  objective = "reg:squarederror",
+  nrounds = 100,
+  eta = 0.1,
+  max_depth = 4,
+  verbose = 0
+)
+
+# Calculate our transfer predictions
+testing$preds <- predict(xgb_model, newdata = dtest)
+
+# Calculate RMSE
+actuals <- testing[[target]]
+
+# Find RMSE of our test set
+rmse_xg <- sqrt(mean((testing$preds - actuals)^2))
+
+testing <- testing %>%
+  select(player, team_location, Season, preds, impact)
+
+
+cat("RMSE:", round(rmse_xg, 4))
+```
+
+# NBA Draft projections
+
+```{r NBA Draft projections}
+# 
+# conf <- read_csv("~/Desktop/Data Testing/Pacers Project/conferences.csv") %>%
+#   filter(Season == 2025 & Division == "D1") %>%
+#   select(Team, Conference)
+# 
+# testing <- testing %>%
+#   left_join(conf, by = c(team_location = "Team")) %>%
+#   mutate(impact = case_when(Conference %in% c("SEC", "ACC", "Big 12", "Big Ten", "Big East") ~
+#                               impact + 0.1*impact,
+#                             .default = impact)) %>%
+#   arrange(-impact) %>%
+#   select(-Conference)
+# 
+# # Scraped NBA draft projections, per NBADraft.net
+# proj_picks_draft <- read_csv("~/Desktop/Data Testing/Pacers Project/pred_picks.csv") %>%
+#   select(-c(...1, Team)) %>%
+#   filter(Pick <= 60)
+# 
+# testing <- testing %>%
+#   select(-pick) %>%
+#   stringdist_left_join(
+#     proj_picks_draft,
+#     by = c(player = "Player", team_location = "School"),
+#     method = "jw",
+#     max_dist = 0.15,
+#     distance_col = "dist"
+#   ) %>%
+#   filter(!is.na(Pick)) %>%
+#   select(-c(Player, School, player.dist, team_location.dist, dist)) %>%
+#   rename("pick" = "Pick") %>%
+#   arrange(pick)
+# 
+# 
+# cbb_ovr <- cbb_ovr %>%
+#   filter(!player %in% c(proj_picks_draft$Player)) %>%
+#   bind_rows(testing)
+
+darko <- read_csv("~/Desktop/Understanding Data Science/SP26_IDS701_UDS_Project/data/darko_history.csv") # change to data/darko_history.csv
+#darko <- read_csv("data/darko_history.csv")
+
+darko <- darko %>%
+  filter(season >= 2002) %>%
+  select(player_name, season, age, dpm, dpm_rank, o_dpm, d_dpm) %>%
+  group_by(player_name) %>%
+  # Grabs the 5 earliest seasons for each player
+  slice_min(order_by = season, n = 5) %>% 
+  ungroup() %>%
+  # Sorting by player and season makes the output easy to read
+  arrange(player_name, season) %>%
+  rename(nba_season = season) %>%
+  # Remove accents, tildes, umlauts
+  mutate(player_name = stri_trans_general(player_name, "Latin-ASCII"))
+
+draft_test <- draft_full %>%
+  #filter(Season != 2004) %>%
+  select(-Season)
+
+preds <- draft_test %>%
+  stringdist_left_join(darko, by = c(Player = "player_name")) %>%
+  relocate(nba_season, .after = draft_year) %>%
+  mutate(dpm = ifelse(is.na(dpm), median(dpm, na.rm = TRUE), dpm))
+
+# Pad each player up to five seasons
+preds <- preds %>%
+  group_by(Player) %>%
+  group_modify(~ {
+    n_missing <- 5 - nrow(.x)
+    if (n_missing <= 0) return(.x)
+    
+    last_season <- max(.x$nba_season)
+    
+    new_rows <- tibble(
+      nba_season            = last_season + seq_len(n_missing),
+      dpm                   = -5,
+      Pk                    = .x$Pk[1],
+      College               = .x$College[1],
+      draft_year            = .x$draft_year[1],
+      athlete_id            = .x$athlete_id[1],
+      athlete_position_name = .x$athlete_position_name[1],
+      num_years_college     = .x$num_years_college[1]
+    )
+    
+    bind_rows(.x, new_rows)
+  }) %>%
+  ungroup()
+
+nba_did <- preds %>%
+  select(Player, athlete_id, num_years_college, dpm)
+
+
+```
+
+```{r}
+target <- "dpm"
+
+exclude_vars <- c("player",
+                  "impact",
+                  target)
+
+features <- setdiff(names(projections), exclude_vars)
+```
+
+```{r}
+training <- projections %>% 
+  filter(dpm != 0 | player %in% c("Kris Dunn", "Miles Bridges")) %>% 
+  ungroup()
+testing <- projections %>% 
+  filter(dpm == 0 & (!player %in% c("Kris Dunn",
+                                       "Miles Bridges",
+                                       "Bobby Portis"))) %>% 
+  ungroup()
+
+set.seed(123)
+
+dtrain <- xgb.DMatrix(data = as.matrix(training[, features]), 
+                      label = training[[target]])
+dtest  <- xgb.DMatrix(data = as.matrix(testing[, features]), 
+                      label = testing[[target]])
+
+# Train the model
+xgb_model <- xgboost(
+  data = dtrain,
+  objective = "reg:squarederror",
+  nrounds = 100,
+  eta = 0.1,
+  max_depth = 4,
+  verbose = 0
+)
+
+# Calculate our transfer predictions
+testing$dpm <- predict(xgb_model, newdata = dtest)
+
+testing <- testing %>%
+  mutate(pick_factor = 0.2*pick + abs(0.8*dpm - 0.2*impact)) %>%
+  reframe(player, dpm, impact, pick_factor) %>%
+  arrange(pick_factor) %>%
+  mutate(proj_pick = 1:n())
+
+logos <- load_mbb_player_box(seasons = 2026) %>%
+  select(athlete_display_name, athlete_headshot_href, team_logo)
+
+testing <- testing %>%
+  left_join(logos, by = c(player = "athlete_display_name")) %>%
+  distinct()
+
+sort_data <- testing %>%
+  select(proj_pick, player, athlete_headshot_href, team_logo, pick_factor, dpm, impact) %>%
+  mutate(athlete_headshot_href = ifelse(is.na(athlete_headshot_href), team_logo, athlete_headshot_href),
+         pick_factor = round(pick_factor, 3),
+         dpm = round(dpm, 3),
+         impact = round(impact, 3))
+
+sort_gt <- sort_data %>%
+  gt(id = "sorted_gt") %>%
+  text_transform(locations = cells_body(c(athlete_headshot_href, team_logo)),
+    fn = function(x) {
+      web_image(
+        url = x,
+        height = 50
+      )
+    }) %>%
+  cols_align(align = "center") %>%
+           cols_label(player = "Player",
+                      athlete_headshot_href = "",
+                      team_logo = "Team",
+                      proj_pick = "Proj. Pick",
+                      pick_factor = "DPM + Impact Score",
+                      impact = "Impact Score",
+                      dpm = "DARKO DPM") %>%
+  tab_header(title = "Pacers Projected Top Pick",
+             subtitle = "2026 Draft") %>%
+  gtExtras::gt_theme_espn() %>%
+  data_color(columns = c(dpm, impact),
+             palette = c("darkred", "red", "indianred", "white", "steelblue", "blue", "darkblue"))
+
+sort_gt
+```
+
+```{r}
+nba_did <- read_csv("data/nba_did.csv")
+```
+
+```{r memo_data_prep, message=FALSE, warning=FALSE, echo=FALSE}
+nba_plot <- nba_did %>%
+  group_by(Player) %>%
+  mutate(nba_year = row_number()) %>%
+  filter(nba_year <= 5,
+         num_years_college %in% c(1, 2, 3, 4)) %>%
+  ungroup() %>%
+  mutate(college_label = case_when(
+    num_years_college == 1 ~ "1 Year (One-and-Done)",
+    num_years_college == 2 ~ "2 Years",
+    num_years_college == 3 ~ "3 Years",
+    num_years_college == 4 ~ "4 Years"
+  ),
+  college_label = factor(college_label, 
+                         levels = c("1 Year (One-and-Done)", "2 Years", "3 Years", "4 Years")))
+
+group_counts <- nba_plot %>%
+  distinct(Player, college_label) %>%
+  count(college_label) %>%
+  mutate(label_with_n = paste0(college_label, " (n=", n, ")"))
+
+nba_plot <- nba_plot %>%
+  left_join(group_counts, by = "college_label")
+
+tenure_colors <- c("1 Year (One-and-Done)" = "#1b9e77", 
+                    "2 Years" = "#d95f02", 
+                    "3 Years" = "#7570b3", 
+                    "4 Years" = "#e7298a")
+```
+
+```{r fig1_dpm_trajectories, fig.width=8, fig.height=5, echo=FALSE, fig.cap="Figure 1: Mean DARKO DPM trajectories over the first five NBA seasons, grouped by years spent in college."}
+trajectory_data <- nba_plot %>%
+  group_by(college_label, label_with_n, nba_year) %>%
+  summarize(mean_dpm = mean(dpm, na.rm = TRUE), .groups = "drop")
+
+ggplot(trajectory_data, aes(x = nba_year, y = mean_dpm, 
+                             color = college_label, group = college_label)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50", alpha = 0.4) +
+  scale_x_continuous(breaks = 1:5, labels = paste("Year", 1:5)) +
+  scale_color_manual(values = tenure_colors,
+                     labels = trajectory_data %>% 
+                       distinct(college_label, label_with_n) %>% 
+                       pull(label_with_n)) +
+  labs(title = "NBA Performance Trajectories by College Tenure",
+       x = "NBA Season (Years Since Draft)",
+       y = "Mean DARKO DPM",
+       color = NULL) +
+  coord_cartesian(ylim = c(-4.5, 0.5)) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        panel.grid.minor = element_blank())
+```
+
+```{r fig2_survivorship, fig.width=7, fig.height=5, echo=FALSE, fig.cap="Figure 2: NBA roster survival rates over five seasons by college tenure."}
+survival_data <- nba_plot %>%
+  group_by(college_label, nba_year) %>%
+  summarize(total = n(),
+            still_active = sum(dpm > -5.0),
+            pct_active = still_active / total * 100,
+            .groups = "drop")
+
+ggplot(survival_data, aes(x = nba_year, y = pct_active, 
+                           color = college_label, group = college_label)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3, shape = 15) +
+  scale_x_continuous(breaks = 1:5, labels = paste("Year", 1:5)) +
+  scale_color_manual(values = tenure_colors) +
+  labs(title = "NBA Roster Survival Rate by College Tenure",
+       x = "NBA Season (Years Since Draft)",
+       y = "% Still on NBA Roster",
+       color = NULL) +
+  coord_cartesian(ylim = c(0, 105)) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        panel.grid.minor = element_blank())
+```
+
+```{r fig3_rookie_boxplot, fig.width=7, fig.height=5, echo=FALSE, fig.cap="Figure 3: Distribution of rookie-year DPM by college tenure (excluding players who left the league)."}
+rookie_data <- nba_plot %>%
+  filter(nba_year == 1, dpm > -5.0)
+
+ggplot(rookie_data, aes(x = college_label, y = dpm, fill = college_label)) +
+  geom_boxplot(alpha = 0.6, outlier.shape = 1, outlier.size = 2, width = 0.6) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50", alpha = 0.4) +
+  scale_fill_manual(values = tenure_colors) +
+  labs(title = "Rookie Year Performance Distribution by College Tenure",
+       x = "Years in College",
+       y = "Rookie Year DARKO DPM") +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "none",
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        panel.grid.minor = element_blank())
+```
+
+```{r summary_table, echo=FALSE}
+summary_tbl <- nba_plot %>%
+  distinct(Player, num_years_college, college_label) %>%
+  group_by(college_label) %>%
+  summarize(n_players = n(), .groups = "drop") %>%
+  left_join(
+    nba_plot %>%
+      filter(nba_year == 1) %>%
+      group_by(college_label) %>%
+      summarize(yr1_dpm = round(mean(dpm), 2), .groups = "drop"),
+    by = "college_label"
+  ) %>%
+  left_join(
+    nba_plot %>%
+      filter(dpm == -5.0) %>%
+      distinct(Player, college_label) %>%
+      count(college_label, name = "left_n") %>%
+      left_join(
+        nba_plot %>% distinct(Player, college_label) %>% count(college_label, name = "total_n"),
+        by = "college_label"
+      ) %>%
+      mutate(pct_left = round(left_n / total_n * 100, 1)) %>%
+      select(college_label, pct_left),
+    by = "college_label"
+  )
+
+summary_tbl %>%
+  gt() %>%
+  cols_label(
+    college_label = "College Tenure",
+    n_players = "Players (n)",
+    yr1_dpm = "Year 1 DPM",
+    pct_left = "Left NBA by Yr 5 (%)"
+  ) %>%
+  tab_header(title = "Summary Statistics by College Tenure Cohort") %>%
+  cols_align(align = "center") %>%
+  gtExtras::gt_theme_espn()
+```

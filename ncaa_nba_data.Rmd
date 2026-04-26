@@ -196,8 +196,8 @@ player_03_26 <- player_03_26 %>%
   ungroup()
 
 # Since data only starts in 2005, we manually went through 2004-2008 to get the real number of years a player spent in college
-draft_pre_08 <- read_csv("~/Downloads/draft_pre_08.csv") # change to data/
-#draft_pre_08 <- read_csv("data/draft_pre_08.csv")
+# draft_pre_08 <- read_csv("~/Downloads/draft_pre_08.csv") # change to data/
+draft_pre_08 <- read_csv("data/draft_pre_08.csv")
 
 
 ```
@@ -255,7 +255,8 @@ cbb_player <- cbb_player %>%
 
 
 
-torvik_26 <- read_csv('/Users/gauravlaw/Desktop/Understanding Data Science/SP26_IDS701_UDS_Project/data/Torvik_26.csv') # change to data/Torvik_26.csv
+#torvik_26 <- read_csv('/Users/gauravlaw/Desktop/Understanding Data Science/SP26_IDS701_UDS_Project/data/Torvik_26.csv') # change to data/Torvik_26.csv
+torvik_26 <- read_csv('data/Torvik_26.csv')
 
 torvik_26 <- torvik_26 %>%
   rename_with(tolower) %>%
