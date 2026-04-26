@@ -623,6 +623,9 @@ ncaa_nba_full <- draft_test %>%
 
 # IMPORTANT: There will still be nulls for the first NBA season for a player. This is because that player didn't play in that first season and dropped out of the league.
 
+ncaa_nba_full <- ncaa_nba_full %>%
+  mutate(nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1))
+
 
 ```
 
