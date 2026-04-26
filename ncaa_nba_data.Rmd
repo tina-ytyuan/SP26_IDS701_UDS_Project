@@ -624,9 +624,38 @@ ncaa_nba_full <- draft_test %>%
 # IMPORTANT: There will still be nulls for the first NBA season for a player. This is because that player didn't play in that first season and dropped out of the league.
 
 ncaa_nba_full <- ncaa_nba_full %>%
-  mutate(nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1))
+  mutate(nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1),
+         num_years_college = ifelse(num_years_college >= 4, 4, num_years_college))
 
 
+ncaa_nba_full <- ncaa_nba_full %>%
+  rowwise() %>%
+  mutate(
+    # Extract just the non-NA values from the four columns
+    actual_vals = list(na.omit(c(college_1, college_2, college_3, college_4))),
+    
+    # Pad the end with NAs so it is exactly 4 elements long again
+    padded_vals = list(c(actual_vals, rep(NA_real_, 4 - length(actual_vals)))),
+    
+    # Reassign them in the correct left-aligned order
+    college_1 = padded_vals[1],
+    college_2 = padded_vals[2],
+    college_3 = padded_vals[3],
+    college_4 = padded_vals[4]
+  ) %>%
+  select(-actual_vals, -padded_vals) %>%
+  ungroup()
+
+
+```
+
+```{r}
+ncaa_nba_full %>%
+  group_by(num_years_college) %>%
+  reframe(Num_players = n(),
+          mean_pick = mean(Pk),
+          Freshman_impact = mean(college_1),
+          NBA_Year_1_impact = mean(nba_season_1))
 ```
 
 
