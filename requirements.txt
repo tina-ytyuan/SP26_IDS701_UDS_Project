@@ -1,3 +1,7 @@
 pandas
 selenium
 webdriver-manager
+causalpy
+scikit-learn
+
+ipykernel
