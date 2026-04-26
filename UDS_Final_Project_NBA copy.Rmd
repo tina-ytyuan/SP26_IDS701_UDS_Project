@@ -1,0 +1,631 @@
+---
+title: "UDS_Final_Project"
+author: "Gaurav Law"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r install packages, warning=FALSE}
+
+install.packages("renv")
+
+# 1. Install all standard CRAN packages
+renv::install(c(
+  "tidyverse", "xgboost", "randomForest", "broom", "janitor", 
+  "pROC", "reshape2", "caret", "purrr", "fuzzyjoin", "gt", 
+  "gtExtras", "prismatic", "ggrepel", "scales", "ggimage", 
+  "rvest", "stringi", "AdvancedBasketballStats", "hoopR"
+))
+
+# 2. Install the GitHub-only packages
+renv::install(c(
+  "lbenz730/ncaahoopR",
+  "andreweatherman/toRvik",
+  "andreweatherman/cbbdata"
+))
+
+renv::snapshot()
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(xgboost)
+library(randomForest)
+library(broom)
+library(janitor)
+library(pROC)
+library(reshape2)
+library(caret)
+library(purrr)
+library(fuzzyjoin)
+library(tidyr)
+library(gt)
+library(gtExtras)
+library(prismatic)
+library(ggrepel)
+library(scales)
+library(purrr)
+library(ggimage)
+
+library(hoopR)
+library(ncaahoopR)
+library(toRvik)
+library(AdvancedBasketballStats)
+library(cbbdata)
+library(rvest)
+library(stringi)
+```
+
+
+```{r load inital MBB data}
+
+# Player box stats 2003-2026
+player_03_26_load <- hoopR::load_mbb_player_box(seasons = c(2003:2026))
+
+player_03_26 <- player_03_26_load %>%
+  filter(!is.nan(minutes) & !is.na(minutes)) %>%
+  group_by(athlete_id, season) %>%
+  reframe(team_id, athlete_display_name, athlete_position_name, athlete_headshot_href,
+          team_location, team_logo,
+          across(
+            c(minutes:points),
+            ~ round(mean(.x, na.rm = TRUE), 2)
+            ),
+          games = n()) %>%
+  #filter(minutes >= 15 & games >= 19) %>%
+  distinct()
+
+```
+
+```{r draft data 2005-25}
+
+scrape_nba_draft <- function(years) {
+  
+  scrape_single_year <- function(year) {
+    url <- paste0("https://www.basketball-reference.com/draft/NBA_", year, ".html")
+    
+    tryCatch({
+      full_table <- read_html(url)
+      
+      draft <- full_table %>%
+        html_nodes("table") %>%
+        .[[1]] %>%
+        html_table(fill = TRUE)
+      
+      # Set first row as column names and remove it
+      colnames(draft) <- draft[1, ]
+      draft <- draft[-1, ]
+      
+      # Remove duplicate header rows that appear mid-table
+      draft <- draft[draft[[1]] != colnames(draft)[1], ]
+      
+      # Add year column for reference
+      draft$draft_year <- year
+      
+      message("Successfully scraped ", year, " NBA Draft (", nrow(draft), " rows)")
+      return(draft)
+      
+    }, error = function(e) {
+      warning("Failed to scrape year ", year, ": ", e$message)
+      return(NULL)
+    })
+  }
+  
+  # Scrape all years and bind into one data frame
+  all_drafts <- lapply(years, function(y) {
+    Sys.sleep(3)
+    scrape_single_year(y)
+  })
+  
+  # Drop any failed years and combine
+  all_drafts <- Filter(Negate(is.null), all_drafts)
+  combined <- bind_rows(all_drafts)
+  
+  return(combined)
+}
+
+all_years <- c(2005:2025)
+
+# Run the scraper
+draft_data <- scrape_nba_draft(all_years)
+
+
+```
+
+
+```{r}
+# Look at name differences between players in the dataframes
+#setdiff(draft_upd$Player, player_03_26$athlete_display_name)
+```
+
+
+```{r Join manipulation}
+
+# Look at case by case data manipulation
+draft_upd <- draft_data %>%
+  select(Pk, Player, College, draft_year) %>%
+  mutate(across(where(is.character), ~na_if(., "")),
+         Season = draft_year,
+         Pk = as.integer(Pk),
+         Player = stri_trans_general(Player, "Latin-ASCII"),
+         Player = case_when(
+           Player == "V.J. Edgecombe" ~ "VJ Edgecombe",
+           Player == "J.J. Hickson" ~ "JJ Hickson",
+           Player == "Patrick Ewing" ~ "Patrick Ewing Jr.",
+           Player == "Marcus Morris" ~ "Marcus Morris Sr.",
+           Player == "Jeff Taylor" ~ "Jeffery Taylor",
+           Player == "Robbie Hummel" ~ "Robbie John Hummel",
+           Player == "K.J. McDaniels" ~ "KJ McDaniels",
+           Player == "R.J. Hunter" ~ "RJ Hunter",
+           Player == "A.J. Hammons" ~ "AJ Hammons",
+           Player == "Harry Giles" ~ "Harry Giles III",
+           Player == "Wade Baldwin" ~ "Wade Baldwin IV",
+           Player == "Kevin Knox" ~ "Kevin Knox II",
+           Player == "Vince Edwards" ~ "Vincent Edwards",
+           Player == "Tristan Da Silva" ~ "Tristan da Silva",
+           Player == "DaRon Holmes" ~ "DaRon Holmes II",
+           Player == "Egor Dёmin" ~ "Egor Demin",
+           TRUE ~ Player
+         )) %>%
+  filter(!is.na(Player),
+         !is.na(Pk),
+         !is.na(College),
+         Player != "Player")
+
+player_03_26 <- player_03_26 %>%
+  mutate(athlete_display_name = case_when(
+    athlete_display_name == "Robbie John Hummel" ~ "Robbie Hummel",
+    athlete_display_name == "Pierre Deshawn Jackson" ~ "Pierre Jackson",
+    athlete_display_name == "Erik Jay Murphy" ~ "Erik Murphy",
+    athlete_display_name == "Johnny O'Bryant III" ~ "Johnny O'Bryant",
+    athlete_display_name == "O.G. Anunoby" ~ "OG Anunoby",
+    athlete_display_name == "Xavier Tillman" ~ "Xavier Tillman Sr.",
+    athlete_display_name == "GG Jackson" ~ "GG Jackson II",
+    athlete_display_name == "Carlton Carrington" ~ "Bub Carrington",
+    TRUE ~ athlete_display_name
+  ))
+
+player_03_26 <- player_03_26 %>%
+  group_by(athlete_id) %>%
+  mutate(num_years_college = n()) %>%
+  ungroup()
+
+# Since data only starts in 2005, we manually went through 2004-2008 to get the real number of years a player spent in college
+draft_pre_08 <- read_csv("~/Downloads/draft_pre_08.csv") # change to data/
+#draft_pre_08 <- read_csv("data/draft_pre_08.csv")
+
+
+```
+
+```{r Joins}
+draft_full <- draft_upd %>%
+  left_join(player_03_26, by = c(Player = "athlete_display_name", Season = "season")) %>%
+  left_join(draft_pre_08, by = c("Player", "College", "draft_year", "Season", "Pk")) %>%
+  filter(!is.na(minutes)) %>%
+  mutate(num_years_college = ifelse(Season <= 2008, num_years_college.y, num_years_college.x)) %>%
+  select(-c(num_years_college.x, num_years_college.y, Season))
+
+draft_full <- draft_full %>%
+  mutate(College = case_when(
+    College == "Rutgers University" ~ "Rutgers",
+    College == "Rice University" ~ "Rice",
+    College == "Marist College" ~ "Marist",
+    College == "Rider University" ~ "Rider",
+    College == "Central Florida" ~ "UCF",
+    College == "University of Tennessee at Martin" ~ "UT-Martin",
+    College == "Texas-El Paso" ~ "UTEP",
+    College == "Morehead State University" ~ "Morehead State",
+    College == "Cleveland State University" ~ "Cleveland State",
+    College == "Tennessee Technological University" ~ "Tennessee Tech",
+    College == "University of North Texas" ~ "North Texas",
+    College == "Georgia State University" ~ "Georgia State",
+    College == "Utah State University" ~ "Utah State",
+    College == "Ohio University" ~ "Ohio",
+    College == "UW-Milwaukee" ~ "Milwaukee",
+    College == "Furman University" ~ "Furman",
+    College == "University of Akron" ~ "Akron",
+    TRUE ~ College
+  ))
+```
+
+```{r torvik}
+# Torvik stats 2010-2025
+get_torvik <- function(years) {
+  purrr::map_df(years, function(year) {
+    cbd_torvik_player_season(year = year) %>%
+      mutate(Season = year) %>%
+      relocate(Season, .after = pos)
+  })
+}
+
+# Torvik data 2008-2025
+cbb_player <- get_torvik(2008:2026)
+
+cbb_player <- cbb_player %>%
+  rename("yr" = "exp",
+         "ht" = "hgt") %>%
+  select(yr, ht, player, Season, team, conf, g, pos, mpg, porpag, dporpag,
+         bpm, obpm, dbpm, ortg, drtg, usg, efg, ts, oreb, dreb,
+         ast, to, blk, stl)
+
+
+
+torvik_26 <- read_csv('/Users/gauravlaw/Desktop/Understanding Data Science/SP26_IDS701_UDS_Project/data/Torvik_26.csv') # change to data/Torvik_26.csv
+
+torvik_26 <- torvik_26 %>%
+  rename_with(tolower) %>%
+  mutate(mpg = `min%` * g / 100,
+         Season = 2026) %>%
+  select(-c(rk, `min%`)) %>%
+  rename("pos" = "role",
+         "porpag" = "prpg!",
+         "dporpag" = "d-prpg",
+         "drtg" = "d-rtg",
+         "oreb" = "or",
+         "dreb" = "dr")
+
+cbb_player <- cbb_player %>%
+  bind_rows(torvik_26)
+```
+
+
+```{r impact for college}
+
+# Impact factor: Calculated by Gaurav Law (have used in multiple projects for MCBB + WCBB)
+# Used AI to help with function but formula has been used many times
+calculate_season_impact <- function(data) {
+  data %>%
+    group_by(Season) %>% 
+    mutate(
+      `net rtg` = ortg - drtg
+    ) %>%
+    drop_na(`net rtg`, usg, mpg) %>%
+    mutate(
+      # Net Rating Standardization
+      mean_rtg = mean(`net rtg`),
+      sd_rtg = sd(`net rtg`),
+      net_std = round((`net rtg` - mean_rtg) / sd_rtg, 2),
+      
+      # Minutes Standardization 
+      min_sd = sd(mpg),
+      min_std = round(mpg / min_sd, 2),
+      
+      # Combined Net * Min Score
+      raw_net_min = net_std * min_std,
+      max_raw_net_min = max(raw_net_min, na.rm = TRUE),
+      net_min_std = round(raw_net_min / max_raw_net_min, 2),
+      
+      # PORPAG Standardization
+      prpg_mpg = porpag * mpg,
+      mean_prpg = mean(prpg_mpg),
+      sd_prpg = sd(prpg_mpg),
+      prpg_std = round((prpg_mpg - mean_prpg) / sd_prpg, 2)
+    ) %>%
+    
+    # Impact Score Calculation (max = 25 per season)
+    mutate(
+      term_1 = net_min_std - min(net_min_std, na.rm = TRUE),
+      term_2 = prpg_std - min(prpg_std, na.rm = TRUE),
+      raw_impact_score = usg * term_1 * term_2,
+      max_season_impact = max(raw_impact_score, na.rm = TRUE),
+      impact = round(raw_impact_score / (max_season_impact / 25), 3)
+    ) %>%
+    
+    # Filter for eligible players
+    filter(mpg >= 15 & g >= 19) %>%
+    # mutate(
+    #   fgm = round(fgm / g, 1),
+    #   ftm = round(ftm / g, 1),
+    #   fta = round(fta / g, 1),
+    #   three_m = round(three_m / g, 1),
+    #   three_a = round(three_a / g, 1)
+    # ) %>%
+    select(-mean_rtg, -sd_rtg, -min_sd, -mean_prpg, -sd_prpg, 
+           -term_1, -term_2, -raw_net_min, -max_raw_net_min, 
+           -raw_impact_score, -max_season_impact) %>%
+    
+    ungroup()
+}
+
+cbb_ovr <- calculate_season_impact(cbb_player)
+
+
+# Fix joins
+cbb_ovr <- cbb_ovr %>%
+  mutate(team = str_replace_all(team, "St\\.", "State"),
+         team = case_when(
+           team == "North Carolina" ~ "UNC",
+           team == "Connecticut" ~ "UConn",
+           team == "North Carolina State" ~ "NC State",
+           team == "Pittsburgh" ~ "Pitt",
+           team == "Miami FL" ~ "Miami (FL)",
+           team == "Massachusetts" ~ "UMass",
+           team == "Tennessee Martin" ~ "UT-Martin",
+           team == "Mississippi" ~ "Ole Miss",
+           team == "State John's" ~ "St. John's",
+           team == "State Bonaventure" ~ "St. Bonaventure",
+           team == "Long Beach State" ~ "Cal State Long Beach",
+           team == "Loyola MD" ~ "Loyola (MD)",
+           TRUE ~ team
+        ))
+
+
+```
+
+
+```{r Final NCAA data formation}
+
+# Join to get players and impact
+draft_test <- draft_full %>%
+  stringdist_full_join(
+    cbb_ovr,
+    by = c(Player = "player", College = "team"),
+    method = "jw",
+    max_dist = 0.1,
+    distance_col = "dist"
+  ) %>%
+  filter(!is.na(impact) & !is.na(Player)) %>%
+  arrange(-impact)
+
+
+# Transpose NCAA data
+draft_test <- draft_test %>%
+  select(Pk, Player, player, College, draft_year, athlete_id, team_location, Season, impact, num_years_college) %>%
+  group_by(Player) %>%
+  arrange(Season, .by_group = TRUE) %>%
+  mutate(college_yr = paste0("college_", row_number())) %>%
+  ungroup() %>%
+  pivot_wider(
+    id_cols    = c(Pk, Player, player, College, draft_year, athlete_id, team_location, num_years_college),
+    names_from  = college_yr,
+    values_from = impact
+  ) %>%
+  # Ensure all 4 columns exist even if a player only has 1-2 seasons
+  mutate(
+    college_1 = if ("college_1" %in% names(.)) college_1 else NA_real_,
+    college_2 = if ("college_2" %in% names(.)) college_2 else NA_real_,
+    college_3 = if ("college_3" %in% names(.)) college_3 else NA_real_,
+    college_4 = if ("college_4" %in% names(.)) college_4 else NA_real_,
+    Player = str_remove(Player, "\\s+(Jr\\.|Sr\\.|II|III|IV|V)$")
+  ) %>%
+  select(Pk, Player, player, College, draft_year, athlete_id, team_location,
+         college_1, college_2, college_3, college_4, num_years_college)
+
+# Joins manipulation
+draft_test <- draft_test %>%
+  mutate(team_location = case_when(
+    team_location == "Rutgers University" ~ "Rutgers",
+    team_location == "Rice University" ~ "Rice",
+    team_location == "Marist College" ~ "Marist",
+    team_location == "Rider University" ~ "Rider",
+    team_location == "Central Florida" ~ "UCF",
+    team_location == "University of Tennessee at Martin" ~ "UT-Martin",
+    team_location == "Texas-El Paso" ~ "UTEP",
+    team_location == "Morehead State University" ~ "Morehead State",
+    team_location == "Cleveland State University" ~ "Cleveland State",
+    team_location == "Tennessee Technological University" ~ "Tennessee Tech",
+    team_location == "University of North Texas" ~ "North Texas",
+    team_location == "Georgia State University" ~ "Georgia State",
+    team_location == "Utah State University" ~ "Utah State",
+    team_location == "Ohio University" ~ "Ohio",
+    team_location == "UW-Milwaukee" ~ "Milwaukee",
+    team_location == "Furman University" ~ "Furman",
+    team_location == "University of Akron" ~ "Akron",
+    team_location == "North Carolina" ~ "UNC",
+     team_location == "Connecticut" ~ "UConn",
+     team_location == "North Carolina State" ~ "NC State",
+     team_location == "Pittsburgh" ~ "Pitt",
+     team_location == "Miami" ~ "Miami (FL)",
+     team_location == "Massachusetts" ~ "UMass",
+     team_location == "Tennessee Martin" ~ "UT-Martin",
+     team_location == "Mississippi" ~ "Ole Miss",
+     team_location == "State John's" ~ "St. John's",
+     team_location == "State Bonaventure" ~ "St. Bonaventure",
+     team_location == "Long Beach State" ~ "Cal State Long Beach",
+     team_location == "Loyola MD" ~ "Loyola (MD)",
+    team_location == "Charleston" ~ "College of Charleston",
+    TRUE ~ team_location
+  )) %>%
+  filter(College == team_location)
+
+# Collapse rows if duplicate players
+draft_test <- draft_test %>%
+  group_by(Player, College, draft_year) %>%
+  summarise(
+    across(c(Pk, athlete_id, team_location, num_years_college),
+           ~first(na.omit(.))),
+    college_1 = first(na.omit(college_1)),
+    college_2 = first(na.omit(college_2)),
+    college_3 = first(na.omit(college_3)),
+    college_4 = first(na.omit(college_4)),
+    .groups = "drop"
+  )
+```
+
+
+```{r push years}
+# If there is a disparity between num_years_college and the number of values a player has:
+# 1) Push the first year a player has by x positions
+# 2) Impute based on medians for that column
+
+college_cols <- c("college_1", "college_2", "college_3", "college_4")
+
+col_medians <- sapply(college_cols, function(col) median(draft_test[[col]], na.rm = TRUE))
+
+draft_test <- draft_test %>%
+  mutate(
+    pmap_dfr(
+      list(college_1, college_2, college_3, college_4, num_years_college),
+      function(c1, c2, c3, c4, nyc) {
+        vals      <- c(c1, c2, c3, c4)
+        n_present <- sum(!is.na(vals))
+        disparity <- as.integer(nyc) - n_present
+
+        if (disparity > 0) {
+          non_na  <- vals[!is.na(vals)]
+          shifted <- c(rep(NA_real_, disparity), non_na, rep(NA_real_, 4))[1:4]
+
+          for (i in seq_len(min(disparity, 4))) {
+            if (is.na(shifted[i])) shifted[i] <- col_medians[i]
+          }
+          vals <- shifted
+        }
+
+        tibble(college_1 = vals[1], college_2 = vals[2],
+               college_3 = vals[3], college_4 = vals[4])
+      }
+    )
+  )
+```
+
+# NBA data
+
+```{r scrape NBA data, calculate NBA impact}
+
+# --- 1. Scraper for a single season ---
+scrape_nba_season <- function(year) {
+  message("Scraping ", year - 1, "-", substr(year, 3, 4), "...")
+  Sys.sleep(4)
+
+  url_1 <- paste0("https://www.basketball-reference.com/leagues/NBA_", year, "_per_poss.html")
+  url_2 <- paste0("https://www.basketball-reference.com/leagues/NBA_", year, "_advanced.html")
+
+  tryCatch({
+    table_1 <- read_html(url_1) %>%
+      html_nodes("table") %>%
+      .[[1]] %>%
+      html_table(fill = TRUE)
+
+    Sys.sleep(4)
+
+    table_2 <- read_html(url_2) %>%
+      html_nodes("table") %>%
+      .[[1]] %>%
+      html_table(fill = TRUE)
+
+    full_table <- table_1 %>%
+      left_join(table_2, by = c("Player", "Team", "Age")) %>%
+      filter(Rk.x != "Rk") %>%
+      mutate(season = year)
+
+    # Coerce numeric columns
+    full_table <- full_table %>%
+      mutate(
+        across(c(ORtg, DRtg, PER, `USG%`, MP.x, G.x), as.numeric)
+      )
+
+    return(full_table)
+
+  }, error = function(e) {
+    warning("Failed for year ", year, ": ", e$message)
+    return(NULL)
+  })
+}
+
+# --- 2. Calculate impact score relative to each season ---
+calculate_impact <- function(df) {
+  df %>%
+    mutate(
+      `NET RTG`  = ORtg - DRtg,
+      MPG        = MP.x / G.x,
+      `PER*MPG`  = PER * MPG
+    ) %>%
+    drop_na(`NET RTG`) %>%
+    mutate(
+      # All standardizations relative to THIS season
+      net_std     = round((`NET RTG` - mean(`NET RTG`, na.rm = TRUE)) /
+                            sd(`NET RTG`,   na.rm = TRUE), 2),
+      min_std     = round(MPG / sd(MPG, na.rm = TRUE), 2),
+      net_min_std = round(
+        (net_std * min_std) / max(net_std * min_std, na.rm = TRUE), 2
+      ),
+      per_std     = round(
+        (`PER*MPG` - mean(`PER*MPG`, na.rm = TRUE)) /
+          sd(`PER*MPG`, na.rm = TRUE), 2
+      ),
+      # Impact score on 25-point scale relative to this season
+      impact = round(
+        `USG%` * (net_min_std - min(net_min_std)) * (per_std - min(per_std)) /
+          (max(`USG%` * (net_min_std - min(net_min_std)) *
+                 (per_std - min(per_std))) / 25),
+        3
+      )
+    )
+}
+
+# --- 3. Run across all seasons ---
+years <- 2008:2026  # 2007-08 through 2025-26
+
+all_seasons_raw <- map(years, scrape_nba_season) %>%
+  compact()  # drops any NULLs from failed years
+
+# Apply impact calculation within each season, then stack
+all_seasons <- all_seasons_raw %>%
+  map(calculate_impact) %>%
+  bind_rows()
+
+# --- 4. Final clean outputs ---
+
+# All players, all seasons
+player_fct_full <- all_seasons %>%
+  select(Player, Team, Pos.x, season, impact) %>%
+  rename(Pos = Pos.x) %>%
+  arrange(season, -impact)
+```
+
+```{r}
+# Transpose NBA data
+player_fct_full <- player_fct_full %>%
+  select(Player, season, impact) %>%
+  group_by(Player) %>%
+  arrange(season, .by_group = TRUE) %>%
+  mutate(nba_yr = paste0("nba_season_", row_number())) %>%
+  ungroup() %>%
+  pivot_wider(
+    id_cols     = Player,
+    names_from  = nba_yr,
+    values_from = impact
+  ) %>%
+  mutate(
+    nba_season_1 = if ("nba_season_1" %in% names(.)) nba_season_1 else NA_real_,
+    nba_season_2 = if ("nba_season_2" %in% names(.)) nba_season_2 else NA_real_,
+    nba_season_3 = if ("nba_season_3" %in% names(.)) nba_season_3 else NA_real_,
+    nba_season_4 = if ("nba_season_4" %in% names(.)) nba_season_4 else NA_real_,
+    nba_season_5 = if ("nba_season_5" %in% names(.)) nba_season_5 else NA_real_,
+    Player = str_remove(Player, "\\s+(Jr\\.|Sr\\.|II|III|IV|V)$")
+  ) %>%
+  select(Player, nba_season_1, nba_season_2, nba_season_3, nba_season_4, nba_season_5)
+```
+
+
+```{r}
+# Join NCAA to NBA data
+ncaa_nba_full <- draft_test %>%
+  stringdist_left_join(
+    player_fct_full,
+    by = "Player",
+    method = "jw",
+    max_dist = 0.07,
+    distance_col = "dist",
+  ) %>%
+  select(-c(Player.y, team_location, dist)) %>%
+  rename("Player" = "Player.x")
+
+
+# Check mismatches after fuzzy joins - all good!
+#setdiff(draft_test$Player, player_fct_full$Player)
+
+# IMPORTANT: There will still be nulls for the first NBA season for a player. This is because that player didn't play in that first season and dropped out of the league.
+
+
+```
+
+
+
+
+
