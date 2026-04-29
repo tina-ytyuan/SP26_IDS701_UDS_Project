@@ -679,12 +679,7 @@ darko <- darko %>%
   rename(nba_season = season) %>%
   # Remove accents, tildes, umlauts
   mutate(player_name = stri_trans_general(player_name, "Latin-ASCII")) %>%
-  filter(!player_name %in% c("Jabari Smith", "Glenn Robinson")) %>%
-  mutate(player_name = case_when(
-    player_name == "Justin Jackson" ~ "Justin Jackson Jr.",
-    player_name == "Marcus Thornton"  ~ "Marcus Terell Thornton",
-    TRUE ~ player_name
-  ))
+  filter(!player_name %in% c("Jabari Smith", "Glenn Robinson"))
 
 draft_test <- draft_test %>%
   mutate(Player = case_when(
@@ -692,10 +687,6 @@ draft_test <- draft_test %>%
     (Player == "Marcus Thornton" & College == "LSU") ~ "Marcus Terell Thornton",
     TRUE ~ Player
   ))
-
-draft_test <- draft_full %>%
-  #filter(Season != 2004) %>%
-  select(-Season)
 
 ```
 
@@ -721,40 +712,16 @@ nba_dpm <- darko %>%
     nba_season_5 = if ("nba_season_5" %in% names(.)) nba_season_5 else NA_real_,
     player_name = str_remove(player_name, "\\s+(Jr\\.|Sr\\.|II|III|IV|V)$")
   ) %>%
+  mutate(player_name = case_when(
+    player_name == "Justin Jackson" ~ "Justin Jackson Jr.",
+    player_name == "Marcus Thornton"  ~ "Marcus Terell Thornton",
+    TRUE ~ player_name
+  )) %>%
   select(player_name, nba_season_1, nba_season_2, nba_season_3, nba_season_4, nba_season_5)
 
-nba_dpm %>%
-  filter(is.na(nba_season_1))
-
 preds <- draft_test %>%
-  left_join(nba_dpm, by = c(Player = "player_name")) 
-
-preds_test <- draft_test %>%
-  stringdist_left_join(
-    nba_dpm,
-    by = c("Player" = "player_name"),
-    method = "jw",
-    max_dist = 0,
-    distance_col = "dist"
-  )
-
-preds_test %>%
-  get_dupes(Player) %>%
-  select(Player, player_name, College, athlete_id, nba_season_1)
-
-view(preds_test %>%
-  get_dupes(Player))
-
-preds %>%
-  mutate(nba_season_1 = ifelse(is.na(nba_season_1), -10, nba_season_1)) %>%
-  arrange(nba_season_1)
-
-preds_test %>%
-  filter(is.na(Player))
-
-preds %>%
-  get_dupes(Player)
-
+  left_join(nba_dpm, by = c(Player = "player_name")) %>%
+  mutate(nba_season_1 = ifelse(is.na(nba_season_1), -10, nba_season_1))
 
 ```
 
