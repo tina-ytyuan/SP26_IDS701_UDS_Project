@@ -1,62 +1,62 @@
 "Player","College","draft_year","Pk","athlete_id","team_location","num_years_college","college_1","college_2","college_3","college_4","nba_season_1","nba_season_2","nba_season_3","nba_season_4","nba_season_5"
-"A.J. Price","UConn",2009,52,22422,"UConn",3,7.048,11.418,7.542,NA,-10,NA,NA,NA,NA
+"A.J. Price","UConn",2009,52,22422,"UConn",3,11.418,7.542,11.093,NA,-10,NA,NA,NA,NA
 "AJ Griffin","Duke",2022,16,4432585,"Duke",1,6.331,NA,NA,NA,-1.02,-2.02,NA,NA,NA
 "AJ Hammons","Purdue",2016,46,61274,"Purdue",4,4.968,5.828,7.798,10.152,-3.12,-2.26,NA,NA,NA
 "Aaron Gordon","Arizona",2014,4,66320,"Arizona",1,9.507,NA,NA,NA,-1.83,0.84,0.34,0.51,1.25
 "Aaron Holiday","UCLA",2018,23,3922230,"UCLA",3,2.694,10.435,15.508,NA,-1.33,-1.13,-0.88,-0.45,0.29
-"Aaron Nesmith","Vanderbilt",2020,14,4396909,"Vanderbilt",2,7.048,5.326,NA,NA,-2.25,-1.25,-1.25,-0.08,1.13
+"Aaron Nesmith","Vanderbilt",2020,14,4396909,"Vanderbilt",2,5.326,9.65,NA,NA,-2.25,-1.25,-1.25,-0.08,1.13
 "Aaron White","Iowa",2015,49,56985,"Iowa",4,6.24,8.351,9.329,16.439,-10,NA,NA,NA,NA
 "Aaron Wiggins","Maryland",2021,55,4397183,"Maryland",3,4.772,4.913,10.799,NA,-1.87,-0.96,0.46,1.85,0.23
-"Abdel Nader","Iowa State",2016,58,57136,"Iowa State",4,7.048,9.65,3.411,5.109,-2.8,-2.52,-1.77,-2.13,-2.7
+"Abdel Nader","Iowa State",2016,58,57136,"Iowa State",4,3.411,5.109,11.093,13.329,-2.8,-2.52,-1.77,-2.13,-2.7
 "Ace Bailey","Rutgers",2025,5,4873138,"Rutgers",1,8.829,NA,NA,NA,-2.34,NA,NA,NA,NA
 "Adem Bona","UCLA",2024,41,5105637,"UCLA",2,4.37,8.498,NA,NA,-0.82,-0.37,NA,NA,NA
 "Admiral Schofield","Tennessee",2019,42,3918423,"Tennessee",4,3.423,6.945,9.398,9.799,-2.4,-3.05,-1.54,-2.07,NA
-"Adou Thiero","Arkansas",2025,36,5060631,"Arkansas",3,7.048,9.65,10.617,NA,-1.86,NA,NA,NA,NA
-"Adreian Payne","Michigan State",2014,15,51545,"Michigan State",4,7.048,4.617,6.698,11.788,-3.8,-4.27,-2.8,-3.04,NA
-"Ahmad Nivins","Saint Joseph's",2009,56,26901,"Saint Joseph's",4,7.048,9.65,9.038,15.61,-10,NA,NA,NA,NA
+"Adou Thiero","Arkansas",2025,36,5060631,"Arkansas",3,10.617,9.65,11.093,NA,-1.86,NA,NA,NA,NA
+"Adreian Payne","Michigan State",2014,15,51545,"Michigan State",4,4.617,6.698,11.788,13.329,-3.8,-4.27,-2.8,-3.04,NA
+"Ahmad Nivins","Saint Joseph's",2009,56,26901,"Saint Joseph's",4,9.038,15.61,11.093,13.329,-10,NA,NA,NA,NA
 "Ajay Mitchell","UC Santa Barbara",2024,38,4900671,"UC Santa Barbara",3,6.618,12.483,13.32,NA,-1.96,0.84,NA,NA,NA
 "Al-Farouq Aminu","Wake Forest",2010,8,41037,"Wake Forest",2,5.184,9.816,NA,NA,-0.79,0.16,1.41,0.07,2.29
 "Alec Brown","Green Bay",2014,50,51135,"Green Bay",4,3.784,7.757,5.434,9.12,-10,NA,NA,NA,NA
 "Alec Burks","Colorado",2011,12,46086,"Colorado",2,11.469,13.9,NA,NA,-1.25,-0.71,-0.83,-1.51,-0.89
 "Alec Peters","Valparaiso",2017,54,66821,"Valparaiso",4,6.557,13.532,16.132,23.063,-2.35,NA,NA,NA,NA
 "Alex Len","Maryland",2013,5,57379,"Maryland",2,2.737,6.827,NA,NA,-2.98,-1.09,-2.48,-2.33,-1.02
-"Alex Oriakhi","Missouri",2013,57,45946,"Missouri",4,7.048,9.65,11.093,7.521,-10,NA,NA,NA,NA
-"Alijah Martin","Florida",2025,39,4702656,"Florida",4,7.048,9.65,11.093,10.158,-1.61,NA,NA,NA,NA
-"Alize Johnson","Missouri State",2018,50,4067045,"Missouri State",3,7.048,14.171,12.728,NA,-2.66,-2.06,-0.87,-2.56,-2.23
+"Alex Oriakhi","Missouri",2013,57,45946,"Missouri",4,7.521,9.65,11.093,13.329,-10,NA,NA,NA,NA
+"Alijah Martin","Florida",2025,39,4702656,"Florida",4,10.158,9.65,11.093,13.329,-1.61,NA,NA,NA,NA
+"Alize Johnson","Missouri State",2018,50,4067045,"Missouri State",3,14.171,12.728,11.093,NA,-2.66,-2.06,-0.87,-2.56,-2.23
 "Allen Crabbe","California",2013,31,51022,"California",3,5.733,10.96,12.522,NA,-2.78,-2.07,-0.53,-1.08,-0.09
 "Amari Bailey","UCLA",2023,41,5105638,"UCLA",1,4.948,NA,NA,NA,-2.6,NA,NA,NA,NA
-"Amari Williams","Kentucky",2025,46,4702745,"Kentucky",4,7.048,9.65,11.093,7.458,-2.81,NA,NA,NA,NA
+"Amari Williams","Kentucky",2025,46,4702745,"Kentucky",4,7.458,9.65,11.093,13.329,-2.81,NA,NA,NA,NA
 "Andre Drummond","UConn",2012,9,57279,"UConn",1,5.414,NA,NA,NA,0.34,0.46,0.31,0.34,-0.57
-"Andre Jackson","UConn",2023,36,4432190,"UConn",3,7.048,3.889,4.82,NA,-1.92,-2.87,-1.64,NA,NA
+"Andre Jackson","UConn",2023,36,4432190,"UConn",3,3.889,4.82,11.093,NA,-1.92,-2.87,-1.64,NA,NA
 "Andre Roberson","Colorado",2013,26,51029,"Colorado",3,3.391,9.269,6.159,NA,-0.45,0.28,1.2,1.83,2.5
 "Andrew Goudelock","College of Charleston",2011,46,36889,"College of Charleston",4,6.664,5.916,12.045,15.633,-2.66,-3.05,-2.37,NA,NA
 "Andrew Harrison","Kentucky",2015,44,66615,"Kentucky",2,6.279,8.03,NA,NA,-0.97,-1.25,-1.37,NA,NA
-"Andrew Nembhard","Gonzaga",2022,31,4395712,"Gonzaga",4,7.048,9.65,7.48,10.362,-2.53,-1.25,0.12,-0.32,NA
+"Andrew Nembhard","Gonzaga",2022,31,4395712,"Gonzaga",4,7.48,10.362,11.093,13.329,-2.53,-1.25,0.12,-0.32,NA
 "Andrew Nicholson","St. Bonaventure",2012,19,41510,"St. Bonaventure",4,3.979,8.704,10.695,15.357,-2.2,-2.46,-2.62,-0.72,-2.74
 "Andrew Wiggins","Kansas",2014,1,67429,"Kansas",1,11.697,NA,NA,NA,-1.42,-0.5,-0.13,-0.79,-1.22
-"Andy Rautins","Syracuse",2010,38,27189,"Syracuse",4,7.048,9.65,3.581,8.07,-1.89,NA,NA,NA,NA
+"Andy Rautins","Syracuse",2010,38,27189,"Syracuse",4,3.581,8.07,11.093,13.329,-1.89,NA,NA,NA,NA
 "Anthony Bennett","UNLV",2013,1,61902,"UNLV",1,9.256,NA,NA,NA,-2.83,-2.74,-2.29,-1.17,NA
 "Anthony Black","Arkansas",2023,6,4712849,"Arkansas",1,6.766,NA,NA,NA,-1.33,-0.48,0.25,NA,NA
-"Anthony Brown","Stanford",2015,34,51361,"Stanford",4,7.048,9.65,3.007,3.635,-0.94,-1.84,-0.82,NA,NA
+"Anthony Brown","Stanford",2015,34,51361,"Stanford",4,3.007,3.635,11.093,13.329,-0.94,-1.84,-0.82,NA,NA
 "Anthony Davis","Kentucky",2012,1,56353,"Kentucky",1,18.595,NA,NA,NA,1.15,2.11,4.21,2.31,3.04
 "Anthony Edwards","Georgia",2020,1,4594268,"Georgia",1,10.665,NA,NA,NA,0.64,2.23,3.15,3.62,4.29
 "Anthony Randolph","LSU",2008,14,36181,"LSU",1,8.652,NA,NA,NA,-0.95,-1.09,-1.39,-1.14,-1.1
 "Anton Watson","Gonzaga",2024,54,4431705,"Gonzaga",4,4.787,5.501,7.498,10.908,-2.75,-2.62,NA,NA,NA
-"Antonio Reeves","Kentucky",2024,47,4592686,"Kentucky",4,7.048,9.65,6.186,11.794,-1.78,-1.04,NA,NA,NA
+"Antonio Reeves","Kentucky",2024,47,4592686,"Kentucky",4,6.186,11.794,11.093,13.329,-1.78,-1.04,NA,NA,NA
 "Archie Goodwin","Kentucky",2013,29,61841,"Kentucky",1,6.28,NA,NA,NA,-2.34,-1.88,-2.37,-2.21,NA
 "Armon Johnson","Nevada",2010,34,36326,"Nevada",3,5.851,6.805,6.673,NA,-3.05,-3.15,NA,NA,NA
-"Arnett Moultrie","Mississippi State",2012,27,41183,"Mississippi State",3,7.048,9.65,14.243,NA,-0.7,-1.67,NA,NA,NA
-"Arsalan Kazemi","Oregon",2013,54,45677,"Oregon",4,7.048,9.65,11.093,6.727,-10,NA,NA,NA,NA
+"Arnett Moultrie","Mississippi State",2012,27,41183,"Mississippi State",3,14.243,9.65,11.093,NA,-0.7,-1.67,NA,NA,NA
+"Arsalan Kazemi","Oregon",2013,54,45677,"Oregon",4,6.727,9.65,11.093,13.329,-10,NA,NA,NA,NA
 "Asa Newell","Georgia",2025,23,4873201,"Georgia",1,12.76,NA,NA,NA,-0.59,NA,NA,NA,NA
 "Austin Daye","Gonzaga",2009,15,36390,"Gonzaga",2,7.193,5.356,NA,NA,-1.2,-1.06,-2.6,-1.92,-1.79
 "Austin Rivers","Duke",2012,10,56112,"Duke",1,8.646,NA,NA,NA,-1.77,-1.54,-2.5,-2.53,-1.8
 "Avery Bradley","Texas",2010,19,46196,"Texas",1,4.746,NA,NA,NA,-2.63,-0.43,-1.12,-0.68,-0.28
 "Ayo Dosunmu","Illinois",2021,38,4397002,"Illinois",3,7.285,10.622,20.14,NA,-1.94,-1.74,-1.07,-1.41,-0.4
-"Balsa Koprivica","Florida State",2021,57,4432829,"Florida State",2,7.048,6.623,NA,NA,-10,NA,NA,NA,NA
-"Baylor Scheierman","Creighton",2024,30,4593841,"Creighton",4,7.048,9.65,7.164,14.512,-0.92,-0.33,NA,NA,NA
+"Balsa Koprivica","Florida State",2021,57,4432829,"Florida State",2,6.623,9.65,NA,NA,-10,NA,NA,NA,NA
+"Baylor Scheierman","Creighton",2024,30,4593841,"Creighton",4,7.164,14.512,11.093,13.329,-0.92,-0.33,NA,NA,NA
 "Ben Bentil","Providence",2016,51,3136469,"Providence",2,3.781,15.02,NA,NA,-3.13,NA,NA,NA,NA
 "Ben McLemore","Kansas",2013,7,56652,"Kansas",1,11.188,NA,NA,NA,-2.49,-0.62,-0.33,-0.88,-2.4
-"Ben Sheppard","Belmont",2023,26,4433076,"Belmont",4,7.048,5.687,9.448,9.791,-0.56,-1.95,-1.43,NA,NA
+"Ben Sheppard","Belmont",2023,26,4433076,"Belmont",4,5.687,9.448,9.791,13.329,-0.56,-1.95,-1.43,NA,NA
 "Ben Simmons","LSU",2016,1,3907387,"LSU",1,16.223,NA,NA,NA,-0.51,1.36,1.3,0.85,1.96
 "Bennedict Mathurin","Arizona",2022,6,4683634,"Arizona",2,7.547,13.192,NA,NA,-3.01,-2.96,-1.5,-1.6,NA
 "Bernard James","Florida State",2012,33,51353,"Florida State",2,3.699,6.952,NA,NA,-2.43,-3.35,-1.61,NA,NA
@@ -65,122 +65,122 @@
 "Bobby Portis","Arkansas",2015,22,66332,"Arkansas",2,8.445,13.588,NA,NA,-3.65,-1.49,0.2,-0.98,-1.84
 "Bradley Beal","Florida",2012,3,56792,"Florida",1,12.248,NA,NA,NA,-0.4,0.02,0.22,-0.06,2.37
 "Branden Dawson","Michigan State",2015,56,56933,"Michigan State",4,5.679,4.602,9.703,8.768,-2.45,NA,NA,NA,NA
-"Brandin Podziemski","Santa Clara",2023,19,4709138,"Santa Clara",2,7.048,15.967,NA,NA,-1.34,-0.02,0.52,NA,NA
+"Brandin Podziemski","Santa Clara",2023,19,4709138,"Santa Clara",2,15.967,9.65,NA,NA,-1.34,-0.02,0.52,NA,NA
 "Brandon Boston","Kentucky",2021,51,4432162,"Kentucky",1,5.461,NA,NA,NA,-1.88,-2.05,-3.24,-1.15,-1.18
-"Brandon Clarke","Gonzaga",2019,21,3906665,"Gonzaga",3,7.048,9.65,15.994,NA,0.04,1.05,1.48,1.09,0.84
+"Brandon Clarke","Gonzaga",2019,21,3906665,"Gonzaga",3,15.994,9.65,11.093,NA,0.04,1.05,1.48,1.09,0.84
 "Brandon Ingram","Duke",2016,2,3913176,"Duke",1,11.22,NA,NA,NA,-2.23,0.13,-0.76,0.49,1.59
 "Brandon Knight","Kentucky",2011,8,51542,"Kentucky",1,10.72,NA,NA,NA,-2.16,-2.37,-0.89,-1.54,-1.65
 "Brandon Miller","Alabama",2023,2,4433287,"Alabama",1,13.805,NA,NA,NA,-1.53,-1.55,0.72,NA,NA
-"Brandon Rush","Kansas",2008,13,28158,"Kansas",3,7.048,9.65,9.333,NA,-1.81,-1.33,-1.74,0.02,0.68
-"Brice Johnson","UNC",2016,25,61653,"UNC",4,7.048,7.002,8.753,14.635,-2.36,-3.34,NA,NA,NA
+"Brandon Rush","Kansas",2008,13,28158,"Kansas",3,9.333,9.65,11.093,NA,-1.81,-1.33,-1.74,0.02,0.68
+"Brice Johnson","UNC",2016,25,61653,"UNC",4,7.002,8.753,14.635,13.329,-2.36,-3.34,NA,NA,NA
 "Brice Sensabaugh","Ohio State",2023,28,5105839,"Ohio State",1,9.478,NA,NA,NA,-2.85,-0.98,-0.6,NA,NA
 "Bronny James","USC",2024,55,4683774,"USC",1,3.312,NA,NA,NA,-2.29,-1.71,NA,NA,NA
-"Brook Lopez","Stanford",2008,10,31765,"Stanford",2,7.048,17.428,NA,NA,-0.46,-0.57,-0.36,-0.11,1.85
-"Brooks Barnhizer","Northwestern",2025,44,4684208,"Northwestern",4,7.048,9.65,3.727,9.439,-2.8,NA,NA,NA,NA
+"Brook Lopez","Stanford",2008,10,31765,"Stanford",2,17.428,9.65,NA,NA,-0.46,-0.57,-0.36,-0.11,1.85
+"Brooks Barnhizer","Northwestern",2025,44,4684208,"Northwestern",4,3.727,9.439,11.093,13.329,-2.8,NA,NA,NA,NA
 "Bruce Brown","Miami (FL)",2018,42,4065670,"Miami (FL)",2,11.926,7.274,NA,NA,-0.9,-1.16,0.56,0.75,0.15
 "Bruno Fernando","Maryland",2019,34,4277952,"Maryland",2,7.178,11.29,NA,NA,-1.28,-2.41,-2.13,-1.68,-1.35
 "Bryce McGowens","Nebraska",2022,40,4576086,"Nebraska",1,6.836,NA,NA,NA,-3.36,-2.46,-1.97,-1.5,NA
 "Buddy Hield","Oklahoma",2016,6,61663,"Oklahoma",4,3.059,9.563,13.527,22.66,-0.56,0.27,0.36,0.21,0.01
 "Byron Mullens","Ohio State",2009,24,41747,"Ohio State",1,3.642,NA,NA,NA,-4,-3.82,-3.03,-3.47,-2.57
 "CJ Elleby","Washington State",2020,46,4397166,"Washington State",2,6.733,11.757,NA,NA,-2.12,-2.75,NA,NA,NA
-"CJ McCollum","Lehigh",2013,10,46502,"Lehigh",4,7.048,11.781,11.408,22.134,-2.17,-0.68,1.39,2,1.87
-"Cade Cunningham","Oklahoma State",2021,1,4432166,"Oklahoma State",2,7.048,15.105,NA,NA,-0.79,-0.82,0.2,1.42,3.62
-"Cady Lalanne","UMass",2015,55,51123,"UMass",4,7.048,3.742,6.336,5.902,-10,NA,NA,NA,NA
+"CJ McCollum","Lehigh",2013,10,46502,"Lehigh",4,11.781,11.408,22.134,13.329,-2.17,-0.68,1.39,2,1.87
+"Cade Cunningham","Oklahoma State",2021,1,4432166,"Oklahoma State",2,15.105,9.65,NA,NA,-0.79,-0.82,0.2,1.42,3.62
+"Cady Lalanne","UMass",2015,55,51123,"UMass",4,3.742,6.336,5.902,13.329,-10,NA,NA,NA,NA
 "Caleb Houstan","Michigan",2022,32,4433623,"Michigan",1,4.176,NA,NA,NA,-2.15,-1.06,-1.47,-1.01,NA
 "Caleb Swanigan","Purdue",2017,26,3906671,"Purdue",2,4.333,19.882,NA,NA,-2.18,-3.76,-2.44,NA,NA
 "Cam Christie","Minnesota",2024,46,4845363,"Minnesota",1,5.636,NA,NA,NA,-1.22,-2.63,NA,NA,NA
 "Cam Reddish","Duke",2019,10,4395627,"Duke",1,6.477,NA,NA,NA,-1.28,-1.23,-1.19,-2.09,-1.45
-"Cam Spencer","UConn",2024,53,4433083,"UConn",4,7.048,9.65,11.093,12.682,-1.52,-0.53,NA,NA,NA
+"Cam Spencer","UConn",2024,53,4433083,"UConn",4,12.682,9.65,11.093,13.329,-1.52,-0.53,NA,NA,NA
 "Cam Whitmore","Villanova",2023,20,5105592,"Villanova",1,5.719,NA,NA,NA,-0.6,-0.26,-1.38,NA,NA
-"Cameron Bairstow","New Mexico",2014,49,51163,"New Mexico",4,7.048,2.303,5.524,17.165,-3.4,-2.88,NA,NA,NA
-"Cameron Johnson","UNC",2019,11,3138196,"UNC",4,7.048,9.65,8.736,12.077,-0.29,0.35,0.66,1.49,0.51
+"Cameron Bairstow","New Mexico",2014,49,51163,"New Mexico",4,2.303,5.524,17.165,13.329,-3.4,-2.88,NA,NA,NA
+"Cameron Johnson","UNC",2019,11,3138196,"UNC",4,8.736,12.077,11.093,13.329,-0.29,0.35,0.66,1.49,0.51
 "Cameron Payne","Murray State",2015,14,66902,"Murray State",2,11.301,18.208,NA,NA,-1.94,-3.19,-1.84,-1.97,-0.96
-"Caris LeVert","Michigan",2016,20,61810,"Michigan",4,7.048,9.65,11.093,9.459,-0.13,-1.03,0.21,0.99,-0.53
-"Carrick Felix","Arizona State",2013,33,51084,"Arizona State",3,7.048,3.568,8.433,NA,-2.22,-1.78,NA,NA,NA
+"Caris LeVert","Michigan",2016,20,61810,"Michigan",4,9.459,9.65,11.093,13.329,-0.13,-1.03,0.21,0.99,-0.53
+"Carrick Felix","Arizona State",2013,33,51084,"Arizona State",3,3.568,8.433,11.093,NA,-2.22,-1.78,NA,NA,NA
 "Carsen Edwards","Purdue",2019,33,4066407,"Purdue",3,7.872,15.905,18.855,NA,-1.8,-2.03,-2.66,NA,NA
 "Carter Bryant","Arizona",2025,14,5061568,"Arizona",1,3.359,NA,NA,NA,-1.78,NA,NA,NA,NA
 "Cason Wallace","Kentucky",2023,10,4683692,"Kentucky",1,7.122,NA,NA,NA,0.66,0.61,1.38,NA,NA
 "Cassius Stanley","Duke",2020,54,4431686,"Duke",1,6.907,NA,NA,NA,-2.65,-2.19,NA,NA,NA
 "Cassius Winston","Michigan State",2020,53,4066382,"Michigan State",4,8.258,13.568,19.607,16.443,-2.97,-2.95,NA,NA,NA
-"Chandler Hutchison","Boise State",2018,22,3149010,"Boise State",4,7.048,2.835,13.65,15.773,-1.56,-1.38,-2.72,-2.83,NA
+"Chandler Hutchison","Boise State",2018,22,3149010,"Boise State",4,2.835,13.65,15.773,13.329,-1.56,-1.38,-2.72,-2.83,NA
 "Chandler Parsons","Florida",2011,38,36383,"Florida",4,5.022,3.836,8.351,7.352,0.24,0.57,0.99,1.44,0.96
-"Charles Bassey","Western Kentucky",2021,53,4397886,"Western Kentucky",3,7.048,9.316,15.839,NA,-1.36,-1.13,0.09,-0.58,-0.04
+"Charles Bassey","Western Kentucky",2021,53,4397886,"Western Kentucky",3,9.316,15.839,11.093,NA,-1.36,-1.13,0.09,-0.58,-0.04
 "Charles Jenkins","Hofstra",2011,44,31911,"Hofstra",4,7.255,10.152,14.248,18.673,-3.71,-3.28,NA,NA,NA
-"Chase Budinger","Arizona",2009,44,31642,"Arizona",3,7.048,11.959,12.89,NA,-0.45,0.08,0.45,-0.11,-0.57
-"Chaz Lanier","Tennessee",2025,37,4700852,"Tennessee",4,7.048,9.65,11.093,11.701,-3.03,NA,NA,NA,NA
+"Chase Budinger","Arizona",2009,44,31642,"Arizona",3,11.959,12.89,11.093,NA,-0.45,0.08,0.45,-0.11,-0.57
+"Chaz Lanier","Tennessee",2025,37,4700852,"Tennessee",4,11.701,9.65,11.093,13.329,-3.03,NA,NA,NA,NA
 "Chet Holmgren","Gonzaga",2022,2,4433255,"Gonzaga",1,12.241,NA,NA,NA,0.15,2.46,1.86,4.12,NA
 "Chimezie Metu","USC",2018,49,3914283,"USC",3,2.558,11.612,10.812,NA,-3.57,-2.22,-2.15,-1.76,-0.13
 "Chinanu Onuaku","Louisville",2016,37,3147366,"Louisville",2,2.291,7.062,NA,NA,-1.47,-0.91,NA,NA,NA
-"Chinemelu Elonu","Texas A&M",2009,59,30778,"Texas A&M",3,7.048,9.65,4.201,NA,-10,NA,NA,NA,NA
-"Chris Douglas-Roberts","Memphis",2008,40,26973,"Memphis",3,7.048,9.65,13.199,NA,-1.63,-1.74,-0.88,-0.78,-0.09
+"Chinemelu Elonu","Texas A&M",2009,59,30778,"Texas A&M",3,4.201,9.65,11.093,NA,-10,NA,NA,NA,NA
+"Chris Douglas-Roberts","Memphis",2008,40,26973,"Memphis",3,13.199,9.65,11.093,NA,-1.63,-1.74,-0.88,-0.78,-0.09
 "Chris Duarte","Oregon",2021,13,4592402,"Oregon",2,8.916,16.196,NA,NA,-1.33,-1.83,-1.62,-1.1,-1.32
 "Chris Livingston","Kentucky",2023,58,4433622,"Kentucky",1,2.289,NA,NA,NA,-2.49,-1.89,-1.78,NA,NA
 "Chris Singleton","Florida State",2011,18,40974,"Florida State",3,2.414,4.103,6.379,NA,-0.73,-1.31,-2.03,NA,NA
 "Christian Braun","Kansas",2022,21,4431767,"Kansas",3,2.977,5.977,11.495,NA,-1.22,-1.25,1.23,0.75,NA
-"Christian Koloko","Arizona",2022,33,4431778,"Arizona",3,7.048,3.904,9.483,NA,-1.2,-0.76,-1.31,-2.26,NA
+"Christian Koloko","Arizona",2022,33,4431778,"Arizona",3,3.904,9.483,11.093,NA,-1.2,-0.76,-1.31,-2.26,NA
 "Chuma Okeke","Auburn",2019,16,4278052,"Auburn",2,5.234,9.598,NA,NA,-0.89,-0.59,-0.76,-1.26,-0.04
 "Cleanthony Early","Wichita State",2014,34,62186,"Wichita State",2,8.337,12.264,NA,NA,-2.21,-3.01,NA,NA,NA
 "Coby White","UNC",2019,7,4395651,"UNC",1,9.769,NA,NA,NA,-1.32,-1.5,-1.65,0.22,0.45
-"Cody Martin","Nevada",2019,36,3138161,"Nevada",4,7.048,9.65,12.47,9.235,-0.77,-0.04,1,0.01,-0.62
+"Cody Martin","Nevada",2019,36,3138161,"Nevada",4,12.47,9.235,11.093,13.329,-0.77,-0.04,1,0.01,-0.62
 "Cody Williams","Colorado",2024,10,4895758,"Colorado",1,6.345,NA,NA,NA,-3.72,-2.9,NA,NA,NA
 "Cody Zeller","Indiana",2013,4,56224,"Indiana",2,15.222,14.473,NA,NA,-0.69,-0.07,2,2.58,2.6
-"Colby Jones","Xavier",2023,34,4433378,"Xavier",3,7.048,8.686,8.947,NA,-1.61,-1.19,-1.26,NA,NA
-"Cole Aldrich","Kansas",2010,11,36170,"Kansas",3,7.048,10.861,8.426,NA,-3.13,-2.25,-2.44,-0.01,-0.73
+"Colby Jones","Xavier",2023,34,4433378,"Xavier",3,8.686,8.947,11.093,NA,-1.61,-1.19,-1.26,NA,NA
+"Cole Aldrich","Kansas",2010,11,36170,"Kansas",3,10.861,8.426,11.093,NA,-3.13,-2.25,-2.44,-0.01,-0.73
 "Cole Anthony","UNC",2020,15,4432809,"UNC",1,9.992,NA,NA,NA,-3.07,-1.71,-0.54,-0.75,0.33
 "Collin Murray-Boyles","South Carolina",2025,9,5093267,"South Carolina",2,8.23,13.234,NA,NA,0.28,NA,NA,NA,NA
 "Collin Sexton","Alabama",2018,8,4277811,"Alabama",1,14.506,NA,NA,NA,-2.07,-1.49,-1.26,-1.98,-1.15
-"Colton Iverson","Colorado State",2013,53,41566,"Colorado State",4,7.048,9.65,11.093,9.802,-10,NA,NA,NA,NA
+"Colton Iverson","Colorado State",2013,53,41566,"Colorado State",4,9.802,9.65,11.093,13.329,-10,NA,NA,NA,NA
 "Cooper Flagg","Duke",2025,1,5041939,"Duke",1,22.757,NA,NA,NA,-0.13,NA,NA,NA,NA
 "Corey Kispert","Gonzaga",2021,15,4280151,"Gonzaga",4,4.37,4.433,9.333,16.975,-1.4,-0.76,-1.59,-1.45,-1.89
-"Cory Jefferson","Baylor",2014,60,45990,"Baylor",4,7.048,9.65,9.161,9.584,-2.19,-2.47,NA,NA,NA
+"Cory Jefferson","Baylor",2014,60,45990,"Baylor",4,9.161,9.584,11.093,13.329,-2.19,-2.47,NA,NA,NA
 "Cory Joseph","Texas",2011,29,51445,"Texas",1,5.105,NA,NA,NA,-1.85,-1.42,0.09,0.21,-0.78
-"Courtney Lee","Western Kentucky",2008,22,22628,"Western Kentucky",4,7.048,9.65,11.093,15.578,-0.15,-0.44,-0.65,-0.4,0.11
+"Courtney Lee","Western Kentucky",2008,22,22628,"Western Kentucky",4,15.578,9.65,11.093,13.329,-0.15,-0.44,-0.65,-0.4,0.11
 "Craig Brackins","Iowa State",2010,21,36262,"Iowa State",3,5.759,10.757,8.492,NA,-2.44,-3.35,NA,NA,NA
 "D'Angelo Russell","Ohio State",2015,2,3136776,"Ohio State",1,18.632,NA,NA,NA,-2.54,-1.76,-1.09,0.61,-0.81
-"D.J. Augustin","Texas",2008,9,31578,"Texas",2,7.048,19.068,NA,NA,0.61,-0.32,-0.82,-2.32,-2.39
-"D.J. White","Indiana",2008,29,22340,"Indiana",4,7.048,9.65,11.093,15.273,-10,NA,NA,NA,NA
-"D.J. Wilson","Michigan",2017,17,3136491,"Michigan",3,7.048,9.65,10.978,NA,-2,-2.68,-2.68,-2.67,-1.92
-"Da'Sean Butler","West Virginia",2010,42,31667,"West Virginia",4,7.048,8.692,9.92,15.842,-1.83,NA,NA,NA,NA
-"DaJuan Summers","Georgetown",2009,35,32020,"Georgetown",3,7.048,7.186,5.84,NA,-2.61,-3.43,-2.87,-2.85,NA
+"D.J. Augustin","Texas",2008,9,31578,"Texas",2,19.068,9.65,NA,NA,0.61,-0.32,-0.82,-2.32,-2.39
+"D.J. White","Indiana",2008,29,22340,"Indiana",4,15.273,9.65,11.093,13.329,-10,NA,NA,NA,NA
+"D.J. Wilson","Michigan",2017,17,3136491,"Michigan",3,10.978,9.65,11.093,NA,-2,-2.68,-2.68,-2.67,-1.92
+"Da'Sean Butler","West Virginia",2010,42,31667,"West Virginia",4,8.692,9.92,15.842,13.329,-1.83,NA,NA,NA,NA
+"DaJuan Summers","Georgetown",2009,35,32020,"Georgetown",3,7.186,5.84,11.093,NA,-2.61,-3.43,-2.87,-2.85,NA
 "DaRon Holmes","Dayton",2024,22,4433607,"Dayton",3,9.949,14.541,18.49,NA,-1.55,-0.37,NA,NA,NA
-"Dakari Johnson","Kentucky",2015,48,66620,"Kentucky",2,7.048,5.71,NA,NA,-1.19,NA,NA,NA,NA
-"Dalano Banton","Nebraska",2021,46,4397885,"Nebraska",2,7.048,4.764,NA,NA,-1.55,-0.06,-1.31,-1.64,-1.64
+"Dakari Johnson","Kentucky",2015,48,66620,"Kentucky",2,5.71,9.65,NA,NA,-1.19,NA,NA,NA,NA
+"Dalano Banton","Nebraska",2021,46,4397885,"Nebraska",2,4.764,9.65,NA,NA,-1.55,-0.06,-1.31,-1.64,-1.64
 "Dalen Terry","Arizona",2022,18,4433159,"Arizona",2,2.423,6.1,NA,NA,-0.61,0.29,-1.32,-0.65,NA
-"Dalton Knecht","Tennessee",2024,17,4897943,"Tennessee",3,7.048,9.65,14.109,NA,-0.74,-1.58,NA,NA,NA
+"Dalton Knecht","Tennessee",2024,17,4897943,"Tennessee",3,14.109,9.65,11.093,NA,-0.74,-1.58,NA,NA,NA
 "Damian Jones","Vanderbilt",2016,30,66275,"Vanderbilt",3,5.53,8.631,7.686,NA,-2.37,-2.72,-1.06,-0.4,-0.93
-"Damian Lillard","Weber State",2012,6,41544,"Weber State",4,7.048,4.257,13.666,25,0.18,1.38,2.18,2.54,3.61
-"Damion James","Texas",2010,24,31581,"Texas",4,7.048,10.41,8.378,13.688,-1,-1.21,-0.9,-1.81,NA
+"Damian Lillard","Weber State",2012,6,41544,"Weber State",4,4.257,13.666,25,13.329,0.18,1.38,2.18,2.54,3.61
+"Damion James","Texas",2010,24,31581,"Texas",4,10.41,8.378,13.688,13.329,-1,-1.21,-0.9,-1.81,NA
 "Daniel Gafford","Arkansas",2019,38,4278049,"Arkansas",2,8.182,10.365,NA,NA,-1.04,1.68,0.2,-0.39,0.75
 "Daniel Hamilton","UConn",2016,56,3147351,"UConn",2,7.217,8.904,NA,NA,-1.36,-2.22,NA,NA,NA
 "Daniel Oturu","Minnesota",2020,33,4397215,"Minnesota",2,6.453,17.81,NA,NA,-3.31,-2.4,NA,NA,NA
-"Danny Green","UNC",2009,46,27017,"UNC",4,7.048,9.65,7.608,6.822,-0.81,-0.89,2.56,2.87,4.01
-"Danny Wolf","Michigan",2025,27,5107173,"Michigan",3,7.048,9.65,8.458,NA,-1.49,NA,NA,NA,NA
-"Dante Cunningham","Villanova",2009,33,26961,"Villanova",4,7.048,9.65,5.442,8.412,-1.23,-1.05,-0.64,-0.51,-0.58
+"Danny Green","UNC",2009,46,27017,"UNC",4,7.608,6.822,11.093,13.329,-0.81,-0.89,2.56,2.87,4.01
+"Danny Wolf","Michigan",2025,27,5107173,"Michigan",3,8.458,9.65,11.093,NA,-1.49,NA,NA,NA,NA
+"Dante Cunningham","Villanova",2009,33,26961,"Villanova",4,5.442,8.412,11.093,13.329,-1.23,-1.05,-0.64,-0.51,-0.58
 "Darington Hobson","New Mexico",2010,37,36419,"New Mexico",1,11.197,NA,NA,NA,-1.85,-2.61,NA,NA,NA
 "Dariq Whitehead","Duke",2023,22,4432735,"Duke",1,3.188,NA,NA,NA,-1.74,-2.48,-2.86,NA,NA
 "Darius Johnson-Odom","Marquette",2012,55,45571,"Marquette",3,6.459,6.402,12.267,NA,-2.29,-3.26,NA,NA,NA
 "Darius Miller","Kentucky",2012,46,41836,"Kentucky",4,1.544,3.019,6.371,7.024,-0.92,-0.2,-0.48,-0.81,-1.34
 "Darius Morris","Michigan",2011,41,3163079,"Michigan",2,1.075,11.999,NA,NA,-2.58,-2.59,-3.17,-3.29,NA
-"Darnell Jackson","Kansas",2008,52,22178,"Kansas",4,7.048,9.65,11.093,8.25,-3.41,-3.97,-2.91,NA,NA
-"Darrell Arthur","Kansas",2008,27,31786,"Kansas",2,7.048,8.325,NA,NA,-1.76,-3.05,-0.63,-0.46,-2.42
-"Darren Collison","UCLA",2009,21,26892,"UCLA",4,7.048,9.65,12.998,10.921,-1.72,-1.7,-0.71,-1.06,-0.33
+"Darnell Jackson","Kansas",2008,52,22178,"Kansas",4,8.25,9.65,11.093,13.329,-3.41,-3.97,-2.91,NA,NA
+"Darrell Arthur","Kansas",2008,27,31786,"Kansas",2,8.325,9.65,NA,NA,-1.76,-3.05,-0.63,-0.46,-2.42
+"Darren Collison","UCLA",2009,21,26892,"UCLA",4,12.998,10.921,11.093,13.329,-1.72,-1.7,-0.71,-1.06,-0.33
 "Darrun Hilliard","Villanova",2015,38,56181,"Villanova",4,2.194,4.77,9.735,11.169,-1.88,-2.02,-2.37,NA,NA
-"David Johnson","Louisville",2021,47,4592204,"Louisville",2,4.989,NA,6.369,NA,-1.69,NA,NA,NA,NA
+"David Johnson","Louisville",2021,47,4592204,"Louisville",2,4.989,6.369,NA,NA,-1.69,NA,NA,NA,NA
 "David Roddy","Colorado State",2022,23,4593041,"Colorado State",3,5.541,14.442,19.8,NA,-2.5,-3.29,-2.14,-1.77,NA
-"Davion Mitchell","Baylor",2021,9,4278053,"Baylor",3,7.048,5.699,15.214,NA,-2.6,-1.18,-1.74,-0.04,-0.21
+"Davion Mitchell","Baylor",2021,9,4278053,"Baylor",3,5.699,15.214,11.093,NA,-2.6,-1.18,-1.74,-0.04,-0.21
 "Davon Reed","Miami (FL)",2017,32,66130,"Miami (FL)",4,3.542,5.997,6.054,13.498,-2.21,-2.44,-1.03,-2.34,NA
 "Day'Ron Sharpe","UNC",2021,29,4432194,"UNC",1,6.645,NA,NA,NA,-1.68,-0.88,0.14,1.05,1.23
 "De'Aaron Fox","Kentucky",2017,5,4066259,"Kentucky",1,15.568,NA,NA,NA,-2.51,0.3,0.72,0.76,-0.53
 "De'Andre Hunter","Virginia",2019,4,4065732,"Virginia",2,8.588,14.734,NA,NA,-1.86,-0.71,-1.66,-1.31,-0.76
-"DeAndre Daniels","UConn",2014,37,56635,"UConn",3,7.048,5.09,8.306,NA,-10,NA,NA,NA,NA
+"DeAndre Daniels","UConn",2014,37,56635,"UConn",3,5.09,8.306,11.093,NA,-10,NA,NA,NA,NA
 "DeAndre Jordan","Texas A&M",2008,35,36142,"Texas A&M",1,4.81,NA,NA,NA,-0.9,-1.71,0,0.29,0.79
 "DeAndre Liggins","Kentucky",2011,53,41837,"Kentucky",3,1.409,1.744,3.662,NA,-1.24,-0.87,-0.95,-1.16,-1.96
 "DeAndre' Bembry","Saint Joseph's",2016,21,67645,"Saint Joseph's",3,6.004,11.555,13.266,NA,-0.89,-1.02,-1.07,-0.97,-0.71
 "DeJuan Blair","Pitt",2009,37,36578,"Pitt",2,8.362,13.275,NA,NA,0.02,-0.54,-0.75,-0.79,-0.33
 "DeMar DeRozan","USC",2009,9,41016,"USC",1,6.758,NA,NA,NA,-2.24,-1.96,-1.82,-1.96,-0.54
 "DeMarcus Cousins","Kentucky",2010,5,45882,"Kentucky",1,11.462,NA,NA,NA,-1.29,-0.7,-0.24,0.94,1.41
-"DeMarre Carroll","Missouri",2009,27,22107,"Missouri",4,7.048,9.65,8.419,10.279,-2.59,-2.2,-1.83,0.88,1.4
-"DeVon Hardin","California",2008,50,22477,"California",4,7.048,9.65,11.093,5.348,-10,NA,NA,NA,NA
+"DeMarre Carroll","Missouri",2009,27,22107,"Missouri",4,8.419,10.279,11.093,13.329,-2.59,-2.2,-1.83,0.88,1.4
+"DeVon Hardin","California",2008,50,22477,"California",4,5.348,9.65,11.093,13.329,-10,NA,NA,NA,NA
 "Deandre Ayton","Arizona",2018,1,4278129,"Arizona",1,20.538,NA,NA,NA,-1.06,0.09,1.96,2.48,0.74
 "Dejounte Murray","Washington",2016,29,3907497,"Washington",1,6.231,NA,NA,NA,-2.28,1.5,1.33,-0.29,0.58
 "Delon Wright","Utah",2015,20,66236,"Utah",2,17.033,19.258,NA,NA,-0.08,0.25,1.25,0.17,-0.61
@@ -189,95 +189,95 @@
 "Denzel Valentine","Michigan State",2016,14,62615,"Michigan State",4,2.378,5.707,12.344,24.841,-1.59,-1.13,-1,-1.44,-1.66
 "Dereck Lively","Duke",2023,12,4683688,"Duke",1,3.411,NA,NA,NA,0.91,1.06,0.51,NA,NA
 "Derik Queen","Maryland",2025,13,4869780,"Maryland",1,12.968,NA,NA,NA,-0.5,NA,NA,NA,NA
-"Deron Washington","Virginia Tech",2008,59,22558,"Virginia Tech",4,7.048,9.65,11.093,7.914,-10,NA,NA,NA,NA
-"Derrick Brown","Xavier",2009,40,26936,"Xavier",3,7.048,7.946,9.205,NA,-1.28,-0.18,-1.29,NA,NA
-"Derrick Caracter","UTEP",2010,58,32008,"UTEP",3,7.048,9.65,7.716,NA,-2.63,-2.5,NA,NA,NA
+"Deron Washington","Virginia Tech",2008,59,22558,"Virginia Tech",4,7.914,9.65,11.093,13.329,-10,NA,NA,NA,NA
+"Derrick Brown","Xavier",2009,40,26936,"Xavier",3,7.946,9.205,11.093,NA,-1.28,-0.18,-1.29,NA,NA
+"Derrick Caracter","UTEP",2010,58,32008,"UTEP",3,7.716,9.65,11.093,NA,-2.63,-2.5,NA,NA,NA
 "Derrick Favors","Georgia Tech",2010,3,45521,"Georgia Tech",1,7.539,NA,NA,NA,-2.03,-1.75,0.13,-1.21,1.17
 "Derrick Rose","Memphis",2008,1,36204,"Memphis",1,12.265,NA,NA,NA,-1.4,-0.08,2.31,2.73,2.66
-"Derrick White","Colorado",2017,29,67845,"Colorado",2,7.048,18.28,NA,NA,-0.4,1.19,1.75,1.87,0.7
-"Derrick Williams","Arizona",2011,2,45854,"Arizona",2,9.563,NA,15.566,NA,-1.76,-2.68,-2.42,-2.26,-2.4
-"Deshaun Thomas","Ohio State",2013,58,51406,"Ohio State",3,7.048,13.631,16.426,NA,-10,NA,NA,NA,NA
+"Derrick White","Colorado",2017,29,67845,"Colorado",2,18.28,9.65,NA,NA,-0.4,1.19,1.75,1.87,0.7
+"Derrick Williams","Arizona",2011,2,45854,"Arizona",2,9.563,15.566,NA,NA,-1.76,-2.68,-2.42,-2.26,-2.4
+"Deshaun Thomas","Ohio State",2013,58,51406,"Ohio State",3,13.631,16.426,11.093,NA,-10,NA,NA,NA,NA
 "Desmond Bane","TCU",2020,30,4066320,"TCU",4,5.474,7.786,10.594,14.099,-1.02,1.99,2.49,1.59,1.45
 "Devin Booker","Kentucky",2015,13,3136193,"Kentucky",1,7.184,NA,NA,NA,-2.69,-1.12,-1.17,0.15,1.62
-"Devin Carter","Providence",2024,13,4433188,"Providence",3,7.048,6.967,15.363,NA,-1,-0.42,NA,NA,NA
+"Devin Carter","Providence",2024,13,4433188,"Providence",3,6.967,15.363,11.093,NA,-1,-0.42,NA,NA,NA
 "Devin Ebanks","West Virginia",2010,43,41840,"West Virginia",2,6.082,8.374,NA,NA,-1.88,-2.07,-2.79,NA,NA
-"Devin Vassell","Florida State",2020,11,4395630,"Florida State",2,7.048,9.606,NA,NA,-1.64,-0.1,-0.96,-1.25,-1.27
-"Devon Hall","Virginia",2018,53,66138,"Virginia",4,7.048,1.906,8.149,12.305,-2.16,NA,NA,NA,NA
+"Devin Vassell","Florida State",2020,11,4395630,"Florida State",2,9.606,9.65,NA,NA,-1.64,-0.1,-0.96,-1.25,-1.27
+"Devon Hall","Virginia",2018,53,66138,"Virginia",4,1.906,8.149,12.305,13.329,-2.16,NA,NA,NA,NA
 "Devonte' Graham","Kansas",2018,34,3133601,"Kansas",4,4.02,7.657,12.244,18.134,-2.31,-0.31,-0.01,-0.94,-1.71
-"Dexter Pittman","Texas",2010,32,31583,"Texas",4,7.048,9.65,4.923,5.449,-2.79,-2.96,-3.88,-3,NA
+"Dexter Pittman","Texas",2010,32,31583,"Texas",4,4.923,5.449,11.093,13.329,-2.79,-2.96,-3.88,-3,NA
 "Deyonta Davis","Michigan State",2016,31,3937101,"Michigan State",1,4.372,NA,NA,NA,-2.71,-1.81,-1.41,NA,NA
 "Diamond Stone","Maryland",2016,40,3924880,"Maryland",1,7.612,NA,NA,NA,-3.06,NA,NA,NA,NA
 "Dillon Brooks","Oregon",2017,45,3155526,"Oregon",3,6.235,12.258,15.402,NA,-2.25,-1.66,-1.09,0.53,0.85
-"Dillon Jones","Weber State",2024,26,4702159,"Weber State",4,7.048,9.65,6.29,8.905,-2.43,-1.96,NA,NA,NA
-"Dion Waiters","Syracuse",2012,4,51344,"Syracuse",2,2.763,NA,9.713,NA,-0.13,0.12,-1.13,-0.71,0.37
+"Dillon Jones","Weber State",2024,26,4702159,"Weber State",4,6.29,8.905,11.093,13.329,-2.43,-1.96,NA,NA,NA
+"Dion Waiters","Syracuse",2012,4,51344,"Syracuse",2,2.763,9.713,NA,NA,-0.13,0.12,-1.13,-0.71,0.37
 "Domantas Sabonis","Gonzaga",2016,11,3155942,"Gonzaga",2,7.312,16.23,NA,NA,-2.71,-1.03,0.55,1.02,1.26
 "Dominique Jones","South Florida",2010,25,36237,"South Florida",3,11.383,10.816,17.981,NA,-1.21,-2.18,-1.33,NA,NA
-"Donovan Clingan","UConn",2024,7,5105565,"UConn",2,7.048,11.032,NA,NA,-0.65,1.26,NA,NA,NA
+"Donovan Clingan","UConn",2024,7,5105565,"UConn",2,11.032,9.65,NA,NA,-0.65,1.26,NA,NA,NA
 "Donovan Mitchell","Louisville",2017,13,3908809,"Louisville",2,4.442,15.358,NA,NA,1.32,2.82,2.37,3.15,3.48
-"Donte DiVincenzo","Villanova",2018,17,3934673,"Villanova",3,7.048,8.569,11.44,NA,-0.75,0.65,0.47,-0.52,0.1
+"Donte DiVincenzo","Villanova",2018,17,3934673,"Villanova",3,8.569,11.44,11.093,NA,-0.75,0.65,0.47,-0.52,0.1
 "Donte Greene","Syracuse",2008,28,36582,"Syracuse",1,9.643,NA,NA,NA,-2.79,-1.61,-0.77,0.27,-0.21
 "Doron Lamb","Kentucky",2012,42,51543,"Kentucky",2,6.775,11.257,NA,NA,-2.54,-1.53,NA,NA,NA
 "Doug McDermott","Creighton",2014,11,51586,"Creighton",4,6.846,18.814,20.057,25,-2.98,-2.71,-2.39,-1.01,-0.71
 "Drake Powell","UNC",2025,22,5037873,"UNC",1,3.187,NA,NA,NA,-3.28,NA,NA,NA,NA
-"Draymond Green","Michigan State",2012,35,41760,"Michigan State",4,7.048,7.459,8.786,16.846,-0.65,1.8,2.85,4.55,4.11
+"Draymond Green","Michigan State",2012,35,41760,"Michigan State",4,7.459,8.786,16.846,13.329,-0.65,1.8,2.85,4.55,4.11
 "Dwayne Bacon","Florida State",2017,40,3907821,"Florida State",2,6.671,12.999,NA,NA,-3.26,-1.74,-2.47,-3.44,NA
-"Dwayne Collins","Miami (FL)",2010,60,31999,"Miami (FL)",4,7.048,5.461,4.96,6.722,-10,NA,NA,NA,NA
+"Dwayne Collins","Miami (FL)",2010,60,31999,"Miami (FL)",4,5.461,4.96,6.722,13.329,-10,NA,NA,NA,NA
 "Dwight Powell","Stanford",2014,45,51365,"Stanford",4,3.021,3.316,9.277,9.165,-1.68,-0.66,0.51,1.76,1.94
 "Dylan Harper","Rutgers",2025,2,5037871,"Rutgers",1,13.568,NA,NA,NA,-0.67,NA,NA,NA,NA
 "Dylan Windler","Belmont",2019,26,3906786,"Belmont",4,1.816,8.162,15.071,15.999,-1.84,-0.88,-0.85,-0.2,-1.55
 "E'Twaun Moore","Purdue",2011,55,36152,"Purdue",4,8.562,6.3,10.149,13.072,-1.73,-2.33,-1.23,-0.48,0.03
 "E.J. Liddell","Ohio State",2022,41,4432821,"Ohio State",3,4.201,13.843,20.046,NA,-1.74,-1.19,-1.86,-0.85,NA
-"Earl Clark","Louisville",2009,14,32006,"Louisville",3,7.048,6.965,7.441,NA,-3.4,-3.88,-3.78,-2.36,-2.18
+"Earl Clark","Louisville",2009,14,32006,"Louisville",3,6.965,7.441,11.093,NA,-3.4,-3.88,-3.78,-2.36,-2.18
 "Ed Davis","UNC",2010,13,36668,"UNC",2,2.556,7.297,NA,NA,-2.65,-2.34,-1.77,-1.6,-0.41
-"Edmond Sumner","Xavier",2017,52,3136485,"Xavier",3,7.048,5.681,13.593,NA,-1.93,-1.49,-1.68,-1.23,-1.18
+"Edmond Sumner","Xavier",2017,52,3136485,"Xavier",3,5.681,13.593,11.093,NA,-1.93,-1.49,-1.68,-1.23,-1.18
 "Egor Demin","BYU",2025,8,5175643,"BYU",1,6.204,NA,NA,NA,-1.03,NA,NA,NA,NA
-"Ekpe Udoh","Baylor",2010,6,31889,"Baylor",3,7.048,9.65,11.911,NA,-1.65,0.05,-1.02,-2.01,-2.06
-"Elijah Hughes","Syracuse",2020,39,4066446,"Syracuse",3,7.048,7.51,13.714,NA,-1.94,-2.86,NA,NA,NA
-"Elliot Williams","Memphis",2010,22,41721,"Memphis",2,7.048,13.177,NA,NA,-1.97,-0.45,-0.69,-1.62,-2.38
-"Emoni Bates","Eastern Michigan",2023,49,4433620,"Eastern Michigan",2,7.048,5.544,NA,NA,-2.45,-1.55,-1.88,NA,NA
+"Ekpe Udoh","Baylor",2010,6,31889,"Baylor",3,11.911,9.65,11.093,NA,-1.65,0.05,-1.02,-2.01,-2.06
+"Elijah Hughes","Syracuse",2020,39,4066446,"Syracuse",3,7.51,13.714,11.093,NA,-1.94,-2.86,NA,NA,NA
+"Elliot Williams","Memphis",2010,22,41721,"Memphis",2,13.177,9.65,NA,NA,-1.97,-0.45,-0.69,-1.62,-2.38
+"Emoni Bates","Eastern Michigan",2023,49,4433620,"Eastern Michigan",2,5.544,9.65,NA,NA,-2.45,-1.55,-1.88,NA,NA
 "Enrique Freeman","Akron",2024,50,4592699,"Akron",4,4.909,11.123,11.897,14.929,-2.81,-1.85,NA,NA,NA
 "Eric Bledsoe","Kentucky",2010,18,45881,"Kentucky",1,4.63,NA,NA,NA,-0.93,0.57,1.67,2.13,2.35
 "Eric Gordon","Indiana",2008,7,36469,"Indiana",1,16.364,NA,NA,NA,-0.47,-0.81,-0.09,0,-0.5
-"Eric Maynor","VCU",2009,20,27371,"VCU",4,7.048,9.65,16.191,20.193,-1.15,-0.96,-0.7,-2.44,-3.68
-"Eric Paschall","Villanova",2019,41,3133817,"Villanova",4,7.048,6.871,8.731,10.466,-1.6,-2.52,-1.31,NA,NA
-"Erick Green","Virginia Tech",2013,46,45918,"Virginia Tech",4,7.048,5.805,12.836,21.16,-3.72,-3.32,NA,NA,NA
-"Erik Murphy","Florida",2013,49,46070,"Florida",4,7.048,9.65,6.634,9.359,-2.62,NA,NA,NA,NA
+"Eric Maynor","VCU",2009,20,27371,"VCU",4,16.191,20.193,11.093,13.329,-1.15,-0.96,-0.7,-2.44,-3.68
+"Eric Paschall","Villanova",2019,41,3133817,"Villanova",4,6.871,8.731,10.466,13.329,-1.6,-2.52,-1.31,NA,NA
+"Erick Green","Virginia Tech",2013,46,45918,"Virginia Tech",4,5.805,12.836,21.16,13.329,-3.72,-3.32,NA,NA,NA
+"Erik Murphy","Florida",2013,49,46070,"Florida",4,6.634,9.359,11.093,13.329,-2.62,NA,NA,NA,NA
 "Evan Mobley","USC",2021,3,4432158,"USC",1,18.468,NA,NA,NA,-1.16,0.9,0.95,3.3,2.92
 "Evan Turner","Ohio State",2010,2,36135,"Ohio State",3,4.829,14.488,25,NA,-1.97,-1.59,-1.58,-2.91,-1.49
-"Fab Melo","Syracuse",2012,22,51343,"Syracuse",2,7.048,4.984,NA,NA,-2.44,NA,NA,NA,NA
-"Festus Ezeli","Vanderbilt",2012,30,38505,"Vanderbilt",4,7.048,9.65,6.926,5.979,-1.13,-0.97,-1,-0.22,-0.73
+"Fab Melo","Syracuse",2012,22,51343,"Syracuse",2,4.984,9.65,NA,NA,-2.44,NA,NA,NA,NA
+"Festus Ezeli","Vanderbilt",2012,30,38505,"Vanderbilt",4,6.926,5.979,11.093,13.329,-1.13,-0.97,-1,-0.22,-0.73
 "Frank Jackson","Duke",2017,31,4065651,"Duke",1,9.21,NA,NA,NA,-1.24,-2.55,-2.99,-1.02,-1.58
-"Frank Kaminsky","Wisconsin",2015,9,56769,"Wisconsin",4,7.048,9.65,13.337,25,-0.57,-0.94,-1.84,0.45,-1.17
+"Frank Kaminsky","Wisconsin",2015,9,56769,"Wisconsin",4,13.337,25,11.093,13.329,-0.57,-0.94,-1.84,0.45,-1.17
 "Frank Mason","Kansas",2017,34,67430,"Kansas",4,3.728,9.483,9.938,23.71,-1.07,-1.14,-0.12,-2.06,NA
 "Franz Wagner","Michigan",2021,8,4566434,"Michigan",2,5.932,12.266,NA,NA,-0.68,-0.1,1.65,2.38,1.66
 "Gani Lawal","Georgia Tech",2010,46,36507,"Georgia Tech",3,3.585,5.751,6.766,NA,-1.86,NA,NA,NA,NA
 "Gary Harris","Michigan State",2014,19,62613,"Michigan State",2,8.068,13.266,NA,NA,-1.61,-0.63,0.07,0.82,0.47
 "Gary Trent","Duke",2018,37,4277843,"Duke",1,9.966,NA,NA,NA,-3.13,-0.75,-2.08,-0.19,-0.56
-"George Hill","IUPUI",2008,26,22778,"IUPUI",4,7.048,9.65,11.093,25,-0.92,0.65,0.24,1.07,2.67
-"George King","Colorado",2018,59,66205,"Colorado",4,7.048,6.207,7.589,7.298,-1.49,-2.63,NA,NA,NA
+"George Hill","IUPUI",2008,26,22778,"IUPUI",4,25,9.65,11.093,13.329,-0.92,0.65,0.24,1.07,2.67
+"George King","Colorado",2018,59,66205,"Colorado",4,6.207,7.589,7.298,13.329,-1.49,-2.63,NA,NA,NA
 "Georges Niang","Iowa State",2016,50,61212,"Iowa State",4,6.251,9.507,9.948,15.929,-2.2,-2.05,-2.17,-1.23,-0.27
-"Gerald Henderson","Duke",2009,12,31708,"Duke",3,7.048,7.399,9.463,NA,-1.36,-1,-2.27,-1.17,-0.72
+"Gerald Henderson","Duke",2009,12,31708,"Duke",3,7.399,9.463,11.093,NA,-1.36,-1,-2.27,-1.17,-0.72
 "Glenn Robinson","Michigan",2014,40,61806,"Michigan",2,8.862,9.083,NA,NA,-2.62,-1.71,-0.64,-0.63,-1.48
-"Goran Suton","Michigan State",2009,50,22394,"Michigan State",4,7.048,9.65,6.95,5.71,-10,NA,NA,NA,NA
+"Goran Suton","Michigan State",2009,50,22394,"Michigan State",4,6.95,5.71,11.093,13.329,-10,NA,NA,NA,NA
 "Gordon Hayward","Butler",2010,9,42247,"Butler",2,10.1,13.555,NA,NA,-1.18,0.54,0.89,-0.26,2.23
 "Gorgui Dieng","Louisville",2013,21,51476,"Louisville",3,2.656,5.919,7.92,NA,-0.99,-0.35,0.44,1.36,-1.28
 "Gradey Dick","Kansas",2023,13,5106258,"Kansas",1,8.206,NA,NA,NA,-2.55,-2.37,-1.83,NA,NA
 "Grant Jerrett","Arizona",2013,40,61550,"Arizona",1,2.44,NA,NA,NA,-2.16,-2.2,NA,NA,NA
 "Grant Riller","College of Charleston",2020,56,3912295,"College of Charleston",4,10.398,12.934,17.49,18.546,-1.93,-1.75,NA,NA,NA
 "Grant Williams","Tennessee",2019,22,4066218,"Tennessee",3,10.99,11.61,17.629,NA,-1,-1.5,-0.63,0.13,-1.37
-"Grayson Allen","Duke",2018,21,3135045,"Duke",4,7.048,20.649,13.555,13.354,-2.42,-1.58,-0.38,-0.13,0.37
+"Grayson Allen","Duke",2018,21,3135045,"Duke",4,20.649,13.555,13.354,13.329,-2.42,-1.58,-0.38,-0.13,0.37
 "Greg Brown","Texas",2021,43,4432161,"Texas",1,5.204,NA,NA,NA,-1.82,-2.1,-2.51,NA,NA
 "Greg Monroe","Georgetown",2010,7,41733,"Georgetown",2,8.285,13.426,NA,NA,0.79,-0.57,-0.08,-0.68,0.19
-"Greivis Vasquez","Maryland",2010,28,32018,"Maryland",4,7.048,11.792,9.85,17.8,-1.06,0.2,0.32,0.66,-0.61
+"Greivis Vasquez","Maryland",2010,28,32018,"Maryland",4,11.792,9.85,17.8,13.329,-1.06,0.2,0.32,0.66,-0.61
 "Hamidou Diallo","Kentucky",2018,45,4080610,"Kentucky",1,5.304,NA,NA,NA,-2.89,-2.75,-2.47,-0.98,-0.27
 "Harrison Barnes","UNC",2012,7,51385,"UNC",2,6.885,10.348,NA,NA,-1.01,-1.61,0.73,-0.16,-0.31
-"Harrison Ingram","UNC",2024,48,4433618,"UNC",3,7.048,9.65,8.193,NA,-1.82,-1.41,NA,NA,NA
-"Hasheem Thabeet","UConn",2009,2,31559,"UConn",3,7.048,6.461,9.092,NA,-0.94,-2.23,-2.24,-0.48,-1.93
+"Harrison Ingram","UNC",2024,48,4433618,"UNC",3,8.193,9.65,11.093,NA,-1.82,-1.41,NA,NA,NA
+"Hasheem Thabeet","UConn",2009,2,31559,"UConn",3,6.461,9.092,11.093,NA,-0.94,-2.23,-2.24,-0.48,-1.93
 "Hassan Whiteside","Marshall",2010,33,46133,"Marshall",1,6.179,NA,NA,NA,-1.67,-1.11,1.25,1.45,1.17
 "Henry Ellenson","Marquette",2016,18,3906522,"Marquette",1,8.639,NA,NA,NA,-3.32,-2.8,-2.55,-2.76,-1.82
-"Henry Walker","Kansas State",2008,47,34658,"Kansas State",2,7.048,10.61,NA,NA,-2.15,-0.2,-0.29,-0.76,-0.48
+"Henry Walker","Kansas State",2008,47,34658,"Kansas State",2,10.61,9.65,NA,NA,-2.15,-0.2,-0.29,-0.76,-0.48
 "Herbert Jones","Alabama",2021,35,4277813,"Alabama",4,2.113,3.493,3.947,8.784,0.93,1.05,2.08,1.49,0.77
-"Hunter Tyson","Clemson",2023,37,4395620,"Clemson",4,7.048,5.196,5.872,10.797,-2.12,-2.05,-3.23,NA,NA
+"Hunter Tyson","Clemson",2023,37,4395620,"Clemson",4,5.196,5.872,10.797,13.329,-2.12,-2.05,-3.23,NA,NA
 "Ignas Brazdeikis","Michigan",2019,47,4397205,"Michigan",1,10.743,NA,NA,NA,-1.36,-3.13,-2.56,NA,NA
 "Iman Shumpert","Georgia Tech",2011,17,40975,"Georgia Tech",3,2.736,4.092,10.843,NA,-0.08,0.68,1.02,1.01,0.55
 "Immanuel Quickley","Kentucky",2020,25,4395724,"Kentucky",2,3.168,11.962,NA,NA,0.33,1.23,1.76,0.64,0.69
@@ -295,54 +295,54 @@
 "Isaiah Whitehead","Seton Hall",2016,42,3136477,"Seton Hall",2,6.208,11.391,NA,NA,-1.02,-2.07,-2.08,NA,NA
 "Isaiah Wong","Miami (FL)",2023,55,4431727,"Miami (FL)",4,3.624,11.592,8.268,10.311,-1.94,-2.07,-2.64,NA,NA
 "Ivan Rabb","California",2017,35,3917378,"California",2,9.082,13.497,NA,NA,-2.18,-0.47,-0.53,NA,NA
-"J.P. Tokoto","UNC",2015,58,61654,"UNC",3,7.048,5.27,5.448,NA,-10,NA,NA,NA,NA
-"J.R. Giddens","New Mexico",2008,30,15187,"New Mexico",4,7.048,9.65,11.093,13.168,-1.61,-1.8,NA,NA,NA
+"J.P. Tokoto","UNC",2015,58,61654,"UNC",3,5.27,5.448,11.093,NA,-10,NA,NA,NA,NA
+"J.R. Giddens","New Mexico",2008,30,15187,"New Mexico",4,13.168,9.65,11.093,13.329,-1.61,-1.8,NA,NA,NA
 "JD Davison","Alabama",2022,53,4576085,"Alabama",1,4.578,NA,NA,NA,-1.93,0.24,-1.68,-0.42,NA
 "JJ Hickson","NC State",2008,19,36375,"NC State",1,10.221,NA,NA,NA,-3.34,-3.1,-4.05,-2.83,-2.29
 "JT Thor","Auburn",2021,37,4702233,"Auburn",1,5.085,NA,NA,NA,-1.71,-2.78,-1.76,-3.21,-2.98
-"Ja Morant","Murray State",2019,2,4279888,"Murray State",2,7.048,25,NA,NA,-0.96,-0.38,2.46,2.18,1.99
+"Ja Morant","Murray State",2019,2,4279888,"Murray State",2,25,9.65,NA,NA,-0.96,-0.38,2.46,2.18,1.99
 "Ja'Kobe Walter","Baylor",2024,19,4684272,"Baylor",1,9.535,NA,NA,NA,-1.28,0.43,NA,NA,NA
 "JaJuan Johnson","Purdue",2011,27,36150,"Purdue",4,3.427,7.606,10.751,16.935,-4.27,NA,NA,NA,NA
-"JaVale McGee","Nevada",2008,18,32080,"Nevada",2,7.048,7.047,NA,NA,-2.56,-3.11,-1.54,-2.58,-2.08
+"JaVale McGee","Nevada",2008,18,32080,"Nevada",2,7.047,9.65,NA,NA,-2.56,-3.11,-1.54,-2.58,-2.08
 "Jabari Bird","California",2017,56,66327,"California",4,4.263,5.445,5.05,10.627,-1.2,-1.44,NA,NA,NA
 "Jabari Parker","Duke",2014,2,66562,"Duke",1,15.725,NA,NA,NA,-1.52,-1.21,-0.79,-1.17,-0.43
 "Jabari Smith","Auburn",2022,3,4432639,"Auburn",1,12.633,NA,NA,NA,-2.56,-1.16,0.02,0.51,NA
-"Jabari Walker","Colorado",2022,57,4432446,"Colorado",2,7.048,9.768,NA,NA,-3.44,-3.06,-1.66,-0.24,NA
-"Jack McClinton","Miami (FL)",2009,51,23242,"Miami (FL)",4,7.048,9.65,11.354,11.855,-10,NA,NA,NA,NA
+"Jabari Walker","Colorado",2022,57,4432446,"Colorado",2,9.768,9.65,NA,NA,-3.44,-3.06,-1.66,-0.24,NA
+"Jack McClinton","Miami (FL)",2009,51,23242,"Miami (FL)",4,11.354,11.855,11.093,13.329,-10,NA,NA,NA,NA
 "Jacob Evans","Cincinnati",2018,28,3934621,"Cincinnati",3,4.465,14.377,11.12,NA,-2.62,-3.16,NA,NA,NA
 "Jaden Ivey","Purdue",2022,5,4433218,"Purdue",2,7.219,12.676,NA,NA,-2.29,-2.44,-1.18,-1.79,NA
 "Jaden McDaniels","Washington",2020,28,4431671,"Washington",1,5.869,NA,NA,NA,-1.84,-0.74,-0.13,0.23,1.23
 "Jaden Springer","Tennessee",2021,28,4432164,"Tennessee",1,9.381,NA,NA,NA,-0.99,-1.23,-0.3,-0.54,-0.43
 "Jae Crowder","Marquette",2012,34,51394,"Marquette",2,6.875,17.366,NA,NA,-0.46,1.29,1.45,1.96,1.89
 "Jahlil Okafor","Duke",2015,3,3135048,"Duke",1,14.848,NA,NA,NA,-1.36,-2.71,-2.8,-2.3,-1.81
-"Jahmai Mashack","Tennessee",2025,59,4683934,"Tennessee",4,7.048,2.359,3.719,3.699,-2.55,NA,NA,NA,NA
+"Jahmai Mashack","Tennessee",2025,59,4683934,"Tennessee",4,2.359,3.719,3.699,13.329,-2.55,NA,NA,NA,NA
 "Jahmi'us Ramsey","Texas Tech",2020,43,4431688,"Texas Tech",1,8.994,NA,NA,NA,-1.96,-2.11,-1.89,NA,NA
 "Jaime Jaquez","UCLA",2023,18,4432848,"UCLA",4,4.426,10.702,11.093,14.884,-1.45,-0.85,-0.64,NA,NA
-"Jake LaRavia","Wake Forest",2022,19,4592691,"Wake Forest",3,7.048,9.65,13.025,NA,-1.3,-0.65,-0.92,-0.28,NA
+"Jake LaRavia","Wake Forest",2022,19,4592691,"Wake Forest",3,13.025,9.65,11.093,NA,-1.3,-0.65,-0.92,-0.28,NA
 "Jake Layman","Maryland",2016,47,61796,"Maryland",4,1.969,6.598,8.721,6.931,-2.47,-2.16,-1.45,-1.05,-0.4
 "Jakob Poeltl","Utah",2016,9,3134908,"Utah",2,7.083,15.969,NA,NA,0.06,0.67,0.54,1.44,1.69
 "Jalen Brunson","Villanova",2018,33,3934672,"Villanova",3,5.078,17.417,19.089,NA,-0.98,-0.43,0.95,1.26,1.99
 "Jalen Duren","Memphis",2022,13,4433621,"Memphis",1,7.615,NA,NA,NA,-0.84,-1.53,1.08,2.14,NA
-"Jalen Harris","Nevada",2020,59,4066998,"Nevada",3,7.048,9.65,16.625,NA,-1.26,NA,NA,NA,NA
+"Jalen Harris","Nevada",2020,59,4066998,"Nevada",3,16.625,9.65,11.093,NA,-1.26,NA,NA,NA,NA
 "Jalen Hood-Schifino","Indiana",2023,17,5105797,"Indiana",1,4.672,NA,NA,NA,-2.7,-2.72,-3.18,NA,NA
 "Jalen McDaniels","San Diego State",2019,52,4066731,"San Diego State",2,8.23,9.107,NA,NA,-2.53,-1.86,-1.32,-0.1,-1.81
-"Jalen Pickett","Penn State",2023,32,4398390,"Penn State",4,7.048,9.65,9.501,19.955,-1.06,-2.34,-2.03,NA,NA
+"Jalen Pickett","Penn State",2023,32,4398390,"Penn State",4,9.501,19.955,11.093,13.329,-1.06,-2.34,-2.03,NA,NA
 "Jalen Slawson","Furman",2023,54,4398207,"Furman",4,3.474,5.89,10.994,9.566,-2.04,-0.37,NA,NA,NA
 "Jalen Smith","Maryland",2020,10,4397189,"Maryland",2,8.206,14.005,NA,NA,-3.07,-0.96,-1.42,-0.74,1.15
 "Jalen Suggs","Gonzaga",2021,5,4432165,"Gonzaga",1,12.21,NA,NA,NA,-2.21,-0.78,1.39,1.53,2.09
-"Jalen Williams","Santa Clara",2022,12,4593803,"Santa Clara",3,7.048,2.695,14.615,NA,-0.39,1.96,2.44,2,NA
-"Jalen Wilson","Kansas",2023,51,4431714,"Kansas",4,7.048,7.892,8.127,12.897,-1.86,-1.7,-2.03,NA,NA
-"Jamaal Franklin","San Diego State",2013,41,51842,"San Diego State",3,7.048,12.152,11.929,NA,-1.78,-2.54,NA,NA,NA
+"Jalen Williams","Santa Clara",2022,12,4593803,"Santa Clara",3,2.695,14.615,11.093,NA,-0.39,1.96,2.44,2,NA
+"Jalen Wilson","Kansas",2023,51,4431714,"Kansas",4,7.892,8.127,12.897,13.329,-1.86,-1.7,-2.03,NA,NA
+"Jamaal Franklin","San Diego State",2013,41,51842,"San Diego State",3,12.152,11.929,11.093,NA,-1.78,-2.54,NA,NA,NA
 "Jamal Murray","Kentucky",2016,7,3936299,"Kentucky",1,16.072,NA,NA,NA,-1.35,0.36,1.05,2.15,1.92
-"Jamal Shead","Houston",2024,45,4432241,"Houston",4,7.048,9.239,7.582,13.03,-2.26,0.85,NA,NA,NA
-"James Anderson","Oklahoma State",2010,20,36251,"Oklahoma State",3,7.048,7.438,10.965,NA,-2.07,-2.25,-0.99,-1.97,-0.83
-"James Bouknight","UConn",2021,11,4431712,"UConn",2,7.048,7.797,NA,NA,-2.47,-3.07,-1.78,NA,NA
+"Jamal Shead","Houston",2024,45,4432241,"Houston",4,9.239,7.582,13.03,13.329,-2.26,0.85,NA,NA,NA
+"James Anderson","Oklahoma State",2010,20,36251,"Oklahoma State",3,7.438,10.965,11.093,NA,-2.07,-2.25,-0.99,-1.97,-0.83
+"James Bouknight","UConn",2021,11,4431712,"UConn",2,7.797,9.65,NA,NA,-2.47,-3.07,-1.78,NA,NA
 "James Ennis","Cal State Long Beach",2013,50,56241,"Cal State Long Beach",2,6.202,8.826,NA,NA,0.04,0.38,0.07,-1.12,-0.44
-"James Gist","Maryland",2008,57,22387,"Maryland",4,7.048,9.65,11.093,9.139,-10,NA,NA,NA,NA
+"James Gist","Maryland",2008,57,22387,"Maryland",4,9.139,9.65,11.093,13.329,-10,NA,NA,NA,NA
 "James Harden","Arizona State",2009,3,36072,"Arizona State",2,17.504,19.071,NA,NA,2.16,2.85,3.28,4.33,4.49
-"James Johnson","Wake Forest",2009,16,36120,"Wake Forest",2,9.69,NA,8.04,NA,-1.12,-1.3,-0.3,-2.75,1.19
+"James Johnson","Wake Forest",2009,16,36120,"Wake Forest",2,9.69,8.04,NA,NA,-1.12,-1.3,-0.3,-2.75,1.19
 "James Young","Kentucky",2014,17,66613,"Kentucky",1,9.078,NA,NA,NA,-1.94,-0.79,-0.87,-1.06,NA
-"Jamir Watkins","Florida State",2025,43,4606840,"Florida State",4,7.048,9.65,10.381,10.323,-0.45,NA,NA,NA,NA
+"Jamir Watkins","Florida State",2025,43,4606840,"Florida State",4,10.381,10.323,11.093,13.329,-0.45,NA,NA,NA,NA
 "Jarace Walker","Houston",2023,8,5106060,"Houston",1,7.429,NA,NA,NA,-1.27,-1.2,-1.73,NA,NA
 "Jared Butler","Baylor",2021,40,4395695,"Baylor",3,6.012,12.184,17.122,NA,-1.83,-1.55,-0.75,-0.9,-0.75
 "Jared Cunningham","Oregon State",2012,24,46146,"Oregon State",3,2.137,6.2,10.839,NA,-1.67,-1.5,-1.71,-2.55,NA
@@ -350,88 +350,88 @@
 "Jared Sullinger","Ohio State",2012,21,51405,"Ohio State",2,16.314,18.124,NA,NA,-0.85,-0.16,-0.31,-0.03,-0.72
 "Jarell Martin","LSU",2015,25,66253,"LSU",2,5.205,11.374,NA,NA,-1.42,-2.05,-2.05,-0.48,NA
 "Jaren Jackson","Michigan State",2018,4,4277961,"Michigan State",1,8.648,NA,NA,NA,-0.88,0.81,0.43,2.21,2.38
-"Jarnell Stokes","Tennessee",2014,35,61049,"Tennessee",3,7.048,8.242,15.159,NA,-0.82,-1.15,-0.22,-1.51,NA
+"Jarnell Stokes","Tennessee",2014,35,61049,"Tennessee",3,8.242,15.159,11.093,NA,-0.82,-1.15,-0.22,-1.51,NA
 "Jaron Blossomgame","Clemson",2017,59,61835,"Clemson",4,2.728,9.482,15.763,14.617,-2.17,NA,NA,NA,NA
 "Jarrell Brantley","College of Charleston",2019,50,3912292,"College of Charleston",4,4.778,11.481,11.381,13.56,-1.43,-0.93,-0.01,NA,NA
 "Jarrett Allen","Texas",2017,22,4066328,"Texas",1,10.128,NA,NA,NA,-0.66,0.25,0.78,-0.48,1.51
 "Jarrett Culver","Texas Tech",2019,6,4277928,"Texas Tech",2,7.827,17.078,NA,NA,-0.71,-1.71,-2.51,-2.69,NA
-"Jarvis Varnado","Mississippi State",2010,41,32037,"Mississippi State",4,7.048,4.55,6.643,10.099,-2.87,-1.87,NA,NA,NA
+"Jarvis Varnado","Mississippi State",2010,41,32037,"Mississippi State",4,4.55,6.643,10.099,13.329,-2.87,-1.87,NA,NA,NA
 "Jase Richardson","Michigan State",2025,25,5239561,"Michigan State",1,8.43,NA,NA,NA,-2.14,NA,NA,NA,NA
 "Jason Preston","Ohio",2021,33,4397916,"Ohio",3,2.573,13.458,13.565,NA,-1.74,-1.7,-2.7,-2.14,-2.37
-"Jason Thompson","Rider",2008,12,23138,"Rider",4,7.048,9.65,11.093,16.623,-1.19,-1.22,0.04,1.01,0.02
-"Javon Small","West Virginia",2025,48,4781746,"West Virginia",4,7.048,9.65,11.093,17.931,-0.44,NA,NA,NA,NA
+"Jason Thompson","Rider",2008,12,23138,"Rider",4,16.623,9.65,11.093,13.329,-1.19,-1.22,0.04,1.01,0.02
+"Javon Small","West Virginia",2025,48,4781746,"West Virginia",4,17.931,9.65,11.093,13.329,-0.44,NA,NA,NA,NA
 "Jawun Evans","Oklahoma State",2017,39,3912854,"Oklahoma State",2,8.663,20.092,NA,NA,-2.5,-2.47,NA,NA,NA
 "Jaxson Hayes","Texas",2019,8,4397077,"Texas",1,7.333,NA,NA,NA,0.96,-1.33,-0.5,-0.2,-1.19
 "Jaylen Brown","California",2016,3,3917376,"California",1,6.424,NA,NA,NA,-2.04,0.57,0.11,1.31,2.34
-"Jaylen Clark","UCLA",2023,53,4432247,"UCLA",3,7.048,4.497,9.362,NA,-1.84,-1.31,-0.52,NA,NA
+"Jaylen Clark","UCLA",2023,53,4432247,"UCLA",3,4.497,9.362,11.093,NA,-1.84,-1.31,-0.52,NA,NA
 "Jaylen Hands","UCLA",2019,56,4278526,"UCLA",2,5.391,8.042,NA,NA,-10,NA,NA,NA,NA
 "Jaylen Nowell","Washington",2019,43,4278541,"Washington",2,8.878,11.074,NA,NA,-1.71,-1.48,-0.8,-2.2,-1.79
-"Jaylen Wells","Washington State",2024,39,5112087,"Washington State",2,7.048,8.503,NA,NA,-1.39,-1.05,NA,NA,NA
-"Jaylin Williams","Arkansas",2022,34,4432823,"Arkansas",2,NA,2.493,NA,6.906,-1.81,0.17,0.25,0.7,NA
-"Jaylon Tyson","California",2024,20,4683747,"California",3,7.048,9.65,12.371,NA,-1.88,-0.6,NA,NA,NA
+"Jaylen Wells","Washington State",2024,39,5112087,"Washington State",2,8.503,9.65,NA,NA,-1.39,-1.05,NA,NA,NA
+"Jaylin Williams","Arkansas",2022,34,4432823,"Arkansas",2,2.493,6.906,NA,NA,-1.81,0.17,0.25,0.7,NA
+"Jaylon Tyson","California",2024,20,4683747,"California",3,12.371,9.65,11.093,NA,-1.88,-0.6,NA,NA,NA
 "Jayson Tatum","Duke",2017,3,4065648,"Duke",1,15.369,NA,NA,NA,1.39,1.54,3.82,2.93,5.24
-"Jeff Ayres","Arizona State",2009,31,26880,"Arizona State",4,7.048,9.65,9.06,12.571,-2.2,-1.98,-2.9,-2.04,-1.71
+"Jeff Ayres","Arizona State",2009,31,26880,"Arizona State",4,9.06,12.571,11.093,13.329,-2.2,-1.98,-2.9,-2.04,-1.71
 "Jeff Teague","Wake Forest",2009,19,36121,"Wake Forest",2,7.857,10.394,NA,NA,-2.42,-0.49,0.95,0,0.12
-"Jeff Withey","Kansas",2013,39,40989,"Kansas",4,7.048,9.65,7.094,9.295,-1.54,-0.49,-0.4,-1.05,-0.22
+"Jeff Withey","Kansas",2013,39,40989,"Kansas",4,7.094,9.295,11.093,13.329,-1.54,-0.49,-0.4,-1.05,-0.22
 "Jeffery Taylor","Vanderbilt",2012,31,41709,"Vanderbilt",4,5.773,7.54,7.128,12.472,-1.6,-3.16,-3.24,NA,NA
-"Jerami Grant","Syracuse",2014,39,61822,"Syracuse",2,7.048,10.01,NA,NA,-1.08,-1.37,-1.8,-1,0.52
+"Jerami Grant","Syracuse",2014,39,61822,"Syracuse",2,10.01,9.65,NA,NA,-1.08,-1.37,-1.8,-1,0.52
 "Jeremiah Fears","Oklahoma",2025,7,5144091,"Oklahoma",1,10.517,NA,NA,NA,-0.82,NA,NA,NA,NA
 "Jeremiah Robinson-Earl","Villanova",2021,32,4432813,"Villanova",2,7.295,15.327,NA,NA,-2.24,-1.2,-1.17,-0.58,-1.35
-"Jeremy Evans","Western Kentucky",2010,55,32795,"Western Kentucky",4,7.048,3.685,3.918,7.13,0.32,0.7,1.22,-0.12,0.65
+"Jeremy Evans","Western Kentucky",2010,55,32795,"Western Kentucky",4,3.685,3.918,7.13,13.329,0.32,0.7,1.22,-0.12,0.65
 "Jeremy Lamb","UConn",2012,12,51453,"UConn",2,5.825,13.847,NA,NA,-1.93,-0.25,-0.83,0.31,0.14
 "Jeremy Sochan","Baylor",2022,9,4610139,"Baylor",1,6.174,NA,NA,NA,-2.74,-2.1,-1.4,-1.08,NA
-"Jerian Grant","Notre Dame",2015,19,51374,"Notre Dame",4,7.048,10.311,8.125,19.506,-1.83,0.16,-0.43,-1.65,-1.26
-"Jericho Sims","Texas",2021,58,4277922,"Texas",4,7.048,3.135,7.01,6.351,-1.41,-1.36,-1.07,-1.69,-1.75
-"Jermaine Taylor","UCF",2009,32,26812,"UCF",4,7.048,9.65,13.448,14.914,-2.3,-1.45,NA,NA,NA
+"Jerian Grant","Notre Dame",2015,19,51374,"Notre Dame",4,10.311,8.125,19.506,13.329,-1.83,0.16,-0.43,-1.65,-1.26
+"Jericho Sims","Texas",2021,58,4277922,"Texas",4,3.135,7.01,6.351,13.329,-1.41,-1.36,-1.07,-1.69,-1.75
+"Jermaine Taylor","UCF",2009,32,26812,"UCF",4,13.448,14.914,11.093,13.329,-2.3,-1.45,NA,NA,NA
 "Jerome Robinson","Boston College",2018,13,3943606,"Boston College",3,2.473,11.084,14.547,NA,-1.93,-2.07,-2.92,-1.33,NA
 "Jerryd Bayless","Arizona",2008,11,36075,"Arizona",1,16.722,NA,NA,NA,-3.06,-1.44,-1.86,-0.29,-1.47
 "Jett Howard","Michigan",2023,11,5105806,"Michigan",1,6.964,NA,NA,NA,-1.39,-3.38,-2.41,NA,NA
 "Jevon Carter","West Virginia",2018,32,3133635,"West Virginia",4,4.582,4.983,13.613,18.059,-1.86,0.9,0.52,-0.35,0.36
 "Jimmer Fredette","BYU",2011,10,36409,"BYU",4,3.948,9.917,20.72,25,-2.99,-1.87,-0.6,-1.22,-1.62
 "Jimmy Butler","Marquette",2011,30,41080,"Marquette",3,2.908,15.891,11.531,NA,-1.73,2.2,2.3,3.08,2.55
-"Jodie Meeks","Kentucky",2009,41,31683,"Kentucky",3,7.048,9.65,15.306,NA,-0.76,0.54,-0.25,-0.32,-0.74
-"Joe Alexander","West Virginia",2008,8,27301,"West Virginia",3,7.048,9.65,13.004,NA,-1.65,-2.86,-2.27,NA,NA
-"Joe Crawford","Kentucky",2008,58,22100,"Kentucky",4,7.048,9.65,11.093,11.472,-2.07,NA,NA,NA,NA
+"Jodie Meeks","Kentucky",2009,41,31683,"Kentucky",3,15.306,9.65,11.093,NA,-0.76,0.54,-0.25,-0.32,-0.74
+"Joe Alexander","West Virginia",2008,8,27301,"West Virginia",3,13.004,9.65,11.093,NA,-1.65,-2.86,-2.27,NA,NA
+"Joe Crawford","Kentucky",2008,58,22100,"Kentucky",4,11.472,9.65,11.093,13.329,-2.07,NA,NA,NA,NA
 "Joe Harris","Virginia",2014,33,51064,"Virginia",4,4.152,8.33,12.001,9.331,-2.12,-2.58,-2.58,-0.56,-1.22
 "Joe Wieskamp","Iowa",2021,41,4397033,"Iowa",3,6.595,8.054,10.532,NA,-2.2,-2.48,NA,NA,NA
-"Joe Young","Oregon",2015,43,51555,"Oregon",4,7.048,9.65,14.449,15.275,-1.96,-2.02,-2.79,NA,NA
+"Joe Young","Oregon",2015,43,51555,"Oregon",4,14.449,15.275,11.093,13.329,-1.96,-2.02,-2.79,NA,NA
 "Joel Bolomboy","Weber State",2016,52,61231,"Weber State",4,3.115,6.115,6.387,11.659,-1.85,-2.56,NA,NA,NA
 "Joel Embiid","Kansas",2014,3,67433,"Kansas",1,8.421,NA,NA,NA,-0.88,-0.5,2.58,3.02,5.09
-"Joey Dorsey","Memphis",2008,33,22285,"Memphis",4,7.048,9.65,11.093,4.823,-1.31,-3.22,-1.61,-0.22,NA
-"John Collins","Wake Forest",2017,19,3908845,"Wake Forest",2,7.048,18.271,NA,NA,-0.51,-0.02,-0.37,1.26,0.37
+"Joey Dorsey","Memphis",2008,33,22285,"Memphis",4,4.823,9.65,11.093,13.329,-1.31,-3.22,-1.61,-0.22,NA
+"John Collins","Wake Forest",2017,19,3908845,"Wake Forest",2,18.271,9.65,NA,NA,-0.51,-0.02,-0.37,1.26,0.37
 "John Henson","UNC",2012,14,45531,"UNC",3,2.425,4.704,8.641,NA,-2.22,-3.18,-1.85,-2.69,-1.62
 "John Jenkins","Vanderbilt",2012,23,45892,"Vanderbilt",3,5.451,13.119,17.763,NA,-1.48,-1.25,-0.13,-1.38,-1.11
-"John Tonje","Wisconsin",2025,53,4593043,"Wisconsin",4,7.048,9.65,11.093,15.924,-2.08,NA,NA,NA,NA
+"John Tonje","Wisconsin",2025,53,4593043,"Wisconsin",4,15.924,9.65,11.093,13.329,-2.08,NA,NA,NA,NA
 "John Wall","Kentucky",2010,1,45885,"Kentucky",1,13.605,NA,NA,NA,-0.79,-1.22,0.48,1.82,2.25
-"Johni Broome","Auburn",2025,35,4433569,"Auburn",4,7.048,8.271,12.829,19.13,-2.81,NA,NA,NA,NA
-"Johnny Davis","Wisconsin",2022,10,4432356,"Wisconsin",2,7.048,15.219,NA,NA,-3.02,-2.02,-1.26,-1.21,NA
+"Johni Broome","Auburn",2025,35,4433569,"Auburn",4,8.271,12.829,19.13,13.329,-2.81,NA,NA,NA,NA
+"Johnny Davis","Wisconsin",2022,10,4432356,"Wisconsin",2,15.219,9.65,NA,NA,-3.02,-2.02,-1.26,-1.21,NA
 "Johnny Furphy","Kansas",2024,35,5157066,"Kansas",1,5.615,NA,NA,NA,-0.56,-0.57,NA,NA,NA
 "Johnny O'Bryant","LSU",2014,36,56357,"LSU",3,3.906,5.154,7.925,NA,-4.58,-4.45,-3.5,-3.89,NA
-"Jon Brockman","Washington",2009,38,26870,"Washington",4,7.048,9.65,11.77,8.793,-0.14,-1.11,-1.36,NA,NA
+"Jon Brockman","Washington",2009,38,26870,"Washington",4,11.77,8.793,11.093,13.329,-0.14,-1.11,-1.36,NA,NA
 "Jon Diebler","Ohio State",2011,51,36132,"Ohio State",4,2.994,5.828,9.617,11.928,-10,NA,NA,NA,NA
-"Jon Leuer","Wisconsin",2011,40,36138,"Wisconsin",4,7.048,3.735,13.746,16.017,-1.71,-1.73,-0.4,-2.27,-1.19
+"Jon Leuer","Wisconsin",2011,40,36138,"Wisconsin",4,3.735,13.746,16.017,13.329,-1.71,-1.73,-0.4,-2.27,-1.19
 "Jonathan Isaac","Florida State",2017,6,4065654,"Florida State",1,10.935,NA,NA,NA,0.02,0.16,1.58,1.75,1.66
-"Jonathan Mogbo","San Francisco",2024,31,5107897,"San Francisco",2,7.048,13.125,NA,NA,-2.16,-0.83,NA,NA,NA
+"Jonathan Mogbo","San Francisco",2024,31,5107897,"San Francisco",2,13.125,9.65,NA,NA,-2.16,-0.83,NA,NA,NA
 "Jonny Flynn","Syracuse",2009,6,36581,"Syracuse",2,10.151,11.294,NA,NA,-3.53,-3.57,-2.69,NA,NA
-"Jordan Adams","UCLA",2014,22,61730,"UCLA",2,NA,9.067,NA,14.614,-0.16,0.52,NA,NA,NA
-"Jordan Bell","Oregon",2017,38,66207,"Oregon",3,7.048,3.319,3.437,NA,0.26,-1.35,-1.07,-1.63,-1.75
-"Jordan Bone","Tennessee",2019,57,4066212,"Tennessee",3,6.342,6.146,5.851,5.243,-2.61,-2.47,NA,NA,NA
-"Jordan Clarkson","Missouri",2014,46,51323,"Missouri",3,7.048,9.65,12.153,NA,-0.74,-2.26,-2.21,-2.23,-0.98
-"Jordan Crawford","Xavier",2010,27,36467,"Xavier",2,7.048,15.091,NA,NA,-2.56,-1.48,-1.98,-2.66,-1.47
-"Jordan Hamilton","Texas",2011,26,46197,"Texas",2,NA,4.482,NA,13.268,-1.89,-2.29,-0.98,-1.82,-1.47
-"Jordan Hawkins","UConn",2023,14,4683750,"UConn",2,7.048,10.277,NA,NA,-2.34,-2.64,-3.75,NA,NA
-"Jordan Hill","Arizona",2009,8,31643,"Arizona",3,7.048,8.758,11.633,NA,-1.97,-3.17,-1.92,-1.46,-2.27
-"Jordan McRae","Tennessee",2014,58,51418,"Tennessee",4,7.048,3.894,8.386,15.564,-1.2,-2.14,-1.43,-1.24,NA
+"Jordan Adams","UCLA",2014,22,61730,"UCLA",2,9.067,14.614,NA,NA,-0.16,0.52,NA,NA,NA
+"Jordan Bell","Oregon",2017,38,66207,"Oregon",3,3.319,3.437,11.093,NA,0.26,-1.35,-1.07,-1.63,-1.75
+"Jordan Bone","Tennessee",2019,57,4066212,"Tennessee",3,6.342,6.146,5.851,NA,-2.61,-2.47,NA,NA,NA
+"Jordan Clarkson","Missouri",2014,46,51323,"Missouri",3,12.153,9.65,11.093,NA,-0.74,-2.26,-2.21,-2.23,-0.98
+"Jordan Crawford","Xavier",2010,27,36467,"Xavier",2,15.091,9.65,NA,NA,-2.56,-1.48,-1.98,-2.66,-1.47
+"Jordan Hamilton","Texas",2011,26,46197,"Texas",2,4.482,13.268,NA,NA,-1.89,-2.29,-0.98,-1.82,-1.47
+"Jordan Hawkins","UConn",2023,14,4683750,"UConn",2,10.277,9.65,NA,NA,-2.34,-2.64,-3.75,NA,NA
+"Jordan Hill","Arizona",2009,8,31643,"Arizona",3,8.758,11.633,11.093,NA,-1.97,-3.17,-1.92,-1.46,-2.27
+"Jordan McRae","Tennessee",2014,58,51418,"Tennessee",4,3.894,8.386,15.564,13.329,-1.2,-2.14,-1.43,-1.24,NA
 "Jordan Mickey","LSU",2015,33,66256,"LSU",2,6.495,8.572,NA,NA,-2.44,-1.97,-2.63,NA,NA
-"Jordan Miller","Miami (FL)",2023,48,4396818,"Miami (FL)",4,7.048,9.65,7.394,12.065,-1.92,-1.76,-0.09,NA,NA
-"Jordan Nwora","Louisville",2020,45,4277883,"Louisville",3,7.048,10.398,13.889,NA,-1.82,-3.16,-2.97,-2.59,NA
-"Jordan Poole","Michigan",2019,28,4277956,"Michigan",2,7.048,8.375,NA,NA,-2.55,-0.63,0.78,-0.81,-2.11
+"Jordan Miller","Miami (FL)",2023,48,4396818,"Miami (FL)",4,7.394,12.065,11.093,13.329,-1.92,-1.76,-0.09,NA,NA
+"Jordan Nwora","Louisville",2020,45,4277883,"Louisville",3,10.398,13.889,11.093,NA,-1.82,-3.16,-2.97,-2.59,NA
+"Jordan Poole","Michigan",2019,28,4277956,"Michigan",2,8.375,9.65,NA,NA,-2.55,-0.63,0.78,-0.81,-2.11
 "Jordan Walsh","Arkansas",2023,38,4683689,"Arkansas",1,2.67,NA,NA,NA,-1.29,-1.05,0.86,NA,NA
 "Jordan Williams","Maryland",2011,36,45916,"Maryland",2,4.992,9.601,NA,NA,-0.65,NA,NA,NA,NA
 "Josh Green","Arizona",2020,18,4432811,"Arizona",1,7.493,NA,NA,NA,-1.24,-0.02,-0.97,-0.09,-0.74
-"Josh Harrellson","Kentucky",2011,45,41838,"Kentucky",3,7.048,9.65,6.291,NA,-1.61,-1.44,-1.47,NA,NA
+"Josh Harrellson","Kentucky",2011,45,41838,"Kentucky",3,6.291,9.65,11.093,NA,-1.61,-1.44,-1.47,NA,NA
 "Josh Hart","Villanova",2017,30,66173,"Villanova",4,5.706,8.246,12.802,23.268,-0.33,0.19,-0.01,-0.46,-0.13
-"Josh Huestis","Stanford",2014,29,51363,"Stanford",4,7.048,3.184,5.837,6.725,-1.9,-1.25,-1.08,NA,NA
+"Josh Huestis","Stanford",2014,29,51363,"Stanford",4,3.184,5.837,6.725,13.329,-1.9,-1.25,-1.08,NA,NA
 "Josh Jackson","Kansas",2017,4,4066297,"Kansas",1,15.399,NA,NA,NA,-2.61,-2.18,-0.4,-0.44,-1.87
 "Josh Okogie","Georgia Tech",2018,20,4065663,"Georgia Tech",2,12.574,14.02,NA,NA,-0.43,-0.23,0.03,0.27,1.36
 "Josh Richardson","Tennessee",2015,40,56489,"Tennessee",4,1.323,2.956,6.903,13.1,-0.58,-0.33,1.14,0.75,-0.14
@@ -439,21 +439,21 @@
 "Joshua Primo","Alabama",2021,12,4702176,"Alabama",1,4.159,NA,NA,NA,-2.87,-2.75,-3.02,NA,NA
 "Jrue Holiday","UCLA",2009,17,41014,"UCLA",1,4.486,NA,NA,NA,-0.6,1.26,1.46,0.08,1
 "Julian Phillips","Tennessee",2023,35,5105553,"Tennessee",1,4.698,NA,NA,NA,-2.11,-0.91,-1,NA,NA
-"Julian Strawther","Gonzaga",2023,29,4432181,"Gonzaga",3,7.048,7.656,7.749,NA,-2.71,-3.04,-1.28,NA,NA
+"Julian Strawther","Gonzaga",2023,29,4432181,"Gonzaga",3,7.656,7.749,11.093,NA,-2.71,-3.04,-1.28,NA,NA
 "Julius Randle","Kentucky",2014,7,66618,"Kentucky",1,12.005,NA,NA,NA,-1.28,-3.32,-3.48,-1.19,-0.58
 "Justin Anderson","Virginia",2015,21,61766,"Virginia",3,4.608,5.54,11.068,NA,-0.41,-1.04,-1.51,-1.03,-1.96
-"Justin Hamilton","LSU",2012,45,41070,"LSU",3,7.048,9.65,8.884,NA,-2.31,-0.31,-0.95,NA,NA
-"Justin Harper","Richmond",2011,32,36087,"Richmond",4,7.048,2.814,5.841,12.919,-3.26,-2.08,-2.3,NA,NA
+"Justin Hamilton","LSU",2012,45,41070,"LSU",3,8.884,9.65,11.093,NA,-2.31,-0.31,-0.95,NA,NA
+"Justin Harper","Richmond",2011,32,36087,"Richmond",4,2.814,5.841,12.919,13.329,-3.26,-2.08,-2.3,NA,NA
 "Justin Jackson","Maryland",2018,43,4066373,"Maryland",2,7.048,9.65,NA,NA,-10,NA,NA,NA,NA
-"Justin Jackson Jr.","UNC",2017,15,3138156,"UNC",3,7.048,6.559,7.559,NA,-0.9,-1.03,-1.98,-1.52,-1.64
+"Justin Jackson Jr.","UNC",2017,15,3138156,"UNC",3,6.559,7.559,11.093,NA,-0.9,-1.03,-1.98,-1.52,-1.64
 "Justin James","Wyoming",2019,40,3914058,"Wyoming",4,1.694,12.624,10.442,11.798,-1.93,-1.98,-1.87,NA,NA
 "Justin Patton","Creighton",2017,16,3912332,"Creighton",1,10.621,NA,NA,NA,-2.13,-1.61,-1.65,-1.69,NA
-"Justin Wright-Foreman","Hofstra",2019,53,3911566,"Hofstra",4,7.048,13.229,15.086,20.079,-1.82,NA,NA,NA,NA
+"Justin Wright-Foreman","Hofstra",2019,53,3911566,"Hofstra",4,13.229,15.086,20.079,13.329,-1.82,NA,NA,NA,NA
 "Justinian Jessup","Boise State",2020,51,4066632,"Boise State",4,5.106,7.582,8.43,10.742,-10,NA,NA,NA,NA
 "Justise Winslow","Duke",2015,10,3135047,"Duke",1,9.655,NA,NA,NA,-0.73,-1.47,-0.39,0.36,-0.54
-"KJ McDaniels","Clemson",2014,32,56631,"Clemson",3,7.048,5.101,16.324,NA,-1.9,-1.02,-1.59,-1.37,NA
+"KJ McDaniels","Clemson",2014,32,56631,"Clemson",3,5.101,16.324,11.093,NA,-1.9,-1.02,-1.59,-1.37,NA
 "KJ Simpson","Colorado",2024,42,4683834,"Colorado",3,3.5,8.491,16.576,NA,-2.69,-2.51,NA,NA,NA
-"KZ Okpala","Stanford",2019,32,4278521,"Stanford",2,7.048,8.341,NA,NA,-1.14,-1.5,-2.58,-1.85,NA
+"KZ Okpala","Stanford",2019,32,4278521,"Stanford",2,8.341,9.65,NA,NA,-1.14,-1.5,-2.58,-1.85,NA
 "Kadeem Allen","Arizona",2017,53,3134880,"Arizona",2,4.273,8.707,NA,NA,-2.78,-1.98,-1.43,NA,NA
 "Kai Jones","Texas",2021,19,4431699,"Texas",2,1.957,6.207,NA,NA,-2,-0.94,-1.5,-0.24,-0.09
 "Kam Jones","Marquette",2025,38,4697268,"Marquette",4,3.236,7.639,11.198,18.451,-2.07,NA,NA,NA,NA
@@ -461,11 +461,11 @@
 "Kasparas Jakucionis","Illinois",2025,20,5214640,"Illinois",1,9.852,NA,NA,NA,0.2,NA,NA,NA,NA
 "Kawhi Leonard","San Diego State",2011,15,46049,"San Diego State",2,8.795,12.81,NA,NA,1.51,2.95,4.14,4.91,6.68
 "Keegan Murray","Iowa",2022,4,4594327,"Iowa",2,5.041,25,NA,NA,-0.98,0.52,0.18,-0.27,NA
-"Keita Bates-Diop","Ohio State",2018,48,3136779,"Ohio State",4,7.048,9.65,5.847,17.038,-1.92,-2.33,-1.61,-1.18,0.14
-"Keith Benson","Oakland",2011,48,32376,"Oakland",4,7.048,7.997,11.753,9.023,-3.34,NA,NA,NA,NA
-"Kel'el Ware","Indiana",2024,15,5105623,"Indiana",2,7.048,10.258,NA,NA,-1.23,-0.19,NA,NA,NA
+"Keita Bates-Diop","Ohio State",2018,48,3136779,"Ohio State",4,5.847,17.038,11.093,13.329,-1.92,-2.33,-1.61,-1.18,0.14
+"Keith Benson","Oakland",2011,48,32376,"Oakland",4,7.997,11.753,9.023,13.329,-3.34,NA,NA,NA,NA
+"Kel'el Ware","Indiana",2024,15,5105623,"Indiana",2,10.258,9.65,NA,NA,-1.23,-0.19,NA,NA,NA
 "Keldon Johnson","Kentucky",2019,29,4395723,"Kentucky",1,9.087,NA,NA,NA,-0.19,-1.08,0.64,-0.91,-1.61
-"Kelly Olynyk","Gonzaga",2013,13,46207,"Gonzaga",3,7.048,9.65,15.374,NA,-1.02,1.64,0.89,0.29,1.91
+"Kelly Olynyk","Gonzaga",2013,13,46207,"Gonzaga",3,15.374,9.65,11.093,NA,-1.02,1.64,0.89,0.29,1.91
 "Kelly Oubre","Kansas",2015,15,3133603,"Kansas",1,6.208,NA,NA,NA,-2.23,-1.5,-1.25,-0.72,0.49
 "Kemba Walker","UConn",2011,9,41515,"UConn",3,3.898,9.603,24.775,NA,-1.14,0.26,1.73,1.23,2.94
 "Kendall Brown","Baylor",2022,48,4433254,"Baylor",1,6.507,NA,NA,NA,-1.57,-2.17,-2.2,-1.75,NA
@@ -475,111 +475,111 @@
 "Kentavious Caldwell-Pope","Georgia",2013,8,56346,"Georgia",2,8.252,15.139,NA,NA,-1.51,0.15,1.12,-0.63,0.94
 "Keon Johnson","Tennessee",2021,21,4432192,"Tennessee",1,6.964,NA,NA,NA,-3.48,-2.54,-1.41,-1.98,-2.09
 "Kessler Edwards","Pepperdine",2021,44,4397693,"Pepperdine",3,4.196,8.705,10.853,NA,-2.62,-1.47,-1.31,-1.99,-1.62
-"Kevin Hervey","UT Arlington",2018,57,3143565,"UT Arlington",4,7.048,3.431,15.168,12.98,-2.19,NA,NA,NA,NA
+"Kevin Hervey","UT Arlington",2018,57,3143565,"UT Arlington",4,3.431,15.168,12.98,13.329,-2.19,NA,NA,NA,NA
 "Kevin Huerter","Maryland",2018,19,4066372,"Maryland",2,7.395,11.721,NA,NA,-1.79,-1.57,-0.62,-0.3,0.14
 "Kevin Knox","Kentucky",2018,9,4278075,"Kentucky",1,9.084,NA,NA,NA,-3.85,-3.82,-2.16,-1.55,-2.21
 "Kevin Love","UCLA",2008,5,36059,"UCLA",1,19.277,NA,NA,NA,-1.39,-0.4,0.63,1.83,0.74
-"Kevin McCullar","Kansas",2024,56,4411057,"Kansas",4,7.048,9.65,5.341,12.018,-2.59,-1.88,NA,NA,NA
+"Kevin McCullar","Kansas",2024,56,4411057,"Kansas",4,5.341,12.018,11.093,13.329,-2.59,-1.88,NA,NA,NA
 "Kevin Murphy","Tennessee Tech",2012,47,42155,"Tennessee Tech",4,1.924,4.191,4.508,9.972,-3.05,NA,NA,NA,NA
 "Kevin Porter","USC",2019,30,4397140,"USC",1,4.811,NA,NA,NA,-2.11,-1.71,-0.22,0.38,0.3
 "Kevon Looney","UCLA",2015,30,3155535,"UCLA",1,8.562,NA,NA,NA,-1.75,-0.95,1.27,1.92,1.36
-"Keyontae Johnson","Kansas State",2023,50,4395714,"Kansas State",4,7.048,9.65,11.093,8.918,-3.12,NA,NA,NA,NA
+"Keyontae Johnson","Kansas State",2023,50,4395714,"Kansas State",4,8.918,9.65,11.093,13.329,-3.12,NA,NA,NA,NA
 "Keyonte George","Baylor",2023,16,4433627,"Baylor",1,7.856,NA,NA,NA,-3.76,-2.62,-1.08,NA,NA
 "Khaman Maluach","Duke",2025,10,5203685,"Duke",1,7.374,NA,NA,NA,-1.04,NA,NA,NA,NA
 "Khris Middleton","Texas A&M",2012,39,46005,"Texas A&M",3,3.517,8.481,7.383,NA,-1.14,-0.94,2.05,2.25,2.79
 "Khyri Thomas","Creighton",2018,38,3912334,"Creighton",3,2.581,11.424,11.036,NA,-1.92,-2.21,0.04,NA,NA
-"Kim English","Missouri",2012,44,41075,"Missouri",4,7.048,6.038,2.358,10.565,-1.73,NA,NA,NA,NA
+"Kim English","Missouri",2012,44,41075,"Missouri",4,6.038,2.358,10.565,13.329,-1.73,NA,NA,NA,NA
 "Kira Lewis","Alabama",2020,13,4395698,"Alabama",2,7.015,11.949,NA,NA,-1.83,-2.33,-0.72,-2.36,NA
 "Klay Thompson","Washington State",2011,11,41026,"Washington State",3,5.05,9.519,14.372,NA,-0.53,0.21,1.91,3.46,3.34
 "Kobe Brown","Missouri",2023,30,4431752,"Missouri",4,2.834,4.644,7.543,11.198,-2.16,-1.3,-1.04,NA,NA
-"Kobe Bufkin","Michigan",2023,15,4683736,"Michigan",2,7.048,8.187,NA,NA,-2.28,-1.91,-2.83,NA,NA
-"Kobe Sanders","Nevada",2025,50,4702352,"Nevada",4,7.048,9.65,11.093,12.314,-1.17,NA,NA,NA,NA
-"Koby Brea","Kentucky",2025,41,4591259,"Kentucky",4,7.048,9.65,11.093,5.983,-1.73,NA,NA,NA,NA
+"Kobe Bufkin","Michigan",2023,15,4683736,"Michigan",2,8.187,9.65,NA,NA,-2.28,-1.91,-2.83,NA,NA
+"Kobe Sanders","Nevada",2025,50,4702352,"Nevada",4,12.314,9.65,11.093,13.329,-1.17,NA,NA,NA,NA
+"Koby Brea","Kentucky",2025,41,4591259,"Kentucky",4,5.983,9.65,11.093,13.329,-1.73,NA,NA,NA,NA
 "Kon Knueppel","Duke",2025,4,5061575,"Duke",1,13.598,NA,NA,NA,0.02,NA,NA,NA,NA
 "Kosta Koufos","Ohio State",2008,23,36133,"Ohio State",1,9.867,NA,NA,NA,-2.52,-2.74,-2.01,-0.51,0.83
 "Kostas Antetokounmpo","Dayton",2018,60,4066490,"Dayton",1,3.404,NA,NA,NA,-2.63,-1.53,-1.61,-1.86,NA
-"Kris Dunn","Providence",2016,5,61804,"Providence",4,7.048,2.326,13.843,11.832,-1.75,-0.81,-1.87,-0.24,-0.67
-"Kris Joseph","Syracuse",2012,51,41523,"Syracuse",4,7.048,5.945,7.539,9.525,-3.11,NA,NA,NA,NA
-"Kris Murray","Iowa",2023,23,4594326,"Iowa",3,7.048,6.216,14.124,NA,-0.51,-0.78,0.76,NA,NA
-"Kyle Anderson","UCLA",2014,30,61731,"UCLA",2,NA,5.204,NA,13.038,-2.44,-0.38,0.41,1.98,0.75
+"Kris Dunn","Providence",2016,5,61804,"Providence",4,2.326,13.843,11.832,13.329,-1.75,-0.81,-1.87,-0.24,-0.67
+"Kris Joseph","Syracuse",2012,51,41523,"Syracuse",4,5.945,7.539,9.525,13.329,-3.11,NA,NA,NA,NA
+"Kris Murray","Iowa",2023,23,4594326,"Iowa",3,6.216,14.124,11.093,NA,-0.51,-0.78,0.76,NA,NA
+"Kyle Anderson","UCLA",2014,30,61731,"UCLA",2,5.204,13.038,NA,NA,-2.44,-0.38,0.41,1.98,0.75
 "Kyle Filipowski","Duke",2024,32,4684793,"Duke",2,9.209,13.281,NA,NA,-0.71,0.33,NA,NA,NA
 "Kyle Guy","Virginia",2019,55,4065730,"Virginia",3,8.013,10.134,13.375,NA,-1.9,-2.38,-2.16,NA,NA
-"Kyle Kuzma","Utah",2017,27,3134907,"Utah",3,7.048,4.793,15.314,NA,-1.65,-0.69,-0.64,-1.4,-2.26
+"Kyle Kuzma","Utah",2017,27,3134907,"Utah",3,4.793,15.314,11.093,NA,-1.65,-0.69,-0.64,-1.4,-2.26
 "Kyle O'Quinn","Norfolk State",2012,49,43058,"Norfolk State",4,1.479,4.245,8.267,11.591,-1.71,-0.28,0.25,-0.68,-0.91
 "Kyle Singler","Duke",2011,33,36156,"Duke",4,7.943,11.02,18.041,11.132,-1.71,-1.02,-1.51,-2.3,-1.76
-"Kyle Weaver","Washington State",2008,38,22493,"Washington State",4,7.048,9.65,11.093,11.333,-0.17,0.43,0.29,NA,NA
+"Kyle Weaver","Washington State",2008,38,22493,"Washington State",4,11.333,9.65,11.093,13.329,-0.17,0.43,0.29,NA,NA
 "Kyshawn George","Miami (FL)",2024,24,5174563,"Miami (FL)",1,4.406,NA,NA,NA,-1.35,-1.07,NA,NA,NA
-"Lamar Patterson","Pitt",2014,48,45577,"Pitt",4,7.048,7.663,6.425,15.273,-1.81,-1.99,NA,NA,NA
+"Lamar Patterson","Pitt",2014,48,45577,"Pitt",4,7.663,6.425,15.273,13.329,-1.81,-1.99,NA,NA,NA
 "Lance Stephenson","Cincinnati",2010,40,45944,"Cincinnati",1,5.531,NA,NA,NA,-2.58,-2.96,0.68,0.61,-2.87
-"Landry Fields","Stanford",2010,39,31764,"Stanford",4,7.048,9.65,6.318,18.431,-0.06,0.6,-0.72,-0.57,-1.78
-"Landry Shamet","Wichita State",2018,26,3914044,"Wichita State",3,7.048,11.714,12.883,NA,0.11,-1.04,-0.95,-1.71,-1.2
+"Landry Fields","Stanford",2010,39,31764,"Stanford",4,6.318,18.431,11.093,13.329,-0.06,0.6,-0.72,-0.57,-1.78
+"Landry Shamet","Wichita State",2018,26,3914044,"Wichita State",3,11.714,12.883,11.093,NA,0.11,-1.04,-0.95,-1.71,-1.2
 "Larry Nance","Wyoming",2015,27,56440,"Wyoming",4,2.729,6.731,13.593,13.541,0.68,0.59,1.99,0.78,1.04
 "Larry Sanders","VCU",2010,15,36534,"VCU",3,3.291,4.354,9.665,NA,-2.71,-0.19,0.27,0.26,0.18
 "Lauri Markkanen","Arizona",2017,7,4066336,"Arizona",1,16.848,NA,NA,NA,-1.63,-0.68,-0.75,-0.48,0.07
 "Lavoy Allen","Temple",2011,50,36614,"Temple",4,5.139,7.893,10.898,6.494,0.04,-1.59,-1.84,0.34,0.75
-"Lazar Hayward","Marquette",2010,30,31821,"Marquette",4,7.048,8.011,8.991,13.621,-1.59,-2.65,-2.14,NA,NA
+"Lazar Hayward","Marquette",2010,30,31821,"Marquette",4,8.011,8.991,13.621,13.329,-1.59,-2.65,-2.14,NA,NA
 "Liam McNeeley","UConn",2025,29,5239590,"UConn",1,8.246,NA,NA,NA,-1.57,NA,NA,NA,NA
 "Lonnie Walker","Miami (FL)",2018,18,4277890,"Miami (FL)",1,6.758,NA,NA,NA,-1.16,-2.47,-2.49,-2.24,-2.16
 "Lonzo Ball","UCLA",2017,2,4066421,"UCLA",1,17.644,NA,NA,NA,0.38,-0.67,0.07,0.09,0.54
 "Lorenzo Brown","NC State",2013,52,45537,"NC State",3,2.628,9.278,7.586,NA,-2.42,-1.41,-1.4,-1.17,-2.69
-"Luc Mbah a Moute","UCLA",2008,37,26896,"UCLA",3,7.048,9.65,5.403,NA,0.79,1.33,1.58,1.13,0.17
+"Luc Mbah a Moute","UCLA",2008,37,26896,"UCLA",3,5.403,9.65,11.093,NA,0.79,1.33,1.58,1.13,0.17
 "Luka Garza","Iowa",2021,52,4277951,"Iowa",4,8.128,7.887,20.04,25,-1.8,-1.25,0,-0.45,0.9
 "Luke Babbitt","Nevada",2010,16,41425,"Nevada",2,9.068,17.941,NA,NA,-3.92,-2.56,-2.43,-1.14,-0.87
-"Luke Harangody","Notre Dame",2010,52,31678,"Notre Dame",4,7.048,15.708,17.055,15.688,-1.93,-1.79,-1.14,NA,NA
+"Luke Harangody","Notre Dame",2010,52,31678,"Notre Dame",4,15.708,17.055,15.688,13.329,-1.93,-1.79,-1.14,NA,NA
 "Luke Kennard","Duke",2017,12,3913174,"Duke",2,6.806,20.853,NA,NA,-0.53,-0.19,-1,-1.45,-0.25
-"Maarty Leunen","Oregon",2008,54,22484,"Oregon",4,7.048,9.65,11.093,15.359,-10,NA,NA,NA,NA
-"Magnum Rolle","Louisiana Tech",2010,51,26852,"Louisiana Tech",4,7.048,9.65,5.592,7.086,-3.11,NA,NA,NA,NA
-"Malachi Flynn","San Diego State",2020,29,4066668,"San Diego State",3,7.048,9.65,19.575,NA,-1.68,-1.92,-2.67,-1.42,-1.61
+"Maarty Leunen","Oregon",2008,54,22484,"Oregon",4,15.359,9.65,11.093,13.329,-10,NA,NA,NA,NA
+"Magnum Rolle","Louisiana Tech",2010,51,26852,"Louisiana Tech",4,5.592,7.086,11.093,13.329,-3.11,NA,NA,NA,NA
+"Malachi Flynn","San Diego State",2020,29,4066668,"San Diego State",3,19.575,9.65,11.093,NA,-1.68,-1.92,-2.67,-1.42,-1.61
 "Malachi Richardson","Syracuse",2016,22,3934663,"Syracuse",1,5.487,NA,NA,NA,-1.78,-2.16,-2.26,NA,NA
 "Malaki Branham","Ohio State",2022,20,4565201,"Ohio State",1,9.455,NA,NA,NA,-2.78,-3.56,-2.95,-1.65,NA
 "Malcolm Brogdon","Virginia",2016,36,56119,"Virginia",4,3.45,11.72,12.425,18.514,0.65,-0.24,0.5,0.65,0.76
-"Malcolm Lee","UCLA",2011,43,41010,"UCLA",3,7.048,4.617,5.61,NA,-1.84,-1.15,-1.18,NA,NA
+"Malcolm Lee","UCLA",2011,43,41010,"UCLA",3,4.617,5.61,11.093,NA,-1.84,-1.15,-1.18,NA,NA
 "Malik Beasley","Florida State",2016,19,3907822,"Florida State",1,8.476,NA,NA,NA,-0.65,-1.02,0,-0.84,-0.73
-"Malik Hairston","Oregon",2008,48,22482,"Oregon",4,7.048,9.65,11.093,12.021,-2.01,-1.23,NA,NA,NA
+"Malik Hairston","Oregon",2008,48,22482,"Oregon",4,12.021,9.65,11.093,13.329,-2.01,-1.23,NA,NA,NA
 "Malik Monk","Kentucky",2017,11,4066262,"Kentucky",1,16.133,NA,NA,NA,-2.81,-1.82,-2.16,-1.16,-0.28
-"MarShon Brooks","Providence",2011,25,36162,"Providence",4,7.048,3.528,5.981,16.661,-1.92,-1.96,-0.88,0.56,-0.82
+"MarShon Brooks","Providence",2011,25,36162,"Providence",4,3.528,5.981,16.661,13.329,-1.92,-1.96,-0.88,0.56,-0.82
 "Marcus Denmon","Missouri",2012,59,41072,"Missouri",4,2.189,5.393,10.571,17.247,-10,NA,NA,NA,NA
 "Marcus Morris","Kansas",2011,14,41767,"Kansas",3,3.026,8.573,12.189,NA,-3.29,-2.65,-0.37,-0.45,-0.34
 "Marcus Paige","UNC",2016,55,61652,"UNC",4,2.855,13.176,10.95,8.209,-1.92,NA,NA,NA,NA
-"Marcus Sasser","Houston",2023,25,4432107,"Houston",4,7.048,4.343,11.859,14.105,-2.64,-0.62,-0.75,NA,NA
+"Marcus Sasser","Houston",2023,25,4432107,"Houston",4,4.343,11.859,14.105,13.329,-2.64,-0.62,-0.75,NA,NA
 "Marcus Smart","Oklahoma State",2014,6,61669,"Oklahoma State",2,10.973,16.249,NA,NA,-0.3,0.7,0.82,0.8,0.91
 "Marcus Terell Thornton","LSU",2009,43,36182,"LSU",2,14.426,14.475,NA,NA,0.34,-0.79,-0.37,-1.05,-1.06
-"Marcus Thornton","William & Mary",2015,45,56258,"William & Mary",4,7.048,9.65,11.093,2.003,-10,NA,NA,NA,NA
+"Marcus Thornton","William & Mary",2015,45,56258,"William & Mary",4,2.003,9.65,11.093,13.329,-10,NA,NA,NA,NA
 "Marcus Zegarowski","Creighton",2021,49,4397036,"Creighton",3,5.863,11.862,13.773,NA,-10,NA,NA,NA,NA
-"Marial Shayok","Iowa State",2019,54,3138201,"Iowa State",4,7.048,9.65,11.093,12.387,-1.84,NA,NA,NA,NA
-"Mario Chalmers","Kansas",2008,34,27141,"Kansas",3,7.048,9.65,11.599,NA,1.01,-0.85,0.54,1.12,0.68
+"Marial Shayok","Iowa State",2019,54,3138201,"Iowa State",4,12.387,9.65,11.093,13.329,-1.84,NA,NA,NA,NA
+"Mario Chalmers","Kansas",2008,34,27141,"Kansas",3,11.599,9.65,11.093,NA,1.01,-0.85,0.54,1.12,0.68
 "Mark Williams","Duke",2022,15,4701232,"Duke",2,5.357,9.7,NA,NA,-1.02,-0.72,-1.28,-0.98,NA
 "Markel Brown","Oklahoma State",2014,44,51493,"Oklahoma State",4,1.672,4.389,9.069,13.41,-1.61,-1.71,-1.88,NA,NA
-"Markelle Fultz","Washington",2017,1,4066636,"Washington",2,7.048,20.531,NA,NA,-1.84,-2.25,-0.88,-1.36,-1.01
+"Markelle Fultz","Washington",2017,1,4066636,"Washington",2,20.531,9.65,NA,NA,-1.84,-2.25,-0.88,-1.36,-1.01
 "Markieff Morris","Kansas",2011,13,44654,"Kansas",3,1.912,3.788,8.337,NA,-1.2,-1.44,-0.31,0.08,0.06
 "Marquese Chriss","Washington",2016,8,3907487,"Washington",1,5.91,NA,NA,NA,-1.04,-1.8,-3.04,-1.25,-1.06
 "Marquis Teague","Kentucky",2012,29,56354,"Kentucky",1,6.028,NA,NA,NA,-2.15,-2.68,-2.61,NA,NA
-"Marreese Speights","Florida",2008,16,31834,"Florida",2,7.048,9.996,NA,NA,-2.44,-2.87,-2.07,-3.09,-2.71
+"Marreese Speights","Florida",2008,16,31834,"Florida",2,9.996,9.65,NA,NA,-2.44,-2.87,-2.07,-3.09,-2.71
 "Marvin Bagley","Duke",2018,2,4277848,"Duke",1,19.74,NA,NA,NA,-1.72,-2.79,-2.12,-2.29,-1.92
-"Mason Plumlee","Duke",2013,22,45913,"Duke",4,7.048,3.404,7.736,14.227,-0.14,-1.17,0.42,-0.51,-0.33
+"Mason Plumlee","Duke",2013,22,45913,"Duke",4,3.404,7.736,14.227,13.329,-0.14,-1.17,0.42,-0.51,-0.33
 "Matisse Thybulle","Washington",2019,20,3907498,"Washington",4,1.789,6.086,6.05,5.37,0.13,-0.18,0.06,0.15,0.31
 "Max Christie","Michigan State",2022,35,4432582,"Michigan State",1,3.079,NA,NA,NA,-1.77,-1.91,-1.43,-1.21,NA
-"Max Shulga","VCU",2025,57,4701992,"VCU",4,7.048,9.65,10.24,14.855,-2.64,NA,NA,NA,NA
-"Maxime Raynaud","Stanford",2025,42,4898371,"Stanford",4,7.048,3.825,9.866,14.294,-1.74,NA,NA,NA,NA
+"Max Shulga","VCU",2025,57,4701992,"VCU",4,10.24,14.855,11.093,13.329,-2.64,NA,NA,NA,NA
+"Maxime Raynaud","Stanford",2025,42,4898371,"Stanford",4,3.825,9.866,14.294,13.329,-1.74,NA,NA,NA,NA
 "Maxwell Lewis","Pepperdine",2023,40,4684286,"Pepperdine",2,3.944,5.468,NA,NA,-2.1,-2.37,-2.16,NA,NA
-"Meyers Leonard","Illinois",2012,11,51088,"Illinois",2,7.048,10.247,NA,NA,-2.81,-3.87,-1.09,-1.03,-1.66
-"Mfiondu Kabengele","Florida State",2019,27,4065660,"Florida State",2,7.048,9.515,NA,NA,-1.18,-1.65,-2.34,NA,NA
-"Micah Peavy","Georgetown",2025,40,4432185,"Georgetown",4,7.048,9.65,11.093,10.835,-1.18,NA,NA,NA,NA
+"Meyers Leonard","Illinois",2012,11,51088,"Illinois",2,10.247,9.65,NA,NA,-2.81,-3.87,-1.09,-1.03,-1.66
+"Mfiondu Kabengele","Florida State",2019,27,4065660,"Florida State",2,9.515,9.65,NA,NA,-1.18,-1.65,-2.34,NA,NA
+"Micah Peavy","Georgetown",2025,40,4432185,"Georgetown",4,10.835,9.65,11.093,13.329,-1.18,NA,NA,NA,NA
 "Michael Beasley","Kansas State",2008,2,36671,"Kansas State",1,24.807,NA,NA,NA,-1.12,-1.05,-1.38,-1.67,-3.46
-"Michael Carter-Williams","Syracuse",2013,11,56995,"Syracuse",2,7.048,10.211,NA,NA,-0.39,0.45,-0.49,-0.59,-0.99
-"Michael Gbinije","Syracuse",2016,49,56115,"Syracuse",4,7.048,9.65,8.068,13.569,-2.02,NA,NA,NA,NA
+"Michael Carter-Williams","Syracuse",2013,11,56995,"Syracuse",2,10.211,9.65,NA,NA,-0.39,0.45,-0.49,-0.59,-0.99
+"Michael Gbinije","Syracuse",2016,49,56115,"Syracuse",4,8.068,13.569,11.093,13.329,-2.02,NA,NA,NA,NA
 "Michael Kidd-Gilchrist","Kentucky",2012,2,56352,"Kentucky",1,10.107,NA,NA,NA,-0.66,0.53,1.17,1.12,2.09
 "Mikal Bridges","Villanova",2018,10,3147657,"Villanova",3,3.931,10.876,16.776,NA,0.93,1.72,1.74,1.21,0.8
 "Mike Muscala","Bucknell",2013,44,46309,"Bucknell",4,3.992,8.037,17.409,19.772,-3.59,-0.76,-0.21,-0.89,0.63
 "Mike Scott","Virginia",2012,43,36117,"Virginia",4,3.474,4.254,6.52,19.297,-2.5,-1.18,-1.37,-0.25,-1.15
 "Miles Bridges","Michigan State",2018,12,4066383,"Michigan State",2,13.972,13.865,NA,NA,-0.51,-1.57,0.23,1.13,-0.76
 "Miles McBride","West Virginia",2021,36,4431823,"West Virginia",2,5.59,15.34,NA,NA,-2.36,-0.66,-0.22,-0.26,0.71
-"Miles Plumlee","Duke",2012,26,41720,"Duke",4,7.048,2.768,2.147,4.799,-3.72,-1.39,-1.53,-1.34,-1.94
-"Mitch McGary","Michigan",2014,21,61808,"Michigan",2,7.048,4.557,NA,NA,-2.11,-1.39,NA,NA,NA
+"Miles Plumlee","Duke",2012,26,41720,"Duke",4,2.768,2.147,4.799,13.329,-3.72,-1.39,-1.53,-1.34,-1.94
+"Mitch McGary","Michigan",2014,21,61808,"Michigan",2,4.557,9.65,NA,NA,-2.11,-1.39,NA,NA,NA
 "Miye Oni","Yale",2019,58,4066851,"Yale",3,8.961,6.698,10.165,NA,-0.3,-0.89,-1.35,NA,NA
 "Monte Morris","Iowa State",2017,51,66146,"Iowa State",4,4.966,11.57,14.018,20.267,-1.78,-0.75,-0.85,-0.3,0.61
 "Montrezl Harrell","Louisville",2015,32,61793,"Louisville",3,2.789,11.049,13.937,NA,-0.83,-0.32,1.03,1.06,-0.09
-"Moritz Wagner","Michigan",2018,25,3150844,"Michigan",3,7.048,11.484,11.618,NA,-1.54,-0.44,-0.97,-1.04,-0.3
+"Moritz Wagner","Michigan",2018,25,3150844,"Michigan",3,11.484,11.618,11.093,NA,-1.54,-0.44,-0.97,-1.04,-0.3
 "Moses Moody","Arkansas",2021,14,4432171,"Arkansas",1,12.946,NA,NA,NA,-0.94,-0.64,0.12,0.07,0.47
 "Mouhamed Gueye","Washington State",2023,39,4712863,"Washington State",2,3.906,9.084,NA,NA,-2.7,-0.35,0.38,NA,NA
 "Moussa Diabate","Michigan",2022,43,4433249,"Michigan",1,5.098,NA,NA,NA,-1.6,-0.53,0.63,1.03,NA
@@ -590,217 +590,217 @@
 "Nerlens Noel","Kentucky",2013,6,61840,"Kentucky",1,6.641,NA,NA,NA,-1.12,-0.17,0.34,0.61,-0.56
 "Nick Calathes","Florida",2009,45,36380,"Florida",2,13.321,12.832,NA,NA,-0.39,0.22,NA,NA,NA
 "Nick Johnson","Arizona",2014,42,56290,"Arizona",3,3.974,7.18,14.003,NA,-2.43,NA,NA,NA,NA
-"Nick Richards","Kentucky",2020,42,4278076,"Kentucky",3,7.048,9.65,10.561,NA,-1.77,-1.9,-1.14,-0.69,-1.75
+"Nick Richards","Kentucky",2020,42,4278076,"Kentucky",3,10.561,9.65,11.093,NA,-1.77,-1.9,-1.14,-0.69,-1.75
 "Nickeil Alexander-Walker","Virginia Tech",2019,17,4278039,"Virginia Tech",2,5.74,13.342,NA,NA,-2.87,-0.99,-1.56,-1.3,0.6
 "Nico Mannion","Arizona",2020,48,4431672,"Arizona",1,9.577,NA,NA,NA,-1.97,NA,NA,NA,NA
-"Nigel Williams-Goss","Gonzaga",2017,55,67814,"Gonzaga",3,7.048,9.65,19.914,NA,-2.11,NA,NA,NA,NA
+"Nigel Williams-Goss","Gonzaga",2017,55,67814,"Gonzaga",3,19.914,9.65,11.093,NA,-2.11,NA,NA,NA,NA
 "Nik Stauskas","Michigan",2014,8,61809,"Michigan",2,6.71,16.547,NA,NA,-2.23,-2.17,-1.94,-1.85,-3.12
-"Nikola Vucevic","USC",2011,16,41019,"USC",3,7.048,7.423,14.016,NA,-3.39,-1.24,-0.93,-0.74,0.28
-"Nique Clifford","Colorado State",2025,24,4702384,"Colorado State",4,7.048,9.65,8.26,18.62,-1.78,NA,NA,NA,NA
+"Nikola Vucevic","USC",2011,16,41019,"USC",3,7.423,14.016,11.093,NA,-3.39,-1.24,-0.93,-0.74,0.28
+"Nique Clifford","Colorado State",2025,24,4702384,"Colorado State",4,8.26,18.62,11.093,13.329,-1.78,NA,NA,NA,NA
 "Noah Clowney","Alabama",2023,21,4712896,"Alabama",1,5.011,NA,NA,NA,-1.32,-1.87,-1.42,NA,NA
 "Noah Vonleh","Indiana",2014,9,66604,"Indiana",1,7.385,NA,NA,NA,-2.92,-2.26,-2.27,-0.51,-0.95
-"Nolan Smith","Duke",2011,21,36157,"Duke",4,7.048,3.066,15.041,17.626,-2.79,-2.67,NA,NA,NA
+"Nolan Smith","Duke",2011,21,36157,"Duke",4,3.066,15.041,17.626,13.329,-2.79,-2.67,NA,NA,NA
 "Norman Powell","UCLA",2015,46,57041,"UCLA",4,2.187,1.547,7.089,9.661,0.02,0.1,-1.6,-0.68,0.74
-"Norris Cole","Cleveland State",2011,28,37147,"Cleveland State",4,7.048,6.257,8.636,20.181,-3.15,-2.29,-1.96,-2.47,-2.7
+"Norris Cole","Cleveland State",2011,28,37147,"Cleveland State",4,6.257,8.636,20.181,13.329,-3.15,-2.29,-1.96,-2.47,-2.7
 "O.J. Mayo","USC",2008,3,36057,"USC",1,17.125,NA,NA,NA,-1.51,-0.56,0.15,0.04,-1.1
 "Obi Toppin","Dayton",2020,8,4278355,"Dayton",2,9.954,17.445,NA,NA,-0.02,0.51,0.49,0.26,-0.4
 "Ochai Agbaji","Kansas",2022,14,4397018,"Kansas",4,4.19,5.413,9.281,14.389,-1.87,-2.73,-1.52,-1.83,NA
 "Olivier Hanlan","Boston College",2015,42,61155,"Boston College",3,8.101,11.996,14.842,NA,-10,NA,NA,NA,NA
-"Olivier-Maxence Prosper","Marquette",2023,24,4595400,"Marquette",3,7.048,2.921,6.248,NA,-2.94,-2.17,0.06,NA,NA
+"Olivier-Maxence Prosper","Marquette",2023,24,4595400,"Marquette",3,2.921,6.248,11.093,NA,-2.94,-2.17,0.06,NA,NA
 "Omari Spellman","Villanova",2018,30,4065836,"Villanova",1,8.435,NA,NA,NA,-1.43,-1.39,-1.39,NA,NA
 "Onyeka Okongwu","USC",2020,6,4431680,"USC",1,13.347,NA,NA,NA,-0.61,0.22,1.3,0.22,1.31
-"Orlando Johnson","UC Santa Barbara",2012,36,37470,"UC Santa Barbara",4,7.048,9.966,14.688,15.184,-1.99,-2.71,-2.84,NA,NA
-"Oso Ighodaro","Marquette",2024,40,4601023,"Marquette",4,7.048,3.259,8.184,10.438,-0.67,0.63,NA,NA,NA
+"Orlando Johnson","UC Santa Barbara",2012,36,37470,"UC Santa Barbara",4,9.966,14.688,15.184,13.329,-1.99,-2.71,-2.84,NA,NA
+"Oso Ighodaro","Marquette",2024,40,4601023,"Marquette",4,3.259,8.184,10.438,13.329,-0.67,0.63,NA,NA,NA
 "Otto Porter","Georgetown",2013,3,56909,"Georgetown",2,7.913,17.292,NA,NA,-2.86,-0.51,1,2.2,2.96
 "P.J. Washington","Kentucky",2019,12,4278078,"Kentucky",2,6.695,12.121,NA,NA,-2.01,-0.33,0.22,-0.59,0.39
 "Paolo Banchero","Duke",2022,1,4432573,"Duke",1,14.128,NA,NA,NA,-0.93,0.37,0.5,0.39,NA
 "Pascal Siakam","New Mexico State",2016,27,3149673,"New Mexico State",2,10.299,18.794,NA,NA,-2.92,0.69,1.24,1.26,1.74
 "Pat Connaughton","Notre Dame",2015,41,56170,"Notre Dame",4,3.762,4.933,10.803,9.295,-2.38,-1.66,-1.26,-0.52,-0.76
-"Patrick Ewing","Georgetown",2008,43,15350,"Georgetown",4,7.048,9.65,11.093,4.754,-1.08,NA,NA,NA,NA
+"Patrick Ewing","Georgetown",2008,43,15350,"Georgetown",4,4.754,9.65,11.093,13.329,-1.08,NA,NA,NA,NA
 "Patrick McCaw","UNLV",2016,38,3137730,"UNLV",2,5.195,8.458,NA,NA,-0.57,-1.83,-2.43,-1.88,-1.11
 "Patrick Patterson","Kentucky",2010,14,36191,"Kentucky",3,13.278,13.093,11.95,NA,-1.36,-1.77,-0.24,1.45,1.62
 "Patrick Williams","Florida State",2020,4,4431687,"Florida State",1,5.071,NA,NA,NA,-1.97,-1.75,-0.94,-0.54,-1.62
 "Patty Mills","Saint Mary's",2009,55,37525,"Saint Mary's",2,8.758,10.951,NA,NA,-2.29,-2.76,-0.73,-0.28,2.38
 "Paul George","Fresno State",2010,10,41772,"Fresno State",2,5.619,10.235,NA,NA,0.83,2.5,3.3,3.83,3.86
-"Paul Reed","DePaul",2020,58,4278562,"DePaul",3,7.048,7.568,10.537,NA,-0.66,0.15,0.93,0.91,0.7
+"Paul Reed","DePaul",2020,58,4278562,"DePaul",3,7.568,10.537,11.093,NA,-0.66,0.15,0.93,0.91,0.7
 "Payton Pritchard","Oregon",2020,26,4066354,"Oregon",4,7.049,10.606,10.223,23.404,-0.79,0.41,-0.25,0.52,1.8
-"Pelle Larsson","Arizona",2024,44,4601025,"Arizona",4,7.048,3.878,5.719,8.381,-0.5,-0.72,NA,NA,NA
+"Pelle Larsson","Arizona",2024,44,4601025,"Arizona",4,3.878,5.719,8.381,13.329,-0.5,-0.72,NA,NA,NA
 "Perry Jones","Baylor",2012,28,51237,"Baylor",2,6.84,9.65,NA,NA,-4.58,-2.27,-2.87,NA,NA
-"Peyton Siva","Louisville",2013,56,45951,"Louisville",4,7.048,5.101,4.944,7.007,-1.37,NA,NA,NA,NA
+"Peyton Siva","Louisville",2013,56,45951,"Louisville",4,5.101,4.944,7.007,13.329,-1.37,NA,NA,NA,NA
 "Pierre Jackson","Baylor",2013,42,56613,"Baylor",2,12.094,17.861,NA,NA,-0.55,NA,NA,NA,NA
 "Precious Achiuwa","Memphis",2020,20,4431679,"Memphis",1,9.374,NA,NA,NA,-2.84,-1.56,-1.88,-0.99,-1.29
-"Quentin Grimes","Houston",2021,25,4397014,"Houston",3,7.048,7.153,18.563,NA,-1.26,0.05,-1.72,-0.05,-1.21
+"Quentin Grimes","Houston",2021,25,4397014,"Houston",3,7.153,18.563,11.093,NA,-1.26,0.05,-1.72,-0.05,-1.21
 "Quincy Acy","Baylor",2012,37,41788,"Baylor",4,1.871,5.123,6.565,8.811,-0.62,-2.47,-0.84,-0.65,-1.04
 "Quincy Miller","Baylor",2012,38,56614,"Baylor",1,6.547,NA,NA,NA,-3.03,-1.94,-1.51,NA,NA
-"Quincy Pondexter","Washington",2010,26,31658,"Washington",4,7.048,5.651,5.534,16.941,-1.79,-1.11,-0.73,-0.7,-0.69
+"Quincy Pondexter","Washington",2010,26,31658,"Washington",4,5.651,5.534,16.941,13.329,-1.79,-1.11,-0.73,-0.7,-0.69
 "Quinndary Weatherspoon","Mississippi State",2019,49,3907358,"Mississippi State",4,5.719,13.077,10.734,13.605,-3.22,-2.13,-1.73,NA,NA
-"Quinten Post","Boston College",2024,52,4593016,"Boston College",4,7.048,5.079,7.674,12.543,-1.13,-0.62,NA,NA,NA
+"Quinten Post","Boston College",2024,52,4593016,"Boston College",4,5.079,7.674,12.543,13.329,-1.13,-0.62,NA,NA,NA
 "RJ Barrett","Duke",2019,3,4395625,"Duke",1,17.527,NA,NA,NA,-3.04,-0.55,-0.91,-1.23,-1.38
 "RJ Hunter","Georgia State",2015,28,61299,"Georgia State",3,9.635,13.703,17.355,NA,-1.41,-1.7,-2.23,-0.92,NA
-"RaiQuan Gray","Florida State",2021,59,4277850,"Florida State",3,7.048,3.143,8.991,NA,-2,-1.22,NA,NA,NA
-"Rakeem Christmas","Syracuse",2015,36,56996,"Syracuse",4,7.048,2.188,4.748,13.74,-2.48,-3.19,NA,NA,NA
+"RaiQuan Gray","Florida State",2021,59,4277850,"Florida State",3,3.143,8.991,11.093,NA,-2,-1.22,NA,NA,NA
+"Rakeem Christmas","Syracuse",2015,36,56996,"Syracuse",4,2.188,4.748,13.74,13.329,-2.48,-3.19,NA,NA,NA
 "Rashad Vaughn","UNLV",2015,17,3137733,"UNLV",1,9.713,NA,NA,NA,-1,-1.95,-2.73,NA,NA
 "Rasheer Fleming","Saint Joseph's",2025,31,5105977,"Saint Joseph's",3,2.215,7.069,10.22,NA,-1.54,NA,NA,NA,NA
-"Ray Spalding","Louisville",2018,56,3908806,"Louisville",3,7.048,6.228,10.05,NA,-2.77,-2.52,-2.75,NA,NA
+"Ray Spalding","Louisville",2018,56,3908806,"Louisville",3,6.228,10.05,11.093,NA,-2.77,-2.52,-2.75,NA,NA
 "Reed Sheppard","Kentucky",2024,3,4711272,"Kentucky",1,8.641,NA,NA,NA,-0.88,0.89,NA,NA,NA
-"Reggie Bullock","UNC",2013,25,51384,"UNC",3,7.048,4.898,9.999,NA,-1.85,-2.02,-0.68,-0.59,-0.09
+"Reggie Bullock","UNC",2013,25,51384,"UNC",3,4.898,9.999,11.093,NA,-1.85,-2.02,-0.68,-0.59,-0.09
 "Reggie Jackson","Boston College",2011,24,41460,"Boston College",3,2.465,8.325,14.044,NA,-2.2,-0.51,0.02,0.83,1.27
 "Reggie Perry","Mississippi State",2020,57,4396959,"Mississippi State",2,6.298,14.535,NA,NA,-2.25,-1.57,NA,NA,NA
-"Richard Hendrix","Alabama",2008,49,27176,"Alabama",3,7.048,9.65,13.268,NA,-2.09,NA,NA,NA,NA
+"Richard Hendrix","Alabama",2008,49,27176,"Alabama",3,13.268,9.65,11.093,NA,-2.09,NA,NA,NA,NA
 "Richaun Holmes","Bowling Green",2015,37,61438,"Bowling Green",3,3.342,8.409,11.199,NA,-1.3,-0.8,-0.05,-0.13,1.7
 "Rob Dillingham","Kentucky",2024,8,4684275,"Kentucky",1,9.993,NA,NA,NA,-2.76,-2.85,NA,NA,NA
-"Robert Dozier","Memphis",2009,60,22091,"Memphis",4,7.048,9.65,5.87,8.148,-10,NA,NA,NA,NA
-"Robert Sacre","Gonzaga",2012,60,36392,"Gonzaga",4,7.048,4.294,6.573,7.796,-3.46,-1.24,-1.22,-0.91,NA
-"Robert Vaden","UAB",2009,54,22343,"UAB",4,7.048,9.65,13.798,7.079,-2.24,NA,NA,NA,NA
+"Robert Dozier","Memphis",2009,60,22091,"Memphis",4,5.87,8.148,11.093,13.329,-10,NA,NA,NA,NA
+"Robert Sacre","Gonzaga",2012,60,36392,"Gonzaga",4,4.294,6.573,7.796,13.329,-3.46,-1.24,-1.22,-0.91,NA
+"Robert Vaden","UAB",2009,54,22343,"UAB",4,13.798,7.079,11.093,13.329,-2.24,NA,NA,NA,NA
 "Robert Woodard","Mississippi State",2020,40,4396961,"Mississippi State",2,3.687,6.11,NA,NA,-1.47,-1.94,NA,NA,NA
-"Robin Lopez","Stanford",2008,15,31768,"Stanford",2,7.048,6.666,NA,NA,-1.65,-1.4,-1.67,-0.41,-0.06
-"Rodney Hood","Duke",2014,23,56359,"Duke",2,7.048,11.722,NA,NA,-0.4,-0.44,-0.61,-1.69,-1.53
+"Robin Lopez","Stanford",2008,15,31768,"Stanford",2,6.666,9.65,NA,NA,-1.65,-1.4,-1.67,-0.41,-0.06
+"Rodney Hood","Duke",2014,23,56359,"Duke",2,11.722,9.65,NA,NA,-0.4,-0.44,-0.61,-1.69,-1.53
 "Romeo Langford","Indiana",2019,14,4397008,"Indiana",1,10.368,NA,NA,NA,-2.42,-2.36,-1.45,-2.01,NA
-"Romero Osby","Oklahoma",2013,51,41835,"Oklahoma",4,7.048,9.65,7.271,11.813,-10,NA,NA,NA,NA
+"Romero Osby","Oklahoma",2013,51,41835,"Oklahoma",4,7.271,11.813,11.093,13.329,-10,NA,NA,NA,NA
 "Rondae Hollis-Jefferson","Arizona",2015,23,66321,"Arizona",2,7.505,9.217,NA,NA,-0.28,0.49,0.39,-0.42,0.31
-"Roy Hibbert","Georgetown",2008,17,22426,"Georgetown",4,7.048,9.65,11.093,11.916,-1.7,-0.04,0,1.73,3.02
+"Roy Hibbert","Georgetown",2008,17,22426,"Georgetown",4,11.916,9.65,11.093,13.329,-1.7,-0.04,0,1.73,3.02
 "Royce White","Iowa State",2012,16,45982,"Iowa State",1,10.4,NA,NA,NA,-1.11,-2.06,NA,NA,NA
-"Rui Hachimura","Gonzaga",2019,9,4066648,"Gonzaga",3,7.048,8.213,14.988,NA,-2.75,-2.31,-2.29,-1.4,-0.73
-"Russ Smith","Louisville",2014,47,51478,"Louisville",4,7.048,7.091,14.954,16.113,-1.17,-2.02,NA,NA,NA
-"Russell Westbrook","UCLA",2008,4,31663,"UCLA",2,7.048,10.532,NA,NA,-0.13,1.42,1.11,3.31,4.82
-"Ryan Anderson","California",2008,21,31647,"California",2,7.048,17.662,NA,NA,0.4,0.61,1.23,1.92,0.91
-"Ryan Dunn","Virginia",2024,28,4888725,"Virginia",2,7.048,5.86,NA,NA,-1.62,0.19,NA,NA,NA
+"Rui Hachimura","Gonzaga",2019,9,4066648,"Gonzaga",3,8.213,14.988,11.093,NA,-2.75,-2.31,-2.29,-1.4,-0.73
+"Russ Smith","Louisville",2014,47,51478,"Louisville",4,7.091,14.954,16.113,13.329,-1.17,-2.02,NA,NA,NA
+"Russell Westbrook","UCLA",2008,4,31663,"UCLA",2,10.532,9.65,NA,NA,-0.13,1.42,1.11,3.31,4.82
+"Ryan Anderson","California",2008,21,31647,"California",2,17.662,9.65,NA,NA,0.4,0.61,1.23,1.92,0.91
+"Ryan Dunn","Virginia",2024,28,4888725,"Virginia",2,5.86,9.65,NA,NA,-1.62,0.19,NA,NA,NA
 "Ryan Kalkbrenner","Creighton",2025,34,4576060,"Creighton",4,12.241,13.141,13.931,18.442,0.61,NA,NA,NA,NA
-"Ryan Kelly","Duke",2013,48,45911,"Duke",4,7.048,3.089,8.784,9.216,0.1,-0.28,-1.2,-0.25,NA
-"Ryan Reid","Florida State",2010,57,26995,"Florida State",4,7.048,2.932,1.202,2.674,-2.47,NA,NA,NA,NA
+"Ryan Kelly","Duke",2013,48,45911,"Duke",4,3.089,8.784,9.216,13.329,0.1,-0.28,-1.2,-0.25,NA
+"Ryan Reid","Florida State",2010,57,26995,"Florida State",4,2.932,1.202,2.674,13.329,-2.47,NA,NA,NA,NA
 "Ryan Rollins","Toledo",2022,44,4591725,"Toledo",2,7.332,13.334,NA,NA,-2.03,0.68,-0.58,1.19,NA
 "Saben Lee","Vanderbilt",2020,38,4278124,"Vanderbilt",3,6.453,6.504,12.508,NA,-1.07,0.63,-1.21,-0.56,NA
 "Saddiq Bey","Villanova",2020,19,4397136,"Villanova",2,5.425,13.078,NA,NA,-0.66,-1.66,-0.34,-0.37,-0.2
 "Sam Dekker","Wisconsin",2015,18,61278,"Wisconsin",3,5.915,9.857,14.042,NA,-1.53,-0.07,-1.58,-0.41,-0.77
 "Sam Merrill","Utah State",2020,60,4066757,"Utah State",4,8.127,11.379,16.396,18.286,-2.15,-1.5,-0.92,-1.43,0.13
-"Sam Young","Pitt",2009,36,27299,"Pitt",4,7.048,9.65,12.384,10.866,-2.62,-1.12,-1.65,-2.4,NA
-"Sandro Mamukelashvili","Seton Hall",2021,54,4278580,"Seton Hall",4,7.048,4.702,7.19,12.404,-1.01,-2.06,-0.83,0.38,1.88
-"Sasha Kaun","Kansas",2008,56,22177,"Kansas",4,7.048,9.65,11.093,4.495,-3,NA,NA,NA,NA
+"Sam Young","Pitt",2009,36,27299,"Pitt",4,12.384,10.866,11.093,13.329,-2.62,-1.12,-1.65,-2.4,NA
+"Sandro Mamukelashvili","Seton Hall",2021,54,4278580,"Seton Hall",4,4.702,7.19,12.404,13.329,-1.01,-2.06,-0.83,0.38,1.88
+"Sasha Kaun","Kansas",2008,56,22177,"Kansas",4,4.495,9.65,11.093,13.329,-3,NA,NA,NA,NA
 "Scottie Barnes","Florida State",2021,4,4433134,"Florida State",1,8.286,NA,NA,NA,0.28,0.46,0.87,0.69,2.58
 "Scottie Lewis","Florida",2021,56,4432812,"Florida",2,4.39,3.965,NA,NA,-1.23,NA,NA,NA,NA
-"Sean Singletary","Virginia",2008,42,22208,"Virginia",4,7.048,9.65,11.093,15.847,-2.35,NA,NA,NA,NA
+"Sean Singletary","Virginia",2008,42,22208,"Virginia",4,15.847,9.65,11.093,13.329,-2.35,NA,NA,NA,NA
 "Semaj Christon","Xavier",2014,55,61188,"Xavier",2,7.893,10.787,NA,NA,-2.67,NA,NA,NA,NA
-"Semi Ojeleye","SMU",2017,37,66915,"SMU",3,7.048,9.65,22.428,NA,-3.16,-1.75,-2.57,-1.96,-3.38
-"Seth Lundy","Penn State",2023,46,4431775,"Penn State",4,7.048,5.274,4.8,8.723,-2.09,-1.75,-1.46,NA,NA
+"Semi Ojeleye","SMU",2017,37,66915,"SMU",3,22.428,9.65,11.093,NA,-3.16,-1.75,-2.57,-1.96,-3.38
+"Seth Lundy","Penn State",2023,46,4431775,"Penn State",4,5.274,4.8,8.723,13.329,-2.09,-1.75,-1.46,NA,NA
 "Shabazz Muhammad","UCLA",2013,14,61732,"UCLA",1,9.272,NA,NA,NA,-2.21,-0.7,-2.14,-1.44,-1.16
 "Shabazz Napier","UConn",2014,24,51455,"UConn",4,3.358,10.156,14.945,19.322,-1.28,-1.68,-0.05,0.28,0.44
 "Shai Gilgeous-Alexander","Kentucky",2018,11,4278073,"Kentucky",1,12.039,NA,NA,NA,-0.63,0.88,0.87,1.57,2.27
 "Shake Milton","SMU",2018,54,3915195,"SMU",3,5.993,14.765,17.043,NA,-2.46,-1.01,-1.43,-1.63,-1.52
-"Shan Foster","Vanderbilt",2008,51,22108,"Vanderbilt",4,7.048,9.65,11.093,12.958,-10,NA,NA,NA,NA
+"Shan Foster","Vanderbilt",2008,51,22108,"Vanderbilt",4,12.958,9.65,11.093,13.329,-10,NA,NA,NA,NA
 "Shane Larkin","Miami (FL)",2013,18,57804,"Miami (FL)",2,3.831,13.154,NA,NA,-1.39,-1.47,-1.77,-1.29,NA
 "Shelvin Mack","Butler",2011,34,42249,"Butler",3,6.782,9.806,8.696,NA,-1.09,-1.01,-0.08,-0.4,0.15
 "Sindarius Thornwell","South Carolina",2017,48,66270,"South Carolina",4,6.912,5.783,7.375,25,-0.92,-0.83,-0.81,-0.88,NA
-"Sion James","Duke",2025,33,4602025,"Duke",4,7.048,9.65,11.093,7.139,-1.52,NA,NA,NA,NA
+"Sion James","Duke",2025,33,4602025,"Duke",4,7.139,9.65,11.093,13.329,-1.52,NA,NA,NA,NA
 "Sir'Dominic Pointer","St. John's",2015,53,57027,"St. John's",4,1.529,3.03,3.505,11.357,-2.13,NA,NA,NA,NA
 "Skal Labissiere","Kentucky",2016,28,3936296,"Kentucky",1,3.107,NA,NA,NA,-1.45,-1.97,-2.13,-1.7,-1
 "Skylar Mays","LSU",2020,50,4066269,"LSU",4,6.443,7.016,8.528,13.135,-0.38,-1.24,-0.67,-2.47,NA
-"Solomon Alabi","Florida State",2010,50,36130,"Florida State",3,7.048,3.092,7.047,NA,-3.31,-3.06,NA,NA,NA
+"Solomon Alabi","Florida State",2010,50,36130,"Florida State",3,3.092,7.047,11.093,NA,-3.31,-3.06,NA,NA,NA
 "Solomon Hill","Arizona",2013,23,45855,"Arizona",4,2.173,3.635,10.254,9.392,-1.27,-1.57,-0.33,0.12,-0.68
-"Sonny Weems","Arkansas",2008,39,32032,"Arkansas",2,7.048,8.616,NA,NA,-2.46,-0.62,-3,-1.99,NA
-"Spencer Dinwiddie","Colorado",2014,38,56288,"Colorado",3,7.048,5.946,11.362,NA,-1.17,-2.52,0.76,1.14,-0.62
+"Sonny Weems","Arkansas",2008,39,32032,"Arkansas",2,8.616,9.65,NA,NA,-2.46,-0.62,-3,-1.99,NA
+"Spencer Dinwiddie","Colorado",2014,38,56288,"Colorado",3,5.946,11.362,11.093,NA,-1.17,-2.52,0.76,1.14,-0.62
 "Stanley Johnson","Arizona",2015,8,3134881,"Arizona",1,10.779,NA,NA,NA,-2.54,-1.06,0.14,-2.34,-1.33
-"Stanley Robinson","UConn",2010,59,31556,"UConn",4,7.048,5.888,3.366,7.587,-10,NA,NA,NA,NA
-"Stephen Curry","Davidson",2009,7,32284,"Davidson",3,7.048,23.631,25,NA,0.58,1.75,2.64,3.89,5.79
+"Stanley Robinson","UConn",2010,59,31556,"UConn",4,5.888,3.366,7.587,13.329,-10,NA,NA,NA,NA
+"Stephen Curry","Davidson",2009,7,32284,"Davidson",3,23.631,25,11.093,NA,0.58,1.75,2.64,3.89,5.79
 "Stephen Zimmerman","UNLV",2016,41,3936102,"UNLV",1,3.384,NA,NA,NA,-3.13,NA,NA,NA,NA
 "Stephon Castle","UConn",2024,4,4845367,"UConn",1,8.73,NA,NA,NA,-0.68,0.58,NA,NA,NA
 "Sterling Brown","SMU",2017,46,66116,"SMU",4,2.793,4.31,6.601,15.139,-1.39,-2.26,-2.28,-1.02,-1.04
 "Steven Adams","Pitt",2013,12,61218,"Pitt",1,4.048,NA,NA,NA,-0.62,0.01,1.22,1.67,2.62
 "T.J. Leaf","UCLA",2017,18,4066425,"UCLA",1,15.187,NA,NA,NA,-10,NA,NA,NA,NA
 "T.J. Warren","NC State",2014,14,61159,"NC State",2,6.721,21.178,NA,NA,-1.42,-1.02,-1.15,-0.83,-1.21
-"Taelon Peter","Liberty",2025,54,4703421,"Liberty",2,7.048,8.247,NA,NA,-1.41,NA,NA,NA,NA
-"Taj Gibson","USC",2009,26,31775,"USC",3,7.048,6.994,10.315,NA,-1.51,0.88,1.48,0.86,1.17
+"Taelon Peter","Liberty",2025,54,4703421,"Liberty",2,8.247,9.65,NA,NA,-1.41,NA,NA,NA,NA
+"Taj Gibson","USC",2009,26,31775,"USC",3,6.994,10.315,11.093,NA,-1.51,0.88,1.48,0.86,1.17
 "Talen Horton-Tucker","Iowa State",2019,46,4396991,"Iowa State",1,6.683,NA,NA,NA,-1.36,-0.58,-1.28,-0.78,-0.57
-"Tari Eason","LSU",2022,17,4433192,"LSU",2,7.048,14.552,NA,NA,-0.41,-0.13,1.69,0.79,NA
-"Taurean Prince","Baylor",2016,12,61572,"Baylor",4,7.048,9.65,10.126,9.317,-0.76,-0.96,-0.8,-0.81,-1.46
-"Taylor Griffin","Oklahoma",2009,48,26917,"Oklahoma",4,7.048,9.65,4.142,4.35,-1.57,NA,NA,NA,NA
+"Tari Eason","LSU",2022,17,4433192,"LSU",2,14.552,9.65,NA,NA,-0.41,-0.13,1.69,0.79,NA
+"Taurean Prince","Baylor",2016,12,61572,"Baylor",4,10.126,9.317,11.093,13.329,-0.76,-0.96,-0.8,-0.81,-1.46
+"Taylor Griffin","Oklahoma",2009,48,26917,"Oklahoma",4,4.142,4.35,11.093,13.329,-1.57,NA,NA,NA,NA
 "Taylor Hendricks","UCF",2023,9,4684806,"UCF",1,10.699,NA,NA,NA,-2.1,-1.34,-0.39,NA,NA
 "Terance Mann","Florida State",2019,48,3907823,"Florida State",4,2.422,7.456,9.025,8.661,-1.87,-0.53,-0.04,0.31,-0.41
 "Terrence Jones","Kentucky",2012,18,51540,"Kentucky",2,10.177,10.423,NA,NA,-0.45,-0.12,-1.01,-2.55,-1.72
 "Terrence Ross","Washington",2012,8,51075,"Washington",2,3.185,10.381,NA,NA,-1.87,-1.03,-1.5,-0.46,-0.3
-"Terrence Shannon","Illinois",2024,27,4432847,"Illinois",4,7.048,9.65,11.353,17.702,-1.15,-1.12,NA,NA,NA
-"Terrence Williams","Louisville",2009,11,27275,"Louisville",4,7.048,9.65,7.256,8.873,-2.31,-2.46,-2.73,-1.64,NA
+"Terrence Shannon","Illinois",2024,27,4432847,"Illinois",4,11.353,17.702,11.093,13.329,-1.15,-1.12,NA,NA,NA
+"Terrence Williams","Louisville",2009,11,27275,"Louisville",4,7.256,8.873,11.093,13.329,-2.31,-2.46,-2.73,-1.64,NA
 "Terrico White","Ole Miss",2010,36,41334,"Ole Miss",2,5.045,7.819,NA,NA,-1.36,NA,NA,NA,NA
 "Terry Rozier","Louisville",2015,16,66587,"Louisville",2,5.186,14.037,NA,NA,-2.84,-0.79,0.63,-1.11,-2.15
 "Thomas Bryant","Indiana",2017,42,3934723,"Indiana",2,7.412,10.615,NA,NA,-1.74,-0.39,0.55,0.22,-0.8
-"Thomas Robinson","Kansas",2012,5,46114,"Kansas",3,7.048,9.65,16.335,NA,-3.14,-2.76,-2.99,-2.19,-1.51
+"Thomas Robinson","Kansas",2012,5,46114,"Kansas",3,16.335,9.65,11.093,NA,-3.14,-2.76,-2.99,-2.19,-1.51
 "Thomas Sorber","Georgetown",2025,15,5061603,"Georgetown",1,9.875,NA,NA,NA,-1.29,NA,NA,NA,NA
 "Thomas Welsh","UCLA",2018,58,3155536,"UCLA",4,2.614,6.553,9.914,9.204,-1.21,NA,NA,NA,NA
 "Tim Hardaway","Michigan",2013,24,51270,"Michigan",3,7.555,9.283,7.623,NA,-2.67,-2.79,-0.89,-0.45,-0.37
 "Tiny Gallon","Oklahoma",2010,47,45995,"Oklahoma",1,4.617,NA,NA,NA,-10,NA,NA,NA,NA
 "Tobias Harris","Tennessee",2011,19,51417,"Tennessee",1,7.906,NA,NA,NA,-0.81,-0.77,-0.94,-0.78,0.28
-"Toney Douglas","Florida State",2009,29,22111,"Florida State",4,7.048,9.65,9.859,15.986,-0.49,0.54,-1.14,-0.24,-0.82
+"Toney Douglas","Florida State",2009,29,22111,"Florida State",4,9.859,15.986,11.093,13.329,-0.49,0.54,-1.14,-0.24,-0.82
 "Tony Carr","Penn State",2018,51,4066404,"Penn State",2,8.893,17.223,NA,NA,-10,NA,NA,NA,NA
 "Tony Mitchell","North Texas",2013,37,56567,"North Texas",2,10.681,4.759,NA,NA,-1.46,-2.34,-2.57,NA,NA
 "Tony Snell","New Mexico",2013,20,51162,"New Mexico",3,1.277,6.641,6.258,NA,-1.74,-0.94,-0.94,-0.96,-1.38
 "Tony Wroten","Washington",2012,25,56838,"Washington",1,8.982,NA,NA,NA,-2.93,-2.31,-1.14,-1.77,NA
-"Toumani Camara","Dayton",2023,52,4431736,"Dayton",4,7.048,9.65,5.919,9.284,-0.24,0.8,0.87,NA,NA
+"Toumani Camara","Dayton",2023,52,4431736,"Dayton",4,5.919,9.284,11.093,13.329,-0.24,0.8,0.87,NA,NA
 "Trae Young","Oklahoma",2018,5,4277905,"Oklahoma",1,25,NA,NA,NA,0.4,0.96,2.82,2.55,2.19
-"Travis Leslie","Georgia",2011,47,41702,"Georgia",3,7.048,9.4,10.042,NA,-1.38,-1.32,NA,NA,NA
+"Travis Leslie","Georgia",2011,47,41702,"Georgia",3,9.4,10.042,11.093,NA,-1.38,-1.32,NA,NA,NA
 "Trayce Jackson-Davis","Indiana",2023,57,4431684,"Indiana",4,10.967,16.592,16.555,21.336,-0.25,-0.63,-1.58,NA,NA
 "Tre Johnson","Texas",2025,6,5238230,"Texas",1,12.954,NA,NA,NA,-3.08,NA,NA,NA,NA
 "Tre Jones","Duke",2020,41,4395626,"Duke",2,6.884,13.814,NA,NA,-3.24,-0.61,-0.2,0.11,0.28
 "Tre Mann","Florida",2021,18,4432819,"Florida",2,2.325,13.049,NA,NA,-2.15,-2.08,-1.2,-1.53,-2.94
 "Tremont Waters","LSU",2019,51,4278080,"LSU",2,12.429,10.731,NA,NA,-1.4,0.04,-1.77,NA,NA
-"Trent Plaisted","BYU",2008,46,22831,"BYU",4,7.048,9.65,11.093,10.111,-10,NA,NA,NA,NA
-"Trevor Booker","Clemson",2010,23,31865,"Clemson",4,7.048,6.441,11.074,11.956,-0.13,-0.64,-0.24,-0.3,0.4
+"Trent Plaisted","BYU",2008,46,22831,"BYU",4,10.111,9.65,11.093,13.329,-10,NA,NA,NA,NA
+"Trevor Booker","Clemson",2010,23,31865,"Clemson",4,6.441,11.074,11.956,13.329,-0.13,-0.64,-0.24,-0.3,0.4
 "Trevor Keels","Duke",2022,42,4432645,"Duke",1,6.777,NA,NA,NA,-1.83,-2.12,NA,NA,NA
 "Trey Burke","Michigan",2013,9,56670,"Michigan",2,12.907,22.418,NA,NA,-1.88,-1.56,-1.44,-3.92,-1.41
 "Trey Lyles","Kentucky",2015,12,3136196,"Kentucky",1,6.902,NA,NA,NA,-2.03,-2.65,-0.65,-1.39,-1.33
-"Trey Murphy","Virginia",2021,17,4397688,"Virginia",3,7.048,9.65,9.814,NA,-0.52,0.96,1.57,-0.91,0.07
-"Trey Thompkins","Georgia",2011,37,41704,"Georgia",3,7.048,9.65,3.928,NA,-2.93,-2.27,NA,NA,NA
-"Tristan Thompson","Texas",2011,4,51446,"Texas",1,NA,7.665,NA,NA,-2.98,-2.12,-1.53,-0.32,0.37
-"Tristan da Silva","Colorado",2024,18,4702382,"Colorado",4,7.048,4.654,8.435,10.193,-1.84,-0.36,NA,NA,NA
-"Tristen Newton","UConn",2024,49,4592965,"UConn",4,7.048,9.65,7.015,14.713,-2.23,-0.34,NA,NA,NA
+"Trey Murphy","Virginia",2021,17,4397688,"Virginia",3,9.814,9.65,11.093,NA,-0.52,0.96,1.57,-0.91,0.07
+"Trey Thompkins","Georgia",2011,37,41704,"Georgia",3,3.928,9.65,11.093,NA,-2.93,-2.27,NA,NA,NA
+"Tristan Thompson","Texas",2011,4,51446,"Texas",1,7.665,NA,NA,NA,-2.98,-2.12,-1.53,-0.32,0.37
+"Tristan da Silva","Colorado",2024,18,4702382,"Colorado",4,4.654,8.435,10.193,13.329,-1.84,-0.36,NA,NA,NA
+"Tristen Newton","UConn",2024,49,4592965,"UConn",4,7.015,14.713,11.093,13.329,-2.23,-0.34,NA,NA,NA
 "Troy Brown","Oregon",2018,15,4278508,"Oregon",1,6.649,NA,NA,NA,-1.83,-1.36,-0.48,-0.6,-0.92
-"Ty Jerome","Virginia",2019,24,4065733,"Virginia",3,7.048,10.033,15.368,NA,-2.36,-1.6,-1.53,-2.09,-1.57
-"Ty Lawson","UNC",2009,18,31608,"UNC",3,7.048,10.018,14.219,NA,1.08,1.99,2.01,2.18,1.82
+"Ty Jerome","Virginia",2019,24,4065733,"Virginia",3,10.033,15.368,11.093,NA,-2.36,-1.6,-1.53,-2.09,-1.57
+"Ty Lawson","UNC",2009,18,31608,"UNC",3,10.018,14.219,11.093,NA,1.08,1.99,2.01,2.18,1.82
 "TyTy Washington","Kentucky",2022,29,4683749,"Kentucky",1,9.177,NA,NA,NA,-2.75,-3.4,-2.18,-1.65,NA
 "Tyler Bey","Colorado",2020,36,4278502,"Colorado",3,3.657,8.861,10.836,NA,-3.28,NA,NA,NA,NA
 "Tyler Dorsey","Oregon",2017,41,3915560,"Oregon",2,6.886,12.326,NA,NA,-2.89,-2.12,-1.36,NA,NA
 "Tyler Ennis","Syracuse",2014,18,66601,"Syracuse",1,12.668,NA,NA,NA,-2.83,-2.54,-1.57,-1.13,NA
-"Tyler Hansbrough","UNC",2009,13,27018,"UNC",4,7.048,9.65,20.752,14.606,-1.57,-2.36,-2,-1.94,-0.95
-"Tyler Harvey","Eastern Washington",2015,51,56188,"Eastern Washington",3,7.048,14.207,15.485,NA,-10,NA,NA,NA,NA
+"Tyler Hansbrough","UNC",2009,13,27018,"UNC",4,20.752,14.606,11.093,13.329,-1.57,-2.36,-2,-1.94,-0.95
+"Tyler Harvey","Eastern Washington",2015,51,56188,"Eastern Washington",3,14.207,15.485,11.093,NA,-10,NA,NA,NA,NA
 "Tyler Herro","Kentucky",2019,13,4395725,"Kentucky",1,10.072,NA,NA,NA,-1.11,-1.33,-0.76,0.13,0.49
 "Tyler Honeycutt","UCLA",2011,35,46171,"UCLA",2,3.211,4.732,NA,NA,-2.13,-1.82,NA,NA,NA
-"Tyler Kolek","Marquette",2024,34,4433225,"Marquette",4,7.048,3.215,11.413,14.259,-0.57,-0.77,NA,NA,NA
+"Tyler Kolek","Marquette",2024,34,4433225,"Marquette",4,3.215,11.413,14.259,13.329,-0.57,-0.77,NA,NA,NA
 "Tyler Lydon","Syracuse",2017,24,3934662,"Syracuse",2,6.402,12.14,NA,NA,-1.79,-2.39,NA,NA,NA
 "Tyler Ulis","Kentucky",2016,34,3136194,"Kentucky",2,5.311,20.782,NA,NA,-1.48,-2.04,-1.59,NA,NA
-"Tyler Zeller","UNC",2012,17,41465,"UNC",4,7.048,3.889,9.527,13.843,-3.45,-1.61,-1,-1.83,-1.46
+"Tyler Zeller","UNC",2012,17,41465,"UNC",4,3.889,9.527,13.843,13.329,-3.45,-1.61,-1,-1.83,-1.46
 "Tyreke Evans","Memphis",2009,4,41608,"Memphis",1,10.634,NA,NA,NA,-0.77,-1.36,-1.05,0.37,-1.16
 "Tyrell Terry","Stanford",2020,31,4431747,"Stanford",1,10.285,NA,NA,NA,-1.63,-0.98,NA,NA,NA
 "Tyrese Haliburton","Iowa State",2020,12,4396993,"Iowa State",2,6.102,15.217,NA,NA,-0.8,0.52,1.8,2.94,3.36
-"Tyrese Martin","UConn",2022,51,4397179,"UConn",4,7.048,9.65,7.716,9.853,-2.18,-1.83,-1.85,NA,NA
+"Tyrese Martin","UConn",2022,51,4397179,"UConn",4,7.716,9.853,11.093,13.329,-2.18,-1.83,-1.85,NA,NA
 "Tyrese Maxey","Kentucky",2020,21,4431678,"Kentucky",1,8.159,NA,NA,NA,-0.68,-0.56,0.96,2,0.88
 "Tyrese Proctor","Duke",2025,49,5023693,"Duke",3,4.385,6.903,8.385,NA,-1.43,NA,NA,NA,NA
 "Tyrone Wallace","California",2016,60,62208,"California",4,1.923,5.911,9.712,9.107,-2.24,-2.36,-2.12,-2.65,NA
 "Tyshawn Taylor","Kansas",2012,41,41766,"Kansas",4,3.615,3.919,4.113,12.207,-2.21,-3.79,NA,NA,NA
 "Tyus Jones","Duke",2015,24,3135046,"Duke",1,12.277,NA,NA,NA,-0.64,-0.86,0.97,0.11,0.26
-"Udoka Azubuike","Kansas",2020,27,4066299,"Kansas",4,7.048,9.65,9.068,11.439,-2.71,-2.25,-2.46,-2.72,NA
+"Udoka Azubuike","Kansas",2020,27,4066299,"Kansas",4,9.068,11.439,11.093,13.329,-2.71,-2.25,-2.46,-2.72,NA
 "VJ Edgecombe","Baylor",2025,3,5124612,"Baylor",1,12.597,NA,NA,NA,-0.74,NA,NA,NA,NA
 "Vernon Carey","Duke",2020,32,4431669,"Duke",1,13.432,NA,NA,NA,-2.54,-2.68,-2.26,NA,NA
-"Vernon Macklin","Florida",2011,52,32019,"Florida",4,7.048,9.65,5.798,4.959,-2.8,NA,NA,NA,NA
+"Vernon Macklin","Florida",2011,52,32019,"Florida",4,5.798,4.959,11.093,13.329,-2.8,NA,NA,NA,NA
 "Victor Oladipo","Indiana",2013,2,51480,"Indiana",3,3.09,7.381,11.753,NA,-0.1,0.47,1.68,1.11,4.63
 "Vince Williams","VCU",2022,47,4397227,"VCU",4,3.921,2.344,7.245,10.149,-1.24,-0.7,-1.54,-1.68,NA
 "Vincent Edwards","Purdue",2018,52,3136989,"Purdue",4,6.107,7.631,12.808,13.39,-1.82,NA,NA,NA,NA
 "Wade Baldwin","Vanderbilt",2016,17,3136696,"Vanderbilt",2,8.016,10.301,NA,NA,-2.63,-1.21,-2.67,NA,NA
-"Walker Kessler","Auburn",2022,22,4433136,"Auburn",2,7.048,8.908,NA,NA,1.35,0.62,0.72,0.73,NA
-"Wayne Ellington","UNC",2009,28,31606,"UNC",3,7.048,10.932,9.031,NA,-1.82,-2.63,-1.44,-0.79,-0.89
+"Walker Kessler","Auburn",2022,22,4433136,"Auburn",2,8.908,9.65,NA,NA,1.35,0.62,0.72,0.73,NA
+"Wayne Ellington","UNC",2009,28,31606,"UNC",3,10.932,9.031,11.093,NA,-1.82,-2.63,-1.44,-0.79,-0.89
 "Wendell Carter","Duke",2018,7,4277847,"Duke",1,12.106,NA,NA,NA,-1.66,-0.28,-1.23,0.34,0.19
 "Wendell Moore","Duke",2022,26,4592187,"Duke",3,3.308,5.44,12.273,NA,-1.71,-1.07,-1.57,-0.65,NA
 "Wes Iwundu","Kansas State",2017,33,67249,"Kansas State",4,3.958,2.489,5.46,12.158,-1.34,-0.74,-0.66,-2.54,-2.41
-"Wesley Johnson","Syracuse",2010,4,31587,"Syracuse",3,7.048,9.65,12.693,NA,-1.57,-1.61,-2.31,-1.17,-1.49
+"Wesley Johnson","Syracuse",2010,4,31587,"Syracuse",3,12.693,9.65,11.093,NA,-1.57,-1.61,-2.31,-1.17,-1.49
 "Will Barton","Memphis",2012,40,51259,"Memphis",2,4.014,18.592,NA,NA,-3.01,-2.67,-1.15,-1.33,-1.88
-"Will Richard","Florida",2025,56,4897262,"Florida",4,7.048,5.584,5.713,9.332,-0.63,NA,NA,NA,NA
+"Will Richard","Florida",2025,56,4897262,"Florida",4,5.584,5.713,9.332,13.329,-0.63,NA,NA,NA,NA
 "Will Riley","Illinois",2025,21,5144126,"Illinois",1,7.147,NA,NA,NA,-2.02,NA,NA,NA,NA
 "Willie Cauley-Stein","Kentucky",2015,6,61842,"Kentucky",3,3.792,5.187,7.711,NA,-0.64,-0.29,-0.28,1.29,0.8
 "Willie Warren","Oklahoma",2010,54,41570,"Oklahoma",2,7.592,6.903,NA,NA,-0.96,NA,NA,NA,NA
 "Xavier Henry","Kansas",2010,12,46115,"Kansas",1,7.872,NA,NA,NA,-1.97,-1.64,-2.6,-0.98,-0.97
-"Xavier Thames","San Diego State",2014,59,46068,"San Diego State",4,7.048,5.302,3.446,18.136,-10,NA,NA,NA,NA
-"Xavier Tillman","Michigan State",2020,35,4277964,"Michigan State",3,7.048,8.414,12.648,NA,-0.83,-0.23,-0.19,-0.14,-0.62
-"Yanic Konan Niederhauser","Penn State",2025,30,5108024,"Penn State",3,7.048,9.65,7.144,NA,-0.92,NA,NA,NA,NA
+"Xavier Thames","San Diego State",2014,59,46068,"San Diego State",4,5.302,3.446,18.136,13.329,-10,NA,NA,NA,NA
+"Xavier Tillman","Michigan State",2020,35,4277964,"Michigan State",3,8.414,12.648,11.093,NA,-0.83,-0.23,-0.19,-0.14,-0.62
+"Yanic Konan Niederhauser","Penn State",2025,30,5108024,"Penn State",3,7.144,9.65,11.093,NA,-0.92,NA,NA,NA,NA
 "Yves Missi","Baylor",2024,21,5061589,"Baylor",1,7.671,NA,NA,NA,-2.44,-0.93,NA,NA,NA
 "Zach Collins","Gonzaga",2017,10,4066650,"Gonzaga",1,11.267,NA,NA,NA,-2.35,-1.19,-1.54,-0.48,-0.65
-"Zach Edey","Purdue",2024,9,4600663,"Purdue",4,7.048,11.585,25,25,-0.36,-0.08,NA,NA,NA
+"Zach Edey","Purdue",2024,9,4600663,"Purdue",4,11.585,25,25,13.329,-0.36,-0.08,NA,NA,NA
 "Zach LaVine","UCLA",2014,13,66221,"UCLA",1,4.757,NA,NA,NA,-2.39,-1.26,-1.32,-1.65,-0.18
 "Zeke Nnaji","Arizona",2020,22,4431690,"Arizona",1,12.504,NA,NA,NA,-1.79,-1.85,-1.25,-3.21,-1.72
 "Zhaire Smith","Texas Tech",2018,16,4277923,"Texas Tech",1,9.81,NA,NA,NA,-1.91,-1.76,-1.82,NA,NA

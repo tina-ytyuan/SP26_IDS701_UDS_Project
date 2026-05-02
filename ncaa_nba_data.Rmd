@@ -454,9 +454,7 @@ draft_test <- draft_test %>%
 # If there is a disparity between num_years_college and the number of values a player has:
 # 1) Push the first year a player has by x positions
 # 2) Impute based on medians for that column
-
 college_cols <- c("college_1", "college_2", "college_3", "college_4")
-
 col_medians <- sapply(college_cols, function(col) median(draft_test[[col]], na.rm = TRUE))
 
 draft_test <- draft_test %>%
@@ -464,22 +462,26 @@ draft_test <- draft_test %>%
     pmap_dfr(
       list(college_1, college_2, college_3, college_4, num_years_college),
       function(c1, c2, c3, c4, nyc) {
-        vals      <- c(c1, c2, c3, c4)
-        n_present <- sum(!is.na(vals))
-        disparity <- as.integer(nyc) - n_present
+        vals    <- c(c1, c2, c3, c4)
+        non_na  <- vals[!is.na(vals)]
+        n_present <- length(non_na)
+        nyc <- as.integer(nyc)
 
-        if (disparity > 0) {
-          non_na  <- vals[!is.na(vals)]
-          shifted <- c(rep(NA_real_, disparity), non_na, rep(NA_real_, 4))[1:4]
+        # Right-align: college_1 = most recent, pad earlier years with NA
+        # Only keep up to nyc values, fill rest with NA
+        aligned <- rep(NA_real_, 4)
+        n_use <- min(n_present, nyc)
+        aligned[1:n_use] <- non_na[1:n_use]
 
-          for (i in seq_len(min(disparity, 4))) {
-            if (is.na(shifted[i])) shifted[i] <- col_medians[i]
+        # Impute only if we have fewer values than years played
+        if (n_present < nyc) {
+          for (i in (n_present + 1):nyc) {
+            aligned[i] <- col_medians[i]
           }
-          vals <- shifted
         }
 
-        tibble(college_1 = vals[1], college_2 = vals[2],
-               college_3 = vals[3], college_4 = vals[4])
+        tibble(college_1 = aligned[1], college_2 = aligned[2],
+               college_3 = aligned[3], college_4 = aligned[4])
       }
     )
   )
@@ -545,11 +547,9 @@ nba_dpm <- darko %>%
     player_name == "Justin Jackson" ~ "Justin Jackson Jr.",
     player_name == "Marcus Thornton"  ~ "Marcus Terell Thornton",
     TRUE ~ player_name
-  )) %>%
+  ),
+  nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1)) %>%
   select(player_name, nba_season_1, nba_season_2, nba_season_3, nba_season_4, nba_season_5)
-
-nba_dpm %>%
-  mutate(nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1))
 
 preds <- draft_test %>%
   left_join(nba_dpm, by = c(Player = "player_name")) %>%
@@ -560,13 +560,103 @@ preds <- draft_test %>%
 ## Plots
 
 ```{r}
-ncaa_nba_full %>%
-  group_by(num_years_college) %>%
+preds %>%
   distinct() %>%
-  count()
-  ggplot(aes(x = ))
+  ggplot(aes(x = num_years_college)) +
+  geom_histogram(binwidth = 0.5, fill = "steelblue", color = "white") +
+  theme_light() +
+  labs(title = "Distribution of 1-4 year players",
+       subtitle = "807 Drafted Players (2008-2026)",
+       x = "Num. Years in College",
+       y = "Frequency")
 ```
 
+
+```{r}
+
+college_periods <- c("college_2", "college_1")
+nba_periods <- c("nba_season_1", "nba_season_2", "nba_season_3", "nba_season_4", "nba_season_5")
+time_order <- c(college_periods, nba_periods)
+
+x_labels <- c("college_2" = "College 2", "college_1" = "College 1",
+               "nba_season_1" = "NBA 1", "nba_season_2" = "NBA 2",
+               "nba_season_3" = "NBA 3", "nba_season_4" = "NBA 4",
+               "nba_season_5" = "NBA 5")
+
+rescale_to <- function(x, new_min = 0, new_max = 25, old_min = -10, old_max = 7) {
+  (x - old_min) / (old_max - old_min) * (new_max - new_min) + new_min
+}
+
+plot_data <- preds %>%
+  filter(num_years_college %in% c(1:2)) %>%
+  distinct() %>%
+  pivot_longer(
+    cols = c(college_2, college_1,
+             nba_season_1, nba_season_2, nba_season_3, nba_season_4, nba_season_5),
+    names_to = "time_period",
+    values_to = "value"
+  ) %>%
+  filter(!(num_years_college == 1 & time_period == "college_2")) %>%
+  mutate(value = ifelse(time_period %in% nba_periods,
+                        rescale_to(value), value)) %>%
+  group_by(num_years_college, time_period) %>%
+  summarise(
+    mean_val = mean(value, na.rm = TRUE),
+    se = sd(value, na.rm = TRUE) / sqrt(n()),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    time_period = factor(time_period, levels = time_order),
+    num_years_college = factor(num_years_college),
+    phase = ifelse(time_period %in% college_periods, "college", "nba")
+  )
+
+college_data <- filter(plot_data, phase == "college")
+nba_data     <- filter(plot_data, phase == "nba")
+
+ggplot(plot_data, aes(x = time_period, y = mean_val,
+                      color = num_years_college, group = num_years_college)) +
+  # College confidence bands
+  geom_ribbon(data = college_data,
+              aes(ymin = mean_val - 1.96 * se, ymax = mean_val + 1.96 * se,
+                  fill = num_years_college, group = num_years_college),
+              alpha = 0.15, color = NA) +
+  # NBA confidence bands
+  geom_ribbon(data = nba_data,
+              aes(ymin = mean_val - 1.96 * se, ymax = mean_val + 1.96 * se,
+                  fill = num_years_college, group = num_years_college),
+              alpha = 0.15, color = NA) +
+  # College lines
+  geom_line(data = college_data, linewidth = 1) +
+  geom_point(data = college_data, size = 2) +
+  # NBA lines
+  geom_line(data = nba_data, linewidth = 1) +
+  geom_point(data = nba_data, size = 2) +
+  # Mean value labels
+  geom_text(aes(label = round(mean_val, 2)),
+            vjust = -1, size = 3, show.legend = FALSE) +
+  # College/NBA divider
+  geom_vline(xintercept = 2.5, linetype = "dashed", color = "gray50") +
+  annotate("text", x = 1.5, y = max(plot_data$mean_val + 1.96 * plot_data$se) * 1.02,
+           label = "College", color = "gray40", size = 3.5) +
+  annotate("text", x = 4.5, y = max(plot_data$mean_val + 1.96 * plot_data$se) * 1.02,
+           label = "NBA", color = "gray40", size = 3.5) +
+  scale_x_discrete(labels = x_labels) +
+  theme_light() +
+  labs(title = "Player Progression from College to NBA",
+       subtitle = "Freshmen vs. Sophomores",
+       x = NULL,
+       y = "Value",
+       color = "Years in College",
+       fill = "Years in College") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+```{r}
+preds %>%
+  filter(is.na(nba_season_1))
+```
 
 
 
