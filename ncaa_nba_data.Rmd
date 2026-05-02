@@ -371,7 +371,8 @@ draft_test <- draft_full %>%
     distance_col = "dist"
   ) %>%
   filter(!is.na(impact) & !is.na(Player)) %>%
-  arrange(-impact)
+  arrange(-impact) %>%
+  mutate(num_years_college = ifelse(num_years_college >= 4, 4, num_years_college))
 
 
 # Transpose NCAA data
@@ -379,7 +380,7 @@ draft_test <- draft_test %>%
   select(Pk, Player, player, College, draft_year, athlete_id, team_location, Season, impact, num_years_college) %>%
   group_by(Player) %>%
   arrange(Season, .by_group = TRUE) %>%
-  mutate(college_yr = paste0("college_", row_number())) %>%
+  mutate(college_yr = paste0("college_", row_number()),) %>%
   ungroup() %>%
   pivot_wider(
     id_cols    = c(Pk, Player, player, College, draft_year, athlete_id, team_location, num_years_college),
@@ -488,179 +489,7 @@ draft_test <- draft_test %>%
 
 # NBA data
 
-<!-- ```{r scrape NBA data, calculate NBA impact} -->
-
-<!-- # --- 1. Scraper for a single season --- -->
-<!-- scrape_nba_season <- function(year) { -->
-<!--   message("Scraping ", year - 1, "-", substr(year, 3, 4), "...") -->
-<!--   Sys.sleep(4) -->
-
-<!--   url_1 <- paste0("https://www.basketball-reference.com/leagues/NBA_", year, "_per_poss.html") -->
-<!--   url_2 <- paste0("https://www.basketball-reference.com/leagues/NBA_", year, "_advanced.html") -->
-
-<!--   tryCatch({ -->
-<!--     table_1 <- read_html(url_1) %>% -->
-<!--       html_nodes("table") %>% -->
-<!--       .[[1]] %>% -->
-<!--       html_table(fill = TRUE) -->
-
-<!--     Sys.sleep(4) -->
-
-<!--     table_2 <- read_html(url_2) %>% -->
-<!--       html_nodes("table") %>% -->
-<!--       .[[1]] %>% -->
-<!--       html_table(fill = TRUE) -->
-
-<!--     full_table <- table_1 %>% -->
-<!--       left_join(table_2, by = c("Player", "Team", "Age")) %>% -->
-<!--       filter(Rk.x != "Rk") %>% -->
-<!--       mutate(season = year) -->
-
-<!--     # Coerce numeric columns -->
-<!--     full_table <- full_table %>% -->
-<!--       mutate( -->
-<!--         across(c(ORtg, DRtg, PER, `USG%`, MP.x, G.x), as.numeric) -->
-<!--       ) -->
-
-<!--     return(full_table) -->
-
-<!--   }, error = function(e) { -->
-<!--     warning("Failed for year ", year, ": ", e$message) -->
-<!--     return(NULL) -->
-<!--   }) -->
-<!-- } -->
-
-<!-- # --- 2. Calculate impact score relative to each season --- -->
-<!-- calculate_impact <- function(df) { -->
-<!--   df %>% -->
-<!--     mutate( -->
-<!--       `NET RTG`  = ORtg - DRtg, -->
-<!--       MPG        = MP.x / G.x, -->
-<!--       `PER*MPG`  = PER * MPG -->
-<!--     ) %>% -->
-<!--     drop_na(`NET RTG`) %>% -->
-<!--     mutate( -->
-<!--       # All standardizations relative to THIS season -->
-<!--       net_std     = round((`NET RTG` - mean(`NET RTG`, na.rm = TRUE)) / -->
-<!--                             sd(`NET RTG`,   na.rm = TRUE), 2), -->
-<!--       min_std     = round(MPG / sd(MPG, na.rm = TRUE), 2), -->
-<!--       net_min_std = round( -->
-<!--         (net_std * min_std) / max(net_std * min_std, na.rm = TRUE), 2 -->
-<!--       ), -->
-<!--       per_std     = round( -->
-<!--         (`PER*MPG` - mean(`PER*MPG`, na.rm = TRUE)) / -->
-<!--           sd(`PER*MPG`, na.rm = TRUE), 2 -->
-<!--       ), -->
-<!--       # Impact score on 25-point scale relative to this season -->
-<!--       impact = round( -->
-<!--         `USG%` * (net_min_std - min(net_min_std)) * (per_std - min(per_std)) / -->
-<!--           (max(`USG%` * (net_min_std - min(net_min_std)) * -->
-<!--                  (per_std - min(per_std))) / 25), -->
-<!--         3 -->
-<!--       ) -->
-<!--     ) -->
-<!-- } -->
-
-<!-- # --- 3. Run across all seasons --- -->
-<!-- years <- 2008:2026  # 2007-08 through 2025-26 -->
-
-<!-- all_seasons_raw <- map(years, scrape_nba_season) %>% -->
-<!--   compact()  # drops any NULLs from failed years -->
-
-<!-- # Apply impact calculation within each season, then stack -->
-<!-- all_seasons <- all_seasons_raw %>% -->
-<!--   map(calculate_impact) %>% -->
-<!--   bind_rows() -->
-
-<!-- # --- 4. Final clean outputs --- -->
-
-<!-- # All players, all seasons -->
-<!-- player_fct_full <- all_seasons %>% -->
-<!--   select(Player, Team, Pos.x, season, impact) %>% -->
-<!--   rename(Pos = Pos.x) %>% -->
-<!--   arrange(season, -impact) -->
-<!-- ``` -->
-
-<!-- ```{r} -->
-<!-- # Transpose NBA data -->
-<!-- player_fct_full <- player_fct_full %>% -->
-<!--   select(Player, season, impact) %>% -->
-<!--   group_by(Player) %>% -->
-<!--   arrange(season, .by_group = TRUE) %>% -->
-<!--   mutate(nba_yr = paste0("nba_season_", row_number())) %>% -->
-<!--   ungroup() %>% -->
-<!--   pivot_wider( -->
-<!--     id_cols     = Player, -->
-<!--     names_from  = nba_yr, -->
-<!--     values_from = impact -->
-<!--   ) %>% -->
-<!--   mutate( -->
-<!--     nba_season_1 = if ("nba_season_1" %in% names(.)) nba_season_1 else NA_real_, -->
-<!--     nba_season_2 = if ("nba_season_2" %in% names(.)) nba_season_2 else NA_real_, -->
-<!--     nba_season_3 = if ("nba_season_3" %in% names(.)) nba_season_3 else NA_real_, -->
-<!--     nba_season_4 = if ("nba_season_4" %in% names(.)) nba_season_4 else NA_real_, -->
-<!--     nba_season_5 = if ("nba_season_5" %in% names(.)) nba_season_5 else NA_real_, -->
-<!--     Player = str_remove(Player, "\\s+(Jr\\.|Sr\\.|II|III|IV|V)$") -->
-<!--   ) %>% -->
-<!--   select(Player, nba_season_1, nba_season_2, nba_season_3, nba_season_4, nba_season_5) -->
-<!-- ``` -->
-
-
-<!-- ```{r} -->
-<!-- # Join NCAA to NBA data -->
-<!-- ncaa_nba_full <- draft_test %>% -->
-<!--   stringdist_left_join( -->
-<!--     player_fct_full, -->
-<!--     by = "Player", -->
-<!--     method = "jw", -->
-<!--     max_dist = 0.07, -->
-<!--     distance_col = "dist", -->
-<!--   ) %>% -->
-<!--   select(-c(Player.y, team_location, dist)) %>% -->
-<!--   rename("Player" = "Player.x") -->
-
-
-<!-- # Check mismatches after fuzzy joins - all good! -->
-<!-- #setdiff(draft_test$Player, player_fct_full$Player) -->
-
-<!-- # IMPORTANT: There will still be nulls for the first NBA season for a player. This is because that player didn't play in that first season and dropped out of the league. -->
-
-<!-- ncaa_nba_full <- ncaa_nba_full %>% -->
-<!--   mutate(nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1), -->
-<!--          num_years_college = ifelse(num_years_college >= 4, 4, num_years_college)) -->
-
-
-<!-- ncaa_nba_full <- ncaa_nba_full %>% -->
-<!--   rowwise() %>% -->
-<!--   mutate( -->
-<!--     # Extract just the non-NA values from the four columns -->
-<!--     actual_vals = list(na.omit(c(college_1, college_2, college_3, college_4))), -->
-
-<!--     # Pad the end with NAs so it is exactly 4 elements long again -->
-<!--     padded_vals = list(c(actual_vals, rep(NA_real_, 4 - length(actual_vals)))), -->
-
-<!--     # Reassign them in the correct left-aligned order -->
-<!--     college_1 = padded_vals[1], -->
-<!--     college_2 = padded_vals[2], -->
-<!--     college_3 = padded_vals[3], -->
-<!--     college_4 = padded_vals[4] -->
-<!--   ) %>% -->
-<!--   select(-actual_vals, -padded_vals) %>% -->
-<!--   ungroup() -->
-
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-<!-- ncaa_nba_full %>% -->
-<!--   group_by(num_years_college) %>% -->
-<!--   reframe(Num_players = n(), -->
-<!--           mean_pick = mean(Pk), -->
-<!--           Freshman_impact = mean(college_1), -->
-<!--           NBA_Year_1_impact = mean(nba_season_1)) -->
-<!-- ``` -->
-
-# DARKO
+## DARKO
 
 ```{r}
 
@@ -719,11 +548,25 @@ nba_dpm <- darko %>%
   )) %>%
   select(player_name, nba_season_1, nba_season_2, nba_season_3, nba_season_4, nba_season_5)
 
+nba_dpm %>%
+  mutate(nba_season_1 = ifelse(is.na(nba_season_1), 0, nba_season_1))
+
 preds <- draft_test %>%
   left_join(nba_dpm, by = c(Player = "player_name")) %>%
   mutate(nba_season_1 = ifelse(is.na(nba_season_1), -10, nba_season_1))
 
 ```
+
+## Plots
+
+```{r}
+ncaa_nba_full %>%
+  group_by(num_years_college) %>%
+  distinct() %>%
+  count()
+  ggplot(aes(x = ))
+```
+
 
 
 
