@@ -638,24 +638,35 @@ ggplot(plot_data, aes(x = time_period, y = mean_val,
   # College/NBA divider
   geom_vline(xintercept = 2.5, linetype = "dashed", color = "gray50") +
   annotate("text", x = 1.5, y = max(plot_data$mean_val + 1.96 * plot_data$se) * 1.02,
-           label = "College", color = "gray40", size = 3.5) +
+           label = "College (Player Impact)", color = "gray40", size = 3.5) +
   annotate("text", x = 4.5, y = max(plot_data$mean_val + 1.96 * plot_data$se) * 1.02,
-           label = "NBA", color = "gray40", size = 3.5) +
+           label = "NBA (DARKO DPM)", color = "gray40", size = 3.5) +
   scale_x_discrete(labels = x_labels) +
   theme_light() +
   labs(title = "Player Progression from College to NBA",
        subtitle = "Freshmen vs. Sophomores",
-       x = NULL,
+       x = "College & NBA By-Season Production",
        y = "Value",
        color = "Years in College",
        fill = "Years in College") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-
 ```{r}
+preds_first_two <- preds %>%
+  filter(num_years_college %in% c(1:2))
+
 preds %>%
-  filter(is.na(nba_season_1))
+ arrange(draft_year, num_years_college) %>%
+ select(Player, draft_year, num_years_college) %>%
+ group_by(draft_year, num_years_college) %>%
+  distinct() %>%
+  count() %>%
+  arrange(-n)
+
+
+preds_first_two %>%
+  summarise(across(c(nba_season_1:nba_season_5), ~sum(is.na(.))))
 ```
 
 
