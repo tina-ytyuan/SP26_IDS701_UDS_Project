@@ -371,7 +371,8 @@ Future improvements could include:
 ---
  
 ## References
- 
+
+- NBA.com, Official NBA Statistics and Advanced Analytics (https://www.nba.com/stats)
 - Bart Torvik, College Basketball Analytics (https://barttorvik.com)
 - DARKO Daily Plus-Minus Player Projections (https://apanalytics.shinyapps.io/DARKO)
 - Basketball Reference (https://www.basketball-reference.com)
